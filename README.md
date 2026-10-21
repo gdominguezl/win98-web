@@ -204,6 +204,27 @@ Clippy is reintroduced as an optional, AI-powered assistant that provides contex
 **Privacy Note**: Conversations with Clippy are sent to a backend API for processing. The backend service lives here:
 👉 **[resume-chat-api](https://github.com/azayrahmad/resume-chat-api)**
 
+## Docker
+
+The production build can be served as a self-contained container image (Bun build stage + nginx runtime) under the same `/win98-web/` base path used everywhere else.
+
+```bash
+docker build -t win98-web .
+docker run --rm -p 8080:80 win98-web
+```
+
+Then open **http://localhost:8080/win98-web/**. A health endpoint is exposed at **http://localhost:8080/healthz** (returns `200 ok`), independent of the app content.
+
+To verify a running instance against the expected behavior (prefix serving, redirects, deep links, cache headers, compression, health):
+
+```bash
+scripts/verify_container.sh http://localhost:8080
+```
+
+The image also works unchanged behind a reverse proxy that forwards the URI as-is: the `/win98-web` → `/win98-web/` redirect uses a relative `Location`, and the service worker scope stays `/win98-web/`.
+
+**Build resources**: a clean `docker build` on an Apple Silicon MacBook with Docker Desktop took ~15 s (~146 MB build context; `bun install` ~8 s, `vite build` ~3.5 s) and produced a ~360 MB image. The same `bun run build` measured natively peaked at ~0.8 GB RSS, so allow at least ~1-2 GB of free memory (or swap) for builds on small hosts.
+
 ## Technologies Used
 
 ### Core Technologies
