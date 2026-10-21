@@ -1,0 +1,8 @@
+dist/
+public/games/
+public/plus-screensavers/
+public/screensaver/
+public/maze/
+public/pipes/
+public/apps/
+public/jquery-3.3.1.js
