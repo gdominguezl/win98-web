@@ -69,7 +69,7 @@ rules:
     - Manual verification task for visual work - run `bun run dev`, open /win98-web/, exercise the change at the default theme and one other theme, and check the console for errors
     - Do not mock ZenFS or window.System in e2e tests. Run the real app
     - Always include a final validation group - `bun run build` (which also regenerates the registry), `bun run test` (or the specific specs touched), then `graphify update .`
-    - Always include a final task - commit all changes with a Conventional Commit message (for example "feat(notepad): add find and replace dialog")
+    - 'Always include a final task - commit all changes with a Conventional Commit message (for example "feat(notepad): add find and replace dialog")'
 
 operations:
   apply:
