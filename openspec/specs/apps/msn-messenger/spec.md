@@ -1,10 +1,9 @@
-# Spec Delta
+# apps/msn-messenger Specification
 
 ## Purpose
-
 Lets users open the running MSN Messenger web app from the Windows 98 desktop, inside a Win98 window, as if it were an installed program.
 
-## ADDED Requirements
+## Requirements
 
 ### Requirement: MSN Messenger appears on the desktop
 The system SHALL show a "MSN Messenger" shortcut on the desktop of every user, including users whose persisted desktop predates this app.
@@ -80,9 +79,9 @@ The framed URL SHALL be the value of the build-time variable `VITE_MSN_URL` when
 The window SHALL open smaller than the desktop work area and not maximized, taller than it is wide like the original Messenger contact list, so other desktop content stays visible around it. The user MUST be able to enlarge it.
 
 #### Scenario: Default size
-- **GIVEN** a desktop at the default monitor setting
+- **GIVEN** a desktop of at least 1440x900
 - **WHEN** the user opens MSN Messenger
-- **THEN** the window is not maximized, is narrower than half of the desktop width and shorter than the desktop height, and desktop icons remain visible beside it
+- **THEN** the window is 529x796, not maximized, narrower than half of the desktop width and shorter than the desktop height, and desktop icons remain visible beside it
 
 #### Scenario: Enlarging
 - **GIVEN** the compact MSN Messenger window

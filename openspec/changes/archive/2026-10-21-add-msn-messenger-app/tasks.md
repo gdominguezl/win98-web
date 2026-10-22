@@ -30,16 +30,20 @@ Baseline first: before touching code, run the full `bun run test` once on a clea
 ## 6. Manual verification
 
 - [x] 6.1 `bun run dev` with `VITE_MSN_URL=http://localhost:5179` and MSN running via `npm run dev:local`: open `/win98-web/`, double click the icon, and verify the MSN login page renders in the window, the console has no new errors (a cross-origin inactivity warning is expected), and the window drags, minimizes, restores without reloading MSN, maximizes and closes. Check at the default theme and one other theme.
-- [x] 6.2 Tune the window size: open the real MSN login page, contact list and an open chat at the compact default (380x620), then enlarged and maximized. Adjust `width` and `height` in the config literal only if the layout is unusable, keeping the window narrower than half of a default-size desktop and not maximized on open. Observe what `$Window` does at a 640x480 monitor setting (design open question). Re-run `bun run build:registry` if the config changes.
+- [x] 6.2 Tune the window size: open the real MSN login page, contact list and an open chat at the compact default (settled by the user at 529x796), then enlarged and maximized. Adjust `width` and `height` in the config literal only if the layout is unusable, keeping the window narrower than half of a default-size desktop and not maximized on open. Observe what `$Window` does at a 640x480 monitor setting (design open question). Re-run `bun run build:registry` if the config changes.
 - [x] 6.3 Verify the default URL path: build the Docker image (`docker build -t win98-web .`), start the MSN verification stack from MSN-working-clone (`docker compose -f scripts/win98-routing/docker-compose.verify.yml up -d --build`), open `http://localhost:8081/win98`, double click the icon, and verify the frame loads the MSN page from `/` on the same origin, the screensaver does not start while typing in the frame with a short timeout, and `localStorage` is shared with a top-level MSN tab. Then run `docker compose ... down`.
-- [ ] 6.4 After the image is deployed to the EC2 (operator step): open `https://<domain>/win98`, launch MSN Messenger, sign in with Microsoft from inside the frame, send a message, close and reopen the window and confirm the session persists. Record the result.
+- [x] 6.4 After the image is deployed to the EC2 (operator step): open `https://<domain>/win98`, launch MSN Messenger, sign in with Microsoft from inside the frame, send a message, close and reopen the window and confirm the session persists. Record the result. — verified by the user on the EC2 (window opens, MSN login renders inside the frame; screenshot reviewed).
 
 ## 7. Final validation
 
-- [ ] 7.1 Run `bun run build` (which regenerates the registry; confirm the registry diff is still only the new block) and verify it succeeds.
+- [x] 7.1 Run `bun run build` (which regenerates the registry; confirm the registry diff is still only the new block) and verify it succeeds.
 - [x] 7.2 Run `bun run test` and compare with the baseline from 1.1: `e2e/msn_messenger.spec.js` passes and no previously passing spec now fails. — final run 17 passed / 24 failed vs baseline 12 / 22: all 7 new specs pass; the two extra failures (`desktop_component.spec.js:28` and `:38`) also fail on a clean checkout of HEAD without this change (2/2 runs), so they are not caused by it
-- [ ] 7.3 Run `graphify update .`.
+- [x] 7.3 Run `graphify update .`.
 - [x] 7.4 Commit all changes with the Conventional Commit message `feat(msn-messenger): add MSN Messenger desktop shortcut and iframe app`.
+
+## 8. Size update requested after review
+
+- [x] 8.1 Set the initial window size to 529x796 in the config literal, the generated registry block and the app README, and give the e2e spec a 1440x900 viewport so the desktop is taller than the window. Verify `bun x playwright test e2e/msn_messenger.spec.js` passes 7/7 and the registry diff is only the two numbers.
 
 ## Workflow follow-up
 
