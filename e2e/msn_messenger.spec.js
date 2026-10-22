@@ -5,6 +5,10 @@ const WINDOW = '.window[data-app-id="msn-messenger"]';
 const TASKBAR_BUTTON = '.taskbar-button:has-text("MSN Messenger")';
 
 test.describe('MSN Messenger App', () => {
+  // The default 1280x720 viewport is shorter than the 796px window; use a
+  // taller desktop so the "compact" assertions stay meaningful.
+  test.use({ viewport: { width: 1440, height: 900 } });
+
   test.beforeEach(async ({ page }) => {
     // Answer the frame request for `/` (the default MSN URL) with a stub page
     // so the spec does not depend on a running MSN server.

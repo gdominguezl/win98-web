@@ -10,8 +10,8 @@ export class MsnMessengerApp extends IFrameApplication {
     description: "Chat with your contacts.",
     icon: ICONS["msn-messenger"],
     category: "",
-    width: 380,
-    height: 620,
+    width: 529,
+    height: 796,
     resizable: true,
     isSingleton: true,
   };

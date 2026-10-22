@@ -7,7 +7,7 @@ The **MSN Messenger** app opens the running Windows Live Messenger web app (the 
 ## Key Features
 
 - **Desktop and Start menu entry**: A "MSN Messenger" shortcut on the desktop (restored for returning users like the other defaults) and an entry directly under Start > Programs.
-- **Compact Messenger-style window**: Opens as a portrait, contact-list-sized window (380x620), not maximized; it can be resized and maximized like any other app.
+- **Compact Messenger-style window**: Opens as a portrait, contact-list-sized window (529x796), not maximized; it can be resized and maximized like any other app.
 - **Single instance**: Launching it again focuses the existing window instead of opening a second one.
 - **Configurable URL**: The framed URL is the build-time variable `VITE_MSN_URL`, defaulting to `/` (MSN is served at the root of the same domain in the Docker deployment).
 - **Session preserved in storage**: In the same-origin deployment the frame shares `localStorage` with the top-level MSN page, so the Messenger session is the same one used by MSN opened in another tab (signing out in one signs out the other).
