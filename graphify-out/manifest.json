@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "e2e/webamp_launch.spec.js": {
-    "mtime": 1791317071.7814248,
-    "seen": 1792608745.7332008,
-    "ast_hash": "46a2b3c9cbdf5a0b7a31ea8b610534d6",
+    "mtime": 1792693920.97094,
+    "seen": 1792695370.972927,
+    "ast_hash": "793d195e7ac18a84767ef507027b1860",
     "semantic_hash": ""
   },
   "e2e/zenexplorer_c_drive.spec.js": {
@@ -234,9 +234,9 @@
     "semantic_hash": ""
   },
   "src/apps/agent/agent.js": {
-    "mtime": 1791317071.9997985,
-    "seen": 1792608745.733234,
-    "ast_hash": "5ed8560f21b319a67cad328d13847fba",
+    "mtime": 1792694244.9596734,
+    "seen": 1792695370.9729412,
+    "ast_hash": "8e390281a83e14e29124fb5a490e00f2",
     "semantic_hash": ""
   },
   "src/apps/app-maker/app-maker-app.js": {
@@ -918,9 +918,9 @@
     "semantic_hash": ""
   },
   "src/apps/webamp/webamp-app.js": {
-    "mtime": 1791317072.0256038,
-    "seen": 1792608745.733272,
-    "ast_hash": "f824ec580f85f45a86952047ef6c1255",
+    "mtime": 1792694231.093163,
+    "seen": 1792695370.9729972,
+    "ast_hash": "7e9bbd4a771917ebfe198a078f80b296",
     "semantic_hash": ""
   },
   "src/apps/webamp/webamp.js": {
@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792693344.8952577,
-    "seen": 1792693729.522295,
-    "ast_hash": "2cd6e03c7c0fa1b46c10f49f322421ac",
+    "mtime": 1792694922.2753472,
+    "seen": 1792695370.973,
+    "ast_hash": "e3484967133039cdb3eb6bc081f13f26",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -1656,9 +1656,9 @@
     "semantic_hash": ""
   },
   "src/system/zenfs-init.js": {
-    "mtime": 1792692174.4312823,
-    "seen": 1792693729.522354,
-    "ast_hash": "aa66ebfcf4c8895bc98535f2f3f1fed9",
+    "mtime": 1792694244.699543,
+    "seen": 1792695370.973058,
+    "ast_hash": "189a4a65b26d781f5153aa88410ebd48",
     "semantic_hash": ""
   },
   "src/system/zenfs-utils.js": {
@@ -1764,9 +1764,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792614099.4382303,
-    "seen": 1792634458.920937,
-    "ast_hash": "a411a600edb2933a3649f84ff491d11d",
+    "mtime": 1792694519.7551763,
+    "seen": 1792695370.973067,
+    "ast_hash": "d90a5d15b7638657ee7f4382353f350b",
     "semantic_hash": ""
   },
   "THEME_IMPROVEMENT_PLAN.md": {
@@ -1878,9 +1878,9 @@
     "semantic_hash": ""
   },
   "src/apps/README.md": {
-    "mtime": 1792693075.1270127,
-    "seen": 1792693729.522387,
-    "ast_hash": "70245e2af729e91ee2935badd1f7c954",
+    "mtime": 1792694515.2654886,
+    "seen": 1792695370.973092,
+    "ast_hash": "26c6b284243497c4ce8503551ec9bc6a",
     "semantic_hash": ""
   },
   "src/apps/app-maker/README.md": {
@@ -2112,9 +2112,9 @@
     "semantic_hash": ""
   },
   "src/apps/webamp/README.md": {
-    "mtime": 1791317072.0254726,
-    "seen": 1792608745.733363,
-    "ast_hash": "23efd02955991e6a678ed2a563641ef1",
+    "mtime": 1792694515.1760023,
+    "seen": 1792695370.973112,
+    "ast_hash": "077d998dae2e017583a1229d66b863f3",
     "semantic_hash": ""
   },
   "src/apps/wordpad/README.md": {
@@ -6366,9 +6366,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-fotolog-app/design.md": {
-    "mtime": 1792687706.066276,
-    "seen": 1792693729.522366,
-    "ast_hash": "062fab9a8f471b2f95e792557456719f",
+    "mtime": 1792693802.9789186,
+    "seen": 1792695370.9730701,
+    "ast_hash": "25e4240f95259ae4b2b776ee413b2493",
     "semantic_hash": ""
   },
   "openspec/changes/add-fotolog-app/proposal.md": {
@@ -6414,9 +6414,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-msn-winamp-app/tasks.md": {
-    "mtime": 1792687678.7535822,
-    "seen": 1792693729.52237,
-    "ast_hash": "067059f7d415460005535810b4086118",
+    "mtime": 1792695365.401438,
+    "seen": 1792695370.973075,
+    "ast_hash": "e835f5fc4b9a82e017336e7bf6652cad",
     "semantic_hash": ""
   },
   "openspec/changes/open-msn-shortcuts-as-windows/.openspec.yaml": {
@@ -6471,6 +6471,36 @@
     "mtime": 1792693057.4552476,
     "seen": 1792693729.52251,
     "ast_hash": "e1ec093169af76b223d03a440a1d3b38",
+    "semantic_hash": ""
+  },
+  "e2e/winamp.spec.js": {
+    "mtime": 1792693916.4880638,
+    "seen": 1792695370.972928,
+    "ast_hash": "54df537983e8fb7e993f66bfe987de1c",
+    "semantic_hash": ""
+  },
+  "src/apps/winamp/winamp-app.js": {
+    "mtime": 1792694230.8804955,
+    "seen": 1792695370.972998,
+    "ast_hash": "49c4a57fecf4c9de0da2310826a91067",
+    "semantic_hash": ""
+  },
+  "src/system/migrate-winamp-shortcut.js": {
+    "mtime": 1792694244.2780194,
+    "seen": 1792695370.9730518,
+    "ast_hash": "e8d02490465f5e3d989abff10a789d36",
+    "semantic_hash": ""
+  },
+  "src/apps/winamp/README.md": {
+    "mtime": 1792694515.0245466,
+    "seen": 1792695370.973113,
+    "ast_hash": "0d2f5478ed27c21b3e361d2fb5d12a57",
+    "semantic_hash": ""
+  },
+  "src/apps/winamp/screenshot.png": {
+    "mtime": 1792694553.2640963,
+    "seen": 1792695370.973165,
+    "ast_hash": "42b1d357a4d86d1cdc34b42b1ae2a819",
     "semantic_hash": ""
   }
 }
