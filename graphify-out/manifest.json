@@ -1,7 +1,7 @@
 {
   ".claude/settings.json": {
-    "mtime": 1792608646.8366563,
-    "seen": 1792608745.733191,
+    "mtime": 1792614099.4365885,
+    "seen": 1792634458.920528,
     "ast_hash": "3b541b9935fcf0831355da956f897645",
     "semantic_hash": ""
   },
@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792611089.326901,
-    "seen": 1792611406.820205,
-    "ast_hash": "22b24e5e45d35e5e6090e705d30f6766",
+    "mtime": 1792634442.2693229,
+    "seen": 1792634458.920762,
+    "ast_hash": "24f59d0eaacbed6fd65fd67f9446446c",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -1002,9 +1002,9 @@
     "semantic_hash": ""
   },
   "src/config/icons.js": {
-    "mtime": 1791317072.1688561,
-    "seen": 1792608745.7332768,
-    "ast_hash": "ee66a62aed8ff20d55ca60716e350fb2",
+    "mtime": 1792633224.8769197,
+    "seen": 1792634458.920774,
+    "ast_hash": "6b164c1532e6bc56f4e7b02ffa71b545",
     "semantic_hash": ""
   },
   "src/config/languages.js": {
@@ -1656,9 +1656,9 @@
     "semantic_hash": ""
   },
   "src/system/zenfs-init.js": {
-    "mtime": 1791317072.1836846,
-    "seen": 1792608745.733314,
-    "ast_hash": "1ee49ce0f2927a327c2f81bb2d1a63a5",
+    "mtime": 1792633224.9924266,
+    "seen": 1792634458.9209259,
+    "ast_hash": "497fcf703ef189a27ac8eccbd73f6a1e",
     "semantic_hash": ""
   },
   "src/system/zenfs-utils.js": {
@@ -1674,44 +1674,44 @@
     "semantic_hash": ""
   },
   ".agents/skills/openspec-apply-change/SKILL.md": {
-    "mtime": 1792608621.511811,
-    "seen": 1792608745.733315,
+    "mtime": 1792614099.434296,
+    "seen": 1792634458.920928,
     "ast_hash": "2b12e67f11428dbf0f2182b743e95380",
     "semantic_hash": ""
   },
   ".agents/skills/openspec-archive-change/SKILL.md": {
-    "mtime": 1792608621.5147953,
-    "seen": 1792608745.733315,
+    "mtime": 1792614099.4346373,
+    "seen": 1792634458.920929,
     "ast_hash": "2e8b9e7e0466b417487565c25ac09233",
     "semantic_hash": ""
   },
   ".agents/skills/openspec-explore/SKILL.md": {
-    "mtime": 1792608621.5108662,
-    "seen": 1792608745.7333162,
+    "mtime": 1792614099.4350572,
+    "seen": 1792634458.920929,
     "ast_hash": "c9c0af9ca015b09a9aacc0e613220142",
     "semantic_hash": ""
   },
   ".agents/skills/openspec-propose/SKILL.md": {
-    "mtime": 1792608621.5156581,
-    "seen": 1792608745.7333162,
+    "mtime": 1792614099.4354181,
+    "seen": 1792634458.9209301,
     "ast_hash": "bbeeebff03c5e9187187b29688371bd4",
     "semantic_hash": ""
   },
   ".agents/skills/openspec-sync-specs/SKILL.md": {
-    "mtime": 1792608621.5138304,
-    "seen": 1792608745.7333162,
+    "mtime": 1792614099.4357805,
+    "seen": 1792634458.9209301,
     "ast_hash": "95ea3c8b0ac5e7d81a5297759d832859",
     "semantic_hash": ""
   },
   ".agents/skills/openspec-update-change/SKILL.md": {
-    "mtime": 1792608621.5126448,
-    "seen": 1792608745.7333171,
+    "mtime": 1792614099.43607,
+    "seen": 1792634458.920931,
     "ast_hash": "7a4fbeca10021f32441941bac76d3e4f",
     "semantic_hash": ""
   },
   ".claude/CLAUDE.md": {
-    "mtime": 1792608821.6767664,
-    "seen": 1792611406.82027,
+    "mtime": 1792614099.4363437,
+    "seen": 1792634458.920932,
     "ast_hash": "c1673ae79a3f14093223d08350e8b39c",
     "semantic_hash": ""
   },
@@ -1752,8 +1752,8 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792608821.6765418,
-    "seen": 1792611406.8202739,
+    "mtime": 1792614099.4374907,
+    "seen": 1792634458.9209359,
     "ast_hash": "2fff56e4f08793606b153a8a1421516b",
     "semantic_hash": ""
   },
@@ -1764,8 +1764,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792611106.682362,
-    "seen": 1792611406.8202748,
+    "mtime": 1792614099.4382303,
+    "seen": 1792634458.920937,
     "ast_hash": "a411a600edb2933a3649f84ff491d11d",
     "semantic_hash": ""
   },
@@ -1788,8 +1788,8 @@
     "semantic_hash": ""
   },
   "openspec/config.yaml": {
-    "mtime": 1792609283.379823,
-    "seen": 1792611406.82028,
+    "mtime": 1792614099.4702318,
+    "seen": 1792634458.9209468,
     "ast_hash": "b7ba9b59d6f0abe7654501d3b55042a9",
     "semantic_hash": ""
   },
@@ -1878,9 +1878,9 @@
     "semantic_hash": ""
   },
   "src/apps/README.md": {
-    "mtime": 1791317071.999551,
-    "seen": 1792608745.7333498,
-    "ast_hash": "1dbab2cff333a7d5a5e6f9e5c219125a",
+    "mtime": 1792634061.7103198,
+    "seen": 1792634458.9209569,
+    "ast_hash": "b637252c662ec640c75b276c7d24e27c",
     "semantic_hash": ""
   },
   "src/apps/app-maker/README.md": {
@@ -6228,39 +6228,99 @@
     "semantic_hash": ""
   },
   "scripts/verify_container.sh": {
-    "mtime": 1792610937.6629713,
-    "seen": 1792611406.820142,
+    "mtime": 1792614099.4705124,
+    "seen": 1792634458.9205918,
     "ast_hash": "4555f28f36493987f0849e3c52a5aac2",
     "semantic_hash": ""
   },
-  "openspec/changes/add-container-image/.openspec.yaml": {
-    "mtime": 1792609211.7233634,
-    "seen": 1792611406.820277,
+  "e2e/msn_messenger.spec.js": {
+    "mtime": 1792633539.0453563,
+    "seen": 1792634458.920553,
+    "ast_hash": "83aa49fe03364c60b2cb48ae8f7416ec",
+    "semantic_hash": ""
+  },
+  "src/apps/msn-messenger/msn-messenger-app.js": {
+    "mtime": 1792633232.339092,
+    "seen": 1792634458.9206452,
+    "ast_hash": "51f77207dbdaaac38c730f388f87516d",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-msn-messenger-app/.openspec.yaml": {
+    "mtime": 1792632258.831843,
+    "seen": 1792634458.92094,
     "ast_hash": "8dc49b4fe381379a3a28d72313f76df6",
     "semantic_hash": ""
   },
-  "openspec/changes/add-container-image/design.md": {
-    "mtime": 1792609337.3634145,
-    "seen": 1792611406.820278,
+  "openspec/changes/add-msn-messenger-app/design.md": {
+    "mtime": 1792632667.166339,
+    "seen": 1792634458.920941,
+    "ast_hash": "d16d18bb4d4d20b3734e12cd0cd33346",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-msn-messenger-app/proposal.md": {
+    "mtime": 1792632355.2016745,
+    "seen": 1792634458.920942,
+    "ast_hash": "60d5717ed51dd54c709f3457f47b11ea",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-msn-messenger-app/specs/apps/msn-messenger/spec.md": {
+    "mtime": 1792632661.5900881,
+    "seen": 1792634458.920942,
+    "ast_hash": "19a050a0e1b0c5433aba77b1913f2320",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-msn-messenger-app/tasks.md": {
+    "mtime": 1792634417.9989004,
+    "seen": 1792634458.920943,
+    "ast_hash": "aafe723b330416917b715097d8ce0a43",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-21-add-container-image/.openspec.yaml": {
+    "mtime": 1792614099.4690156,
+    "seen": 1792634458.9209442,
+    "ast_hash": "8dc49b4fe381379a3a28d72313f76df6",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-21-add-container-image/design.md": {
+    "mtime": 1792614099.4692051,
+    "seen": 1792634458.9209442,
     "ast_hash": "d44880d41edf586832cc17409371dd55",
     "semantic_hash": ""
   },
-  "openspec/changes/add-container-image/proposal.md": {
-    "mtime": 1792609283.4790447,
-    "seen": 1792611406.820278,
+  "openspec/changes/archive/2026-10-21-add-container-image/proposal.md": {
+    "mtime": 1792614099.4694145,
+    "seen": 1792634458.920945,
     "ast_hash": "e98522680550e320593b925ff44a3f54",
     "semantic_hash": ""
   },
-  "openspec/changes/add-container-image/specs/container-delivery/spec.md": {
-    "mtime": 1792609408.6472328,
-    "seen": 1792611406.8202791,
+  "openspec/changes/archive/2026-10-21-add-container-image/specs/container-delivery/spec.md": {
+    "mtime": 1792614099.469698,
+    "seen": 1792634458.920946,
     "ast_hash": "577d7e04f211d5f5df4729e3a68126f9",
     "semantic_hash": ""
   },
-  "openspec/changes/add-container-image/tasks.md": {
-    "mtime": 1792611114.241208,
-    "seen": 1792611406.8202791,
-    "ast_hash": "912e7fa6947d2e20e70b7515a6b3ee82",
+  "openspec/changes/archive/2026-10-21-add-container-image/tasks.md": {
+    "mtime": 1792630467.2252054,
+    "seen": 1792634458.920946,
+    "ast_hash": "8e424a9f8a212ae233185df660a858d3",
+    "semantic_hash": ""
+  },
+  "openspec/specs/container-delivery/spec.md": {
+    "mtime": 1792630474.5376086,
+    "seen": 1792634458.920948,
+    "ast_hash": "f048466748a3a4447688133167522a4b",
+    "semantic_hash": ""
+  },
+  "src/apps/msn-messenger/README.md": {
+    "mtime": 1792634061.601034,
+    "seen": 1792634458.920974,
+    "ast_hash": "9eacde5c86339245050a86dff7a58154",
+    "semantic_hash": ""
+  },
+  "src/apps/msn-messenger/screenshot.png": {
+    "mtime": 1792634221.5321822,
+    "seen": 1792634458.9210792,
+    "ast_hash": "1f02d432726eac32695fe0b326b7f876",
     "semantic_hash": ""
   }
 }
