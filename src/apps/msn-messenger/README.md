@@ -15,6 +15,8 @@ The **MSN Messenger** app opens the running Windows Live Messenger web app (the 
 
 ## How to Use
 
+**Opening other MSN apps**: the app switcher buttons MSN shows on its pages (`nav.app-shortcuts` with `a.app-shortcuts__link` links to `/`, `/winamp` and `/fotolog`) open the matching Win98 window instead of navigating this frame, when the frame is same-origin with Win98. This depends on the `app-shortcuts__link` class and those hrefs; if MSN changes them, the buttons simply navigate inside the frame as before. On a cross-origin frame (for example `VITE_MSN_URL` pointing at another port) the interception cannot attach and the buttons navigate inside the frame.
+
 1. Double-click **MSN Messenger** on the desktop (or open Start > Programs > MSN Messenger).
 2. Sign in inside the window as you would on the MSN site.
 3. Resize or maximize the window if you want a larger chat view.

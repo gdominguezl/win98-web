@@ -16,6 +16,8 @@ The classic Webamp-based player is archived in place under the `webamp` app id â
 
 ## How to Use
 
+**Opening other MSN apps**: the app switcher buttons MSN shows on its pages (`nav.app-shortcuts` with `a.app-shortcuts__link` links to `/`, `/winamp` and `/fotolog`) open the matching Win98 window instead of navigating this frame, when the frame is same-origin with Win98. This depends on the `app-shortcuts__link` class and those hrefs; if MSN changes them, the buttons simply navigate inside the frame as before. On a cross-origin frame the interception cannot attach and the buttons navigate inside the frame.
+
 1. Double-click **Winamp** on the desktop (or open Start > Programs > Winamp).
 2. Sign in inside the window if prompted, then reopen the window to reach Winamp.
 3. Resize or maximize the window for a larger view (the page switches to its desktop layout at wider sizes).

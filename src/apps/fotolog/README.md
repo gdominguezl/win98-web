@@ -14,6 +14,8 @@ The **Fotolog** app opens the Fotolog photo-sharing page of the running MSN web 
 
 ## How to Use
 
+**Opening other MSN apps**: the app switcher buttons MSN shows on its pages (`nav.app-shortcuts` with `a.app-shortcuts__link` links to `/`, `/winamp` and `/fotolog`) open the matching Win98 window instead of navigating this frame, when the frame is same-origin with Win98. This depends on the `app-shortcuts__link` class and those hrefs; if MSN changes them, the buttons simply navigate inside the frame as before. On a cross-origin frame the interception cannot attach and the buttons navigate inside the frame.
+
 1. Double-click **Fotolog** on the desktop (or open Start > Programs > Fotolog).
 2. Sign in inside the window if prompted, then reopen the window to reach Fotolog.
 3. Resize or maximize the window for a larger view.
