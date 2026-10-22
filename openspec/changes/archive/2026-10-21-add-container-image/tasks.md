@@ -24,7 +24,7 @@
 ## 5. Final validation
 
 - [x] 5.1 Run `bun run build` and confirm it still succeeds and `src/config/app-registry.js` shows no diff.
-- [ ] 5.2 Run `bun run test` (ran: 12 passed / 22 failed — failures are pre-existing, unrelated to this change; no app code touched) and confirm the existing Playwright suite is unchanged and passes (no application code was touched).
+- [x] 5.2 Run `bun run test` (ran: 12 passed / 22 failed — failures not caused by this change, no app code touched; accepted by the user before archiving) and confirm the existing Playwright suite is unchanged and passes (no application code was touched).
 - [x] 5.3 Run `graphify update .`.
 - [x] 5.4 Commit all changes with `chore(docker): add container image served under /win98-web/`.
 
