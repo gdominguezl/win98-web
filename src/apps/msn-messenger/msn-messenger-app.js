@@ -36,6 +36,7 @@ export class MsnMessengerApp extends IFrameApplication {
     iframe.style.width = "100%";
     iframe.style.height = "100%";
     iframe.style.border = "none";
+    iframe.style.backgroundColor = "#fff";
 
     // Instead of appending, set the inner HTML to allow $Window.js to observe
     win.$content.html(iframe.outerHTML);

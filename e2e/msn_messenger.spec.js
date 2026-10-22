@@ -55,6 +55,41 @@ test.describe('MSN Messenger App', () => {
     expect(maxBox.height).toBeGreaterThan(winBox.height);
   });
 
+  test('iframe area renders white behind a transparent document', async ({ page }) => {
+    await page.locator(ICON).dblclick();
+    const win = page.locator(WINDOW);
+    await expect(win).toBeVisible({ timeout: 15000 });
+    const iframe = win.locator('iframe[title="MSN Messenger"]');
+    await expect(iframe).toBeVisible();
+    await page.waitForTimeout(500);
+
+    const bg = await iframe.evaluate(
+      (el) => getComputedStyle(el).backgroundColor,
+    );
+    expect(bg).toBe('rgb(255, 255, 255)');
+
+    // The stub page has no background: the pixel in the frame area must
+    // read as white, not the window's ButtonFace gray showing through.
+    const box = await iframe.boundingBox();
+    const shot = await page.screenshot({
+      clip: { x: box.x + 10, y: box.y + 10, width: 40, height: 40 },
+    });
+    const pixel = await page.evaluate(async (b64) => {
+      const img = new Image();
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = 'data:image/png;base64,' + b64;
+      });
+      const cv = document.createElement('canvas');
+      cv.width = img.width;
+      cv.height = img.height;
+      cv.getContext('2d').drawImage(img, 0, 0);
+      return [...cv.getContext('2d').getImageData(20, 20, 1, 1).data];
+    }, shot.toString('base64'));
+    expect(pixel).toEqual([255, 255, 255, 255]);
+  });
+
   test('is a singleton: a second launch keeps one window', async ({ page }) => {
     await page.locator(ICON).dblclick();
     await expect(page.locator(WINDOW)).toBeVisible({ timeout: 15000 });
