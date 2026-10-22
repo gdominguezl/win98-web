@@ -49,6 +49,8 @@ See proposal.md. Reused as is (checked with `graphify query` and by reading the 
 - **[Risk] Signed-out first launch lands on the MSN login screen and, after login, on the MSN home (MSN always redirects to `/`).** → Accepted; the session is shared once signed in, so reopening the window works. A "return to original page" fix belongs to a separate MSN change.
 - **[Trade-off] Same-origin trust**, as already accepted for MSN.
 
+- **[Deviation found while implementing] `Application.launch` relaunched minimized singleton windows with `win.restore()`, which is a no-op for windows minimized from the taskbar (os-gui only hides them and never adds the `.minimized` class `restore()` checks).** → Fixed with one line in `src/system/application.js`, `unminimize()` (the same call `window-manager.js` uses). It affects every singleton app and is required by the "launched while minimized" scenario.
+
 ## Open Questions
 
 - Should initial window size be clamped to the visible desktop for every MSN-family window (this would also fix the existing MSN 47 px overflow at 1366x768)? Proposed follow-up: `min(config, desktop size)` inside `createMsnFrameWindow`. Needs the user's call.
