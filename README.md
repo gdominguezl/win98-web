@@ -90,7 +90,7 @@ Windows 98 Web Edition includes a growing collection of built-in applications. T
 ### Games & Entertainment
 * **Windows Games**: Solitaire, FreeCell, Minesweeper, Spider Solitaire, remade from scratch. There's also Pinball Emscripten port available.
 * **Classic DOS Games**: Doom, Quake, Diablo, Prince of Persia, SimCity 2000, Commander Keen (via emulation). Yes, it can play Doom.
-* **Media Players**: Winamp (via Webamp), Media Player, Flash Player.
+* **Media Players**: Winamp, Winamp Classic (via Webamp), Media Player, Flash Player.
 
 ### Productivity & Accessories
 * **Text Editors**: Notepad, WordPad.

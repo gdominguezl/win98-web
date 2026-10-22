@@ -7,10 +7,10 @@ test.describe('Webamp App', () => {
     await page.waitForSelector('#boot-screen', { state: 'hidden', timeout: 60000 });
   });
 
-  test('should launch Webamp from Desktop', async ({ page }) => {
-    // Find and double click Winamp icon on desktop
-    const winampIcon = page.locator('.desktop .explorer-icon:has-text("Winamp")');
-    await winampIcon.dblclick();
+  test('should launch classic Webamp', async ({ page }) => {
+    // The desktop "Winamp" icon now opens the MSN Winamp; the classic player
+    // stays registered under the "webamp" app id.
+    await page.evaluate(() => window.System.launchApp('webamp'));
 
     // Webamp renders to #webamp-container
     await page.waitForSelector('#webamp-container', { timeout: 20000 });

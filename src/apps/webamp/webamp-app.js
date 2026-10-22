@@ -24,10 +24,9 @@ let isMinimized = false;
 export class WebampApp extends Application {
   static config = {
     id: "webamp",
-    title: "Winamp",
+    title: "Winamp Classic",
     description: "A classic music player.",
     icon: ICONS.webamp,
-    category: "",
     hasTaskbarButton: true,
     isSingleton: true,
     tray: {

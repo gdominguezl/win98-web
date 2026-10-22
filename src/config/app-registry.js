@@ -568,10 +568,9 @@ export const appRegistry = {
   "webamp": {
     config: {
     id: "webamp",
-    title: "Winamp",
+    title: "Winamp Classic",
     description: "A classic music player.",
     icon: ICONS.webamp,
-    category: "",
     hasTaskbarButton: true,
     isSingleton: true,
     tray: {
@@ -583,6 +582,20 @@ export const appRegistry = {
     ],
   },
     importApp: () => import("../apps/webamp/webamp-app.js")
+  },
+  "winamp": {
+    config: {
+    id: "winamp",
+    title: "Winamp",
+    description: "Listen to music with your friends.",
+    icon: ICONS.webamp,
+    category: "",
+    width: 640,
+    height: 480,
+    resizable: true,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/winamp/winamp-app.js")
   },
   "wordpad": {
     config: {

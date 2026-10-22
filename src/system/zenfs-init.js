@@ -8,6 +8,7 @@ import {
   FAVORITES_PATH,
 } from "../shell/start-menu/start-menu-utils.js";
 import { migrateShortcuts } from "./migrate-shortcuts.js";
+import { migrateWinampShortcuts } from "./migrate-winamp-shortcut.js";
 import startMenuConfig from "../config/start-menu.js";
 import { getStartupApps } from "./startup-manager.js";
 import { apps } from "../config/apps.js";
@@ -119,11 +120,15 @@ export async function initFileSystem(onProgress) {
       await fs.promises.mkdir("/C:/WINDOWS/Desktop");
     }
 
+    // One-time migration: repoint existing "Winamp" shortcuts to the MSN
+    // Winamp app before any defaults are created or Programs is refreshed.
+    await migrateWinampShortcuts();
+
     // Add default shortcuts to Desktop
     const defaultShortcuts = [
       { name: "buggyprogram.exe.lnk.json", appId: "buggy-program" },
       { name: "sheep.lnk.json", appId: "esheep" },
-      { name: "Winamp.lnk.json", appId: "webamp" },
+      { name: "Winamp.lnk.json", appId: "winamp" },
       { name: "Desktop Themes.lnk.json", appId: "desktop-themes" },
       { name: "Notepad.lnk.json", appId: "notepad" },
       { name: "Agent.lnk.json", appId: "agent" },

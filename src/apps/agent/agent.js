@@ -32,7 +32,7 @@ const TUTORIAL_STEPS = [
   },
   {
     id: "webamp",
-    appId: "webamp",
+    appId: "winamp",
     label: "Winamp",
     text: "Winamp is the ultimate media player for your music collection.",
     animation: "Explain",

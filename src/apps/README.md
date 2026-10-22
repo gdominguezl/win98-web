@@ -22,7 +22,8 @@ This guide provides instructions on how to add new applications to Windows 98 We
 | [SimCity 2000](./sim-city-2000/README.md) | Play the SimCity 2000 demo. |
 | [Solitaire](./solitaire/README.md) | Play the classic Klondike solitaire. |
 | [Spider Solitaire](./spider-solitaire/README.md) | Play the challenging Spider solitaire. |
-| [Webamp](./webamp/README.md) | A faithful recreation of the classic Winamp music player. |
+| [Webamp](./webamp/README.md) | Winamp Classic, archived — a faithful recreation of the classic Winamp music player. |
+| [Winamp](./winamp/README.md) | Listen to music with your friends. |
 
 ### Accessories & Tools
 *General-purpose productivity and creative tools.*

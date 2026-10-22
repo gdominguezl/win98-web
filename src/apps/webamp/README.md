@@ -1,5 +1,9 @@
 # Webamp App
 
+> **Archived backup.** This classic player is no longer what the desktop "Winamp" icon opens: that icon now launches the MSN Winamp app (see [src/apps/winamp](../winamp/README.md)). The classic player stays registered under the `webamp` app id — hidden from the Start menu (no `category`), still used for `.m3u` file associations, and launchable programmatically via `window.System.launchApp("webamp")`.
+>
+> To restore it as the desktop player: set `category: ""` back in its `static config`, change the `Winamp.lnk.json` entry in `defaultShortcuts` (`src/system/zenfs-init.js`) back to `appId: "webamp"`, restore `title: "Winamp"`, and remove `/C:/.winamp_msn_migrated` if the shortcut migration already ran (or delete the migrated `Winamp.lnk.json` files).
+
 ## Purpose
 
 The Webamp app integrates a faithful recreation of the classic Winamp music player into the azOS desktop environment. It provides a nostalgic, widget-like experience for playing music directly on the desktop, separate from the standard application windows.
