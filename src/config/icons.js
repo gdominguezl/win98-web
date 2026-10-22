@@ -232,6 +232,10 @@ export const ICONS = {
     16: new URL("../assets/icons/msn-messenger.ico", import.meta.url).href,
     32: new URL("../assets/icons/msn-messenger.ico", import.meta.url).href,
   },
+  fotolog: {
+    16: new URL("../assets/icons/fotolog-16.png", import.meta.url).href,
+    32: new URL("../assets/icons/fotolog-32.png", import.meta.url).href,
+  },
   displayProperties: {
     16: new URL("../assets/icons/Display-16.png", import.meta.url).href,
     32: new URL("../assets/icons/Display-32.png", import.meta.url).href,

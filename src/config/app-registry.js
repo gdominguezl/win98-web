@@ -263,6 +263,20 @@ export const appRegistry = {
   },
     importApp: () => import("../apps/flash-player/flash-player-app.js")
   },
+  "fotolog": {
+    config: {
+    id: "fotolog",
+    title: "Fotolog",
+    description: "Share a photo a day with your friends.",
+    icon: ICONS.fotolog,
+    category: "",
+    width: 1024,
+    height: 768,
+    resizable: true,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/fotolog/fotolog-app.js")
+  },
   "freecell": {
     config: {
     id: "freecell",

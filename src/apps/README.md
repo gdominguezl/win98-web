@@ -44,6 +44,7 @@ This guide provides instructions on how to add new applications to Windows 98 We
 | Application | Description |
 | :--- | :--- |
 | [Buy me a coffee](./buy-me-a-coffee/README.md) | Support the developer. |
+| [Fotolog](./fotolog/README.md) | Share a photo a day with your friends. |
 | [MSN Messenger](./msn-messenger/README.md) | Chat with your contacts. |
 | [Report a Bug](./report-a-bug/README.md) | Report issues encountered while using the system. |
 

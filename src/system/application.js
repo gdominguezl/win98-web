@@ -56,7 +56,7 @@ export class Application {
         if ($win.is(":visible")) {
           existingApp.win.focus();
         } else {
-          existingApp.win.restore();
+          existingApp.win.unminimize();
           setTimeout(() => existingApp.win.focus(), 0);
         }
       } else if (!existingApp.win && existingApp.isSingleton) {
