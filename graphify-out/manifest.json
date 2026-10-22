@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792634442.2693229,
-    "seen": 1792634458.920762,
-    "ast_hash": "24f59d0eaacbed6fd65fd67f9446446c",
+    "mtime": 1792636973.3997474,
+    "seen": 1792637358.2590132,
+    "ast_hash": "bfa5eb06a2ee40016afb623976cc9c34",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -6234,15 +6234,15 @@
     "semantic_hash": ""
   },
   "e2e/msn_messenger.spec.js": {
-    "mtime": 1792633539.0453563,
-    "seen": 1792634458.920553,
-    "ast_hash": "83aa49fe03364c60b2cb48ae8f7416ec",
+    "mtime": 1792637120.063653,
+    "seen": 1792637358.2589371,
+    "ast_hash": "8d5e2cb06eb7e38d61b54d4360c601db",
     "semantic_hash": ""
   },
   "src/apps/msn-messenger/msn-messenger-app.js": {
-    "mtime": 1792633232.339092,
-    "seen": 1792634458.9206452,
-    "ast_hash": "51f77207dbdaaac38c730f388f87516d",
+    "mtime": 1792636959.6454253,
+    "seen": 1792637358.2589738,
+    "ast_hash": "27d40e4244f706989f05d616c65e5bbe",
     "semantic_hash": ""
   },
   "openspec/changes/add-msn-messenger-app/.openspec.yaml": {
@@ -6252,9 +6252,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-msn-messenger-app/design.md": {
-    "mtime": 1792632667.166339,
-    "seen": 1792634458.920941,
-    "ast_hash": "d16d18bb4d4d20b3734e12cd0cd33346",
+    "mtime": 1792637350.4448476,
+    "seen": 1792637358.259084,
+    "ast_hash": "87297a845083b75c27b899c0b1f5a6a2",
     "semantic_hash": ""
   },
   "openspec/changes/add-msn-messenger-app/proposal.md": {
@@ -6264,15 +6264,15 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-msn-messenger-app/specs/apps/msn-messenger/spec.md": {
-    "mtime": 1792632661.5900881,
-    "seen": 1792634458.920942,
-    "ast_hash": "19a050a0e1b0c5433aba77b1913f2320",
+    "mtime": 1792637350.4481044,
+    "seen": 1792637358.259085,
+    "ast_hash": "b1bdd5774864c58c97c63ab21150a155",
     "semantic_hash": ""
   },
   "openspec/changes/add-msn-messenger-app/tasks.md": {
-    "mtime": 1792634417.9989004,
-    "seen": 1792634458.920943,
-    "ast_hash": "aafe723b330416917b715097d8ce0a43",
+    "mtime": 1792637350.451641,
+    "seen": 1792637358.2590861,
+    "ast_hash": "f3b48609d9314543cf45e99f8673c8d5",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-21-add-container-image/.openspec.yaml": {
@@ -6312,9 +6312,9 @@
     "semantic_hash": ""
   },
   "src/apps/msn-messenger/README.md": {
-    "mtime": 1792634061.601034,
-    "seen": 1792634458.920974,
-    "ast_hash": "9eacde5c86339245050a86dff7a58154",
+    "mtime": 1792636959.7843242,
+    "seen": 1792637358.259113,
+    "ast_hash": "9fdf0a20d324b17cb6a2412bc9bb3cea",
     "semantic_hash": ""
   },
   "src/apps/msn-messenger/screenshot.png": {
