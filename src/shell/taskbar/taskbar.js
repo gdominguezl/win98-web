@@ -29,6 +29,8 @@ const CLASSES = {
   TASKBAR_BUTTON: "toggle selected taskbar-button",
 };
 
+const SHOW_SOCIAL_LINKS = false;
+
 /**
  * Main Taskbar class - handles taskbar functionality
  */
@@ -127,7 +129,7 @@ class Taskbar {
       <nav class="taskbar-icon-area" aria-label="Quick Launch">
         <button class="taskbar-icon lightweight show-desktop" title="Show Desktop" aria-label="Show Desktop">
           <img src="${ICONS.desktop_old[16]}" alt="Show Desktop" loading="lazy">
-        </button>
+        </button>${SHOW_SOCIAL_LINKS ? `
         <button class="taskbar-icon lightweight"
                 title="LinkedIn Profile"
                 aria-label="Open LinkedIn Profile"
@@ -141,7 +143,7 @@ class Taskbar {
                 data-url="https://www.github.com/azayrahmad">
           <img src="https://www.google.com/s2/favicons?domain=github.com"
                alt="GitHub" loading="lazy">
-        </button>
+        </button>` : ""}
       </nav>
       <div class="taskbar-divider"></div>
       <div class="taskbar-divider-handler"></div>
