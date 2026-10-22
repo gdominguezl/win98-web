@@ -355,6 +355,20 @@ export const appRegistry = {
   },
     importApp: () => import("../apps/minesweeper/minesweeper-app.js")
   },
+  "msn-messenger": {
+    config: {
+    id: "msn-messenger",
+    title: "MSN Messenger",
+    description: "Chat with your contacts.",
+    icon: ICONS["msn-messenger"],
+    category: "",
+    width: 380,
+    height: 620,
+    resizable: true,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/msn-messenger/msn-messenger-app.js")
+  },
   "notepad": {
     config: {
         id: "notepad",
