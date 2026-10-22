@@ -9,6 +9,15 @@ export const themes = {
     soundScheme: "Default",
     iconScheme: "default",
   },
+  improving: {
+    id: "improving",
+    name: "Improving",
+    colorSchemeId: "default",
+    wallpaper: wallpapers.themes.find((w) => w.id === "improving").src,
+    soundScheme: "Default",
+    iconScheme: "default",
+    desktopConfig: { tileWallpaper: "0", wallpaperStyle: "0" },
+  },
   "60s-usa": {
     id: "60s-usa",
     name: "The 60's USA",

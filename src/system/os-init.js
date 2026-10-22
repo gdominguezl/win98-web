@@ -224,6 +224,10 @@ export async function initializeOS() {
           await themeManager.parseZenFSTheme(activeTheme);
         }
 
+        if (getItem(LOCAL_STORAGE_KEYS.ACTIVE_THEME) === null) {
+          await setTheme("improving");
+        }
+
         finalizeBootProcessStep(logElement, "OK");
       } catch (e) {
         finalizeBootProcessStep(logElement, "FAILED", e);

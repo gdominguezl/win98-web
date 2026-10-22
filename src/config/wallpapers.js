@@ -15,6 +15,7 @@ import wavesWallpaper from "../assets/img/wallpapers/default/Waves.bmp";
 
 import baseballWallpaper from "../assets/img/wallpapers/themes/Baseball wallpaper.jpg";
 import dangerousCreaturesWallpaper from "../assets/img/wallpapers/themes/Dangerous Creatures wallpaper.jpg";
+import improvingWallpaper from "../assets/img/wallpapers/themes/Improving wallpaper.png";
 import insideYourComputerWallpaper from "../assets/img/wallpapers/themes/Inside your Computer wallpaper.jpg";
 import jungleWallpaper from "../assets/img/wallpapers/themes/Jungle wallpaper.jpg";
 import leonardoDaVinciWallpaper from "../assets/img/wallpapers/themes/Leonardo da Vinci wallpaper.jpg";
@@ -50,6 +51,7 @@ export const wallpapers = {
   themes: [
     { id: "baseball", src: baseballWallpaper },
     { id: "dangerousCreatures", src: dangerousCreaturesWallpaper },
+    { id: "improving", src: improvingWallpaper },
     { id: "insideYourComputer", src: insideYourComputerWallpaper },
     { id: "jungle", src: jungleWallpaper },
     { id: "leonardoDaVinci", src: leonardoDaVinciWallpaper },
