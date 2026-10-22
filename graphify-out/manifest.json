@@ -942,8 +942,8 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792694922.2753472,
-    "seen": 1792695370.973,
+    "mtime": 1792696363.7165434,
+    "seen": 1792697270.0852501,
     "ast_hash": "e3484967133039cdb3eb6bc081f13f26",
     "semantic_hash": ""
   },
@@ -1656,9 +1656,9 @@
     "semantic_hash": ""
   },
   "src/system/zenfs-init.js": {
-    "mtime": 1792694244.699543,
-    "seen": 1792695370.973058,
-    "ast_hash": "189a4a65b26d781f5153aa88410ebd48",
+    "mtime": 1792695418.533708,
+    "seen": 1792697270.0853162,
+    "ast_hash": "0e796f5b6a8eb44f1fb89dd4ab29a7b1",
     "semantic_hash": ""
   },
   "src/system/zenfs-utils.js": {
@@ -6282,9 +6282,9 @@
     "semantic_hash": ""
   },
   "src/apps/msn-messenger/README.md": {
-    "mtime": 1792636959.7843242,
-    "seen": 1792637358.259113,
-    "ast_hash": "9fdf0a20d324b17cb6a2412bc9bb3cea",
+    "mtime": 1792696038.3875175,
+    "seen": 1792697270.08537,
+    "ast_hash": "a3f2b319789866cb344e9de703240412",
     "semantic_hash": ""
   },
   "src/apps/msn-messenger/screenshot.png": {
@@ -6354,9 +6354,9 @@
     "semantic_hash": ""
   },
   "src/shared/utils/msn-frame.js": {
-    "mtime": 1792692157.2271092,
-    "seen": 1792693729.522312,
-    "ast_hash": "3e51bded31480455d38519ebe5e3904c",
+    "mtime": 1792695843.8561416,
+    "seen": 1792697270.085269,
+    "ast_hash": "78c922b3ca0684e7435cc93b77bcf311",
     "semantic_hash": ""
   },
   "openspec/changes/add-fotolog-app/.openspec.yaml": {
@@ -6444,15 +6444,15 @@
     "semantic_hash": ""
   },
   "openspec/changes/open-msn-shortcuts-as-windows/tasks.md": {
-    "mtime": 1792687754.9974756,
-    "seen": 1792693729.522378,
-    "ast_hash": "9b43e0f32541cf097eec006884f2cc67",
+    "mtime": 1792697262.1677864,
+    "seen": 1792697270.085345,
+    "ast_hash": "023a27cb587e94d248e53c2ec61aa11f",
     "semantic_hash": ""
   },
   "src/apps/fotolog/README.md": {
-    "mtime": 1792693071.0344908,
-    "seen": 1792693729.522395,
-    "ast_hash": "33fecb716bf650e8544682c4ef1176a9",
+    "mtime": 1792696038.6081965,
+    "seen": 1792697270.0853639,
+    "ast_hash": "27ada64e4ee4168620bef5a0667afe40",
     "semantic_hash": ""
   },
   "src/apps/fotolog/screenshot.png": {
@@ -6486,21 +6486,27 @@
     "semantic_hash": ""
   },
   "src/system/migrate-winamp-shortcut.js": {
-    "mtime": 1792694244.2780194,
-    "seen": 1792695370.9730518,
-    "ast_hash": "e8d02490465f5e3d989abff10a789d36",
+    "mtime": 1792695418.5343482,
+    "seen": 1792697270.08531,
+    "ast_hash": "fdd76d234ae3d46a730311f5c0bda139",
     "semantic_hash": ""
   },
   "src/apps/winamp/README.md": {
-    "mtime": 1792694515.0245466,
-    "seen": 1792695370.973113,
-    "ast_hash": "0d2f5478ed27c21b3e361d2fb5d12a57",
+    "mtime": 1792696038.6723332,
+    "seen": 1792697270.0853791,
+    "ast_hash": "284b7ec74e08ed06e02d55a3b1a010ce",
     "semantic_hash": ""
   },
   "src/apps/winamp/screenshot.png": {
     "mtime": 1792694553.2640963,
     "seen": 1792695370.973165,
     "ast_hash": "42b1d357a4d86d1cdc34b42b1ae2a819",
+    "semantic_hash": ""
+  },
+  "e2e/msn_app_links.spec.js": {
+    "mtime": 1792695838.8623707,
+    "seen": 1792697270.0851672,
+    "ast_hash": "2133d45a6772b90f960d7d4ad0998464",
     "semantic_hash": ""
   }
 }
