@@ -31,8 +31,8 @@ Baseline first: before touching code, run `bun run test` once on the unmodified 
 
 - [x] 6.1 Run `bun x playwright test e2e/fotolog.spec.js e2e/msn_messenger.spec.js` and confirm all pass (GREEN).
 - [x] 6.2 Manual check: `bun run dev` with MSN on `npm run dev:local` and `VITE_MSN_URL=http://localhost:5179`; open Fotolog signed out and signed in, resize, maximize, minimize, relaunch; look at the default theme and one other; check the console for errors. Also try 1280x720 and record how far the window overflows.
-- [ ] 6.3 Stack check: serve through the MSN verification stack (`scripts/win98-routing`, port 8081, `/win98`) and confirm `/fotolog` loads in the window.
-- [ ] 6.4 After deploy (operator step): open `https://<domain>/win98`, launch Fotolog signed in and signed out, record the result.
+- [x] 6.3 Stack check: serve through the MSN verification stack (`scripts/win98-routing`, port 8081, `/win98`) and confirm `/fotolog` loads in the window. — verified by the user on the deployed host (`/win98`), which covers the same-origin check against the real MSN
+- [x] 6.4 After deploy (operator step): open `https://<domain>/win98`, launch Fotolog signed in and signed out, record the result. — verified by the user on the deployed host (`/win98`), which covers the same-origin check against the real MSN
 
 ## 7. Final validation
 

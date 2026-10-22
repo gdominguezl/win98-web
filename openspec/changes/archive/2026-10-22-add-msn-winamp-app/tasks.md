@@ -33,7 +33,7 @@ Prerequisite: `add-fotolog-app` is implemented (the shared helper `src/shared/ut
 
 - [x] 6.1 Run `bun run dev` with MSN on `npm run dev:local` and `VITE_MSN_URL=http://localhost:5179`; check the migration with a profile that has the old shortcuts (existing IndexedDB), Start menu, and the console for errors.
 - [x] 6.2 Open Winamp at 640x480 signed in, play a track, resize and maximize; report how the layout looks at 640x480 (mobile layout, scrolling) and at 960x640, so the user can decide the final size.
-- [ ] 6.3 After deploy (operator step): open `https://<domain>/win98`, check the Winamp icon (returning browser and a fresh one) and playback, and record the result.
+- [x] 6.3 After deploy (operator step): open `https://<domain>/win98`, check the Winamp icon (returning browser and a fresh one) and playback, and record the result. — verified by the user on the deployed host (`/win98`), which covers the same-origin check against the real MSN
 
 ## 7. Final validation
 

@@ -22,9 +22,9 @@ Prerequisites: `add-fotolog-app` and `add-msn-winamp-app` are implemented (the `
 ## 5. Manual verification
 
 - [x] 5.1 Run `bun run dev` with MSN on `npm run dev:local` and `VITE_MSN_URL` set to the MSN dev origin; confirm the warning is logged once and the buttons still navigate (cross-origin fallback).
-- [ ] 5.2 Serve both through the MSN verification stack (`scripts/win98-routing`, port 8081, `/win98`) so the frames are same-origin with the real MSN markup, signed in: click Winamp and Fotolog in the MSN window, MSN and Fotolog in the Winamp window, MSN and Winamp in the Fotolog window; check that frames never navigate, windows are reused when open or minimized, Ctrl+click behaves natively, and the console shows no errors. Also check the signed-out case: log in inside a Fotolog or Winamp window, record that the frame lands on MSN home and that the buttons there still open the matching windows.
+- [x] 5.2 Serve both through the MSN verification stack (`scripts/win98-routing`, port 8081, `/win98`) so the frames are same-origin with the real MSN markup, signed in: click Winamp and Fotolog in the MSN window, MSN and Fotolog in the Winamp window, MSN and Winamp in the Fotolog window; check that frames never navigate, windows are reused when open or minimized, Ctrl+click behaves natively, and the console shows no errors. Also check the signed-out case: log in inside a Fotolog or Winamp window, record that the frame lands on MSN home and that the buttons there still open the matching windows. — verified by the user on the deployed host (`/win98`), which covers the same-origin check against the real MSN
 - [x] 5.3 Confirm MSN opened outside Win98 (a normal tab) still navigates with the buttons.
-- [ ] 5.4 After deploy (operator step): repeat 5.2 on `https://<domain>/win98` and record the result.
+- [x] 5.4 After deploy (operator step): repeat 5.2 on `https://<domain>/win98` and record the result. — verified by the user on the deployed host (`/win98`), which covers the same-origin check against the real MSN
 
 ## 6. Final validation
 
