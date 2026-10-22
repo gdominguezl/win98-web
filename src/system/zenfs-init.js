@@ -120,8 +120,6 @@ export async function initFileSystem(onProgress) {
       await fs.promises.mkdir("/C:/WINDOWS/Desktop");
     }
 
-    // One-time migration: repoint existing "Winamp" shortcuts to the MSN
-    // Winamp app before any defaults are created or Programs is refreshed.
     await migrateWinampShortcuts();
 
     // Add default shortcuts to Desktop

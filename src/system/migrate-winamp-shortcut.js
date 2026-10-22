@@ -8,13 +8,6 @@ const WINAMP_SHORTCUTS = [
   "/C:/WINDOWS/Start Menu/Programs/Winamp.lnk.json",
 ];
 
-/**
- * One-time migration: repoint the default "Winamp" shortcuts from the
- * classic Webamp player ("webamp") to the MSN Winamp app ("winamp"),
- * rewriting the files in place so the desktop layout (keyed by file name)
- * is preserved. Only the two default locations are migrated; any other
- * shortcut to the classic player is left alone.
- */
 export async function migrateWinampShortcuts() {
   if (await existsAsync(MARKER)) {
     return;
