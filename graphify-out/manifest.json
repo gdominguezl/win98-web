@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792788864.4630404,
-    "seen": 1792788886.927042,
-    "ast_hash": "f699c8e4444ac75122936289a982efb2",
+    "mtime": 1792792917.1997354,
+    "seen": 1792792922.7334158,
+    "ast_hash": "adde1b2c31533b11bcf4394ffaeac2ae",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -1074,9 +1074,9 @@
     "semantic_hash": ""
   },
   "src/main.js": {
-    "mtime": 1792725045.3599532,
-    "seen": 1792726084.6460779,
-    "ast_hash": "e282c6ee9fac00cb911db324befa2700",
+    "mtime": 1792791223.565872,
+    "seen": 1792792922.733427,
+    "ast_hash": "9ef534b9beec9a19d6013a495e6dea2a",
     "semantic_hash": ""
   },
   "src/shared/components/animated-logo.js": {
@@ -6612,15 +6612,15 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/api.js": {
-    "mtime": 1792787753.88554,
-    "seen": 1792788886.926997,
-    "ast_hash": "71f218acb6eeafeeefad50f30ecacd63",
+    "mtime": 1792791218.565688,
+    "seen": 1792792922.7333682,
+    "ast_hash": "ea5712bfacec2f4e8139ceadc4d6610b",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/improving-ct-october-app.js": {
-    "mtime": 1792787759.2517126,
-    "seen": 1792788886.926998,
-    "ast_hash": "939ced201599527a462c97c3add95c85",
+    "mtime": 1792791218.8004074,
+    "seen": 1792792922.733369,
+    "ast_hash": "78ee6c08a2e18f8d69d65e6a138eb8ed",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/timer.js": {
@@ -6666,9 +6666,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/README.md": {
-    "mtime": 1792788116.1836302,
-    "seen": 1792788886.9271622,
-    "ast_hash": "a28251553566ecda7f4801e0f6fefd48",
+    "mtime": 1792792467.4168344,
+    "seen": 1792792922.733543,
+    "ast_hash": "162cbdca9c3eb3646d107ab40ea996f6",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-add-improving-ct-october/.openspec.yaml": {
@@ -6707,40 +6707,10 @@
     "ast_hash": "98cffef1b8990367689a1ec5d45c8603",
     "semantic_hash": ""
   },
-  "openspec/changes/edit-ct-patch-code/.openspec.yaml": {
-    "mtime": 1792785048.681969,
-    "seen": 1792788886.9271371,
-    "ast_hash": "4a33b58f0c8a77f25b6316ea945adf72",
-    "semantic_hash": ""
-  },
-  "openspec/changes/edit-ct-patch-code/design.md": {
-    "mtime": 1792785049.2526023,
-    "seen": 1792788886.927138,
-    "ast_hash": "c4170e043ebae8f01d035934af7e4f12",
-    "semantic_hash": ""
-  },
-  "openspec/changes/edit-ct-patch-code/proposal.md": {
-    "mtime": 1792785049.240128,
-    "seen": 1792788886.927138,
-    "ast_hash": "67f1477caa9bf19b03572493e6e52335",
-    "semantic_hash": ""
-  },
-  "openspec/changes/edit-ct-patch-code/specs/apps/improving-ct-october/spec.md": {
-    "mtime": 1792785049.2621057,
-    "seen": 1792788886.927138,
-    "ast_hash": "567ee5dcb379dbd12181d869d3e5d4ed",
-    "semantic_hash": ""
-  },
-  "openspec/changes/edit-ct-patch-code/tasks.md": {
-    "mtime": 1792785049.2704666,
-    "seen": 1792788886.927139,
-    "ast_hash": "cb89004284fc844ed89ab0d3112edec2",
-    "semantic_hash": ""
-  },
   "openspec/specs/apps/improving-ct-october/spec.md": {
-    "mtime": 1792783171.3068128,
-    "seen": 1792788886.92714,
-    "ast_hash": "8bed036c3d7876e2939edd146428e66a",
+    "mtime": 1792790163.636228,
+    "seen": 1792792922.733522,
+    "ast_hash": "74b7ce73b89f16b6eca15dfc401930ed",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/screenshot.png": {
@@ -6759,6 +6729,144 @@
     "mtime": 1792782899.6376526,
     "seen": 1792788886.927284,
     "ast_hash": "86a2d081b65c7b5addd618277dcb80b9",
+    "semantic_hash": ""
+  },
+  "e2e/ct_stations.spec.js": {
+    "mtime": 1792792169.0290086,
+    "seen": 1792792922.733325,
+    "ast_hash": "cd095085a27694f9a04ad5a3a6c2d5e6",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/engine.js": {
+    "mtime": 1792792165.7637587,
+    "seen": 1792792922.733369,
+    "ast_hash": "5ce3fa8bb45605cc75c504533610b3f4",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/registry.js": {
+    "mtime": 1792791219.113945,
+    "seen": 1792792922.73337,
+    "ast_hash": "9f75c5404dbabaa9d20a17e26c3364e0",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-argentina-recycle-clue/.openspec.yaml": {
+    "mtime": 1792790705.4039795,
+    "seen": 1792792922.7334862,
+    "ast_hash": "4a33b58f0c8a77f25b6316ea945adf72",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-argentina-recycle-clue/design.md": {
+    "mtime": 1792791675.8790388,
+    "seen": 1792792922.7334862,
+    "ast_hash": "5863428ec1bb9f57e72cd8457165c78f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-argentina-recycle-clue/proposal.md": {
+    "mtime": 1792790762.6981018,
+    "seen": 1792792922.7334862,
+    "ast_hash": "4171852ba17a8f4efa1f48235f028297",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-argentina-recycle-clue/specs/apps/ct-station-argentina/spec.md": {
+    "mtime": 1792790762.7133245,
+    "seen": 1792792922.7334871,
+    "ast_hash": "857985f1d5097fd572f98ffa4aab5d7f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-argentina-recycle-clue/tasks.md": {
+    "mtime": 1792790869.2050505,
+    "seen": 1792792922.7334871,
+    "ast_hash": "00ee9bd38ea597dc8e3bcccb5611a74c",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-chile-throwback-folder/.openspec.yaml": {
+    "mtime": 1792790705.9919646,
+    "seen": 1792792922.733488,
+    "ast_hash": "4a33b58f0c8a77f25b6316ea945adf72",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-chile-throwback-folder/design.md": {
+    "mtime": 1792791663.2197819,
+    "seen": 1792792922.733488,
+    "ast_hash": "4722b587f9499d3f2eab383d04d81f82",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-chile-throwback-folder/proposal.md": {
+    "mtime": 1792791619.2918172,
+    "seen": 1792792922.7334888,
+    "ast_hash": "cb580860f9c705b00d429684f53780e3",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-chile-throwback-folder/specs/apps/ct-station-chile/spec.md": {
+    "mtime": 1792791675.875601,
+    "seen": 1792792922.7334888,
+    "ast_hash": "a70b357e78f607b31afdfe3abf6d1633",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-chile-throwback-folder/tasks.md": {
+    "mtime": 1792791675.8758616,
+    "seen": 1792792922.73349,
+    "ast_hash": "069a1f15ba06f5020991045a26b24deb",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-station-engine/.openspec.yaml": {
+    "mtime": 1792790704.6893778,
+    "seen": 1792792922.73349,
+    "ast_hash": "4a33b58f0c8a77f25b6316ea945adf72",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-station-engine/design.md": {
+    "mtime": 1792791675.8787482,
+    "seen": 1792792922.733491,
+    "ast_hash": "e0d1ae635f834cf20a183f2602d918e6",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-station-engine/proposal.md": {
+    "mtime": 1792790706.5828161,
+    "seen": 1792792922.733491,
+    "ast_hash": "f6924f14abe28af7095875987823b735",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-station-engine/specs/apps/ct-stations/spec.md": {
+    "mtime": 1792790706.6037202,
+    "seen": 1792792922.733491,
+    "ast_hash": "33a62951fc1aa64dc2e409286fc21641",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-ct-station-engine/tasks.md": {
+    "mtime": 1792790706.6130373,
+    "seen": 1792792922.733492,
+    "ast_hash": "d0ae079565f07d38e5308b31967e4eff",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-edit-ct-patch-code/.openspec.yaml": {
+    "mtime": 1792785048.681969,
+    "seen": 1792792922.7335181,
+    "ast_hash": "4a33b58f0c8a77f25b6316ea945adf72",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-edit-ct-patch-code/design.md": {
+    "mtime": 1792785049.2526023,
+    "seen": 1792792922.733519,
+    "ast_hash": "c4170e043ebae8f01d035934af7e4f12",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-edit-ct-patch-code/proposal.md": {
+    "mtime": 1792785049.240128,
+    "seen": 1792792922.733519,
+    "ast_hash": "67f1477caa9bf19b03572493e6e52335",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-edit-ct-patch-code/specs/apps/improving-ct-october/spec.md": {
+    "mtime": 1792785049.2621057,
+    "seen": 1792792922.7335198,
+    "ast_hash": "567ee5dcb379dbd12181d869d3e5d4ed",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-edit-ct-patch-code/tasks.md": {
+    "mtime": 1792790162.057725,
+    "seen": 1792792922.7335198,
+    "ast_hash": "f4c00b2bd6956e997b7ef74cddd815c2",
     "semantic_hash": ""
   }
 }
