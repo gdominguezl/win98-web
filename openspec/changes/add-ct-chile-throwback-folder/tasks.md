@@ -4,7 +4,7 @@ Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result r
 
 ## 1. Failing e2e spec (RED)
 
-- [ ] 1.1 Add `e2e/ct_station_chile.spec.js` with the cases of design decision 5 (folder and exact contents, `HELP` Spanish lines, `DIR`, `CD`, `TYPE` in any letter case, prompt shows the real name, removal on finish and restart, `HELP` back to default, Argentina and no-session untouched, team file removed with the folder, reload keeps clues and help). Drive MS-DOS Prompt as `e2e/command_prompt_zenfs.spec.js` does. Run it and confirm it fails.
+- [ ] 1.1 Add `e2e/ct_station_chile.spec.js` with the cases of design decision 5 (folder and exact contents, `HELP` Spanish lines first then the short useful block, `DIR`, `CD`, `TYPE` in any letter case, prompt shows the real name, removal on finish and restart, `HELP` back to default, Argentina and no-session untouched, team file removed with the folder, reload keeps clues and help). Drive MS-DOS Prompt as `e2e/command_prompt_zenfs.spec.js` does. Run it and confirm it fails.
 
 ## 2. System (DOS shell)
 

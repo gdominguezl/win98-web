@@ -9,7 +9,7 @@
 
 ## Goals / Non-Goals
 
-**Goals:** during a Chile session `C:\THROWBACK` and its three files exist, `HELP` shows three simple Spanish lines, and `DIR`, `CD` and `TYPE` work with any letter case; nothing changes for anyone else.
+**Goals:** during a Chile session `C:\THROWBACK` and its three files exist, `HELP` shows the three requested Spanish lines first plus a short useful block, and `DIR`, `CD` and `TYPE` work with any letter case; nothing changes for anyone else.
 
 **Non-Goals:** see proposal.
 
@@ -39,15 +39,20 @@ ACCESS RESERVED FOR FINAL DIAGNOSTIC.
 let helpOverride = null;
 export function setHelpOverride(lines) { helpOverride = lines; }
 ```
-In `case "help"`, if `helpOverride` is set, write each line followed by `\r\n` instead of the default list. The Chile text is exactly:
+In `case "help"`, if `helpOverride` is set, write each line followed by `\r\n` instead of the default list. The Chile text starts with the three requested lines, exactly, followed by a blank line and a short block of other instructions that are useful to work in this console (picked from the commands the shell already supports; the three requested ones stay on top):
 ```
 DIR             Muestra los archivos disponibles.
 TYPE ARCHIVO    Abre un archivo de texto.
 CD CARPETA      Ingresa a una carpeta.
+
+CLS             Limpia la pantalla.
+HELP            Muestra esta ayuda.
+EXIT            Cierra esta ventana.
 ```
+Only commands that help to explore are listed; commands that change or delete files (`DEL`, `COPY`, `REN`, `MD`, `RD`) are not listed, although they keep working because only the help text is replaced. The extra block is the assistant's choice and is one array of lines in the station to change.
 The override is `null` by default, in memory only, set by the station on apply and cleared on remove; the engine re-applies it after a reload. All DOS shells (MS-DOS Prompt windows) share it, which is intended for a computer running a Chile session. The default `HELP` output is untouched when no override is set.
 - Alternative: have the station write a hidden `HELP` file. Rejected: `HELP` is a built-in command.
-- Alternative: append the three lines to the default list. Not chosen by default; one line in the setter's caller changes it if wanted.
+- Alternative: append the three lines on top of the whole default list. Rejected by the user in favor of the three requested lines plus a short useful block.
 
 **4. Case-insensitive lookup fallback.** New async method `_findExisting(path)` in `DOSShell`: if `stat(path)` succeeds return `path`; otherwise walk the path segments from the drive root, reading each parent directory and choosing the entry whose lower-cased name equals the lower-cased segment (exact name preferred; if several entries differ only by case, pick the first in name order); return the corrected path, or the original path when any segment has no match. `DIR`, `CD` and `TYPE` call it right after `resolvePath`. Drive mounts and `..` handling are unchanged. No other command changes.
 - The corrected path is only used for the lookup; `CD` stores the real on-disk casing as the current directory so the prompt shows `C:\THROWBACK`.
@@ -55,7 +60,7 @@ The override is `null` by default, in memory only, set by the station on apply a
 
 **5. Tests (Playwright, written first)** in `e2e/ct_station_chile.spec.js` with the CT mock and real ZenFS:
 - Chile team starts: Explorer or `window.fs` shows `/C:/THROWBACK` with the three files and the exact contents.
-- In MS-DOS Prompt: `HELP` prints the three Spanish lines (and not the default list); `DIR \THROWBACK` lists the three files; `CD \THROWBACK` then `TYPE PLANO.TXT`, `type plano.txt`, `TYPE memory.txt` and `TYPE ERROR.LOG` print the contents; `cd throwback` works.
+- In MS-DOS Prompt: `HELP` prints the three Spanish lines first, then the short useful block (`CLS`, `HELP`, `EXIT`), and not the default English list; `DIR \THROWBACK` lists the three files; `CD \THROWBACK` then `TYPE PLANO.TXT`, `type plano.txt`, `TYPE memory.txt` and `TYPE ERROR.LOG` print the contents; `cd throwback` works.
 - Finish (patch accepted) or admin restart: folder gone, `HELP` returns to the default list, the prompt reports `Directory not found` for `CD \THROWBACK`.
 - Argentina team and no session: no folder and the default `HELP`.
 - A file the team created inside `C:\THROWBACK` disappears with the folder.
@@ -74,7 +79,9 @@ The override is `null` by default, in memory only, set by the station on apply a
 
 ## Open Questions
 
-Defaults used because the user did not answer before the plan was written, and the files did not arrive:
+Confirmed with the user:
 - `PLANO.TXT` was received (`/tmp/ct-assets/PLANO.TXT`, copy of `~/Downloads/PLANO.TXT`); it is ANSI art that clears the screen when typed.
-- `HELP` is replaced only during a Chile session (not for everyone, and not appended to the normal list).
+- `HELP` is replaced only during a Chile session, with the three requested lines first plus a short block of other useful instructions.
 - The folder is removed whenever the session stops running (finished, restarted, reset, new game).
+
+Still the assistant's choice: which extra instructions follow the three (`CLS`, `HELP`, `EXIT`).

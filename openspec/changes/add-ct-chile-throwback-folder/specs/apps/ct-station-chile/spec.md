@@ -31,13 +31,14 @@ The system SHALL create `C:\THROWBACK` with `MEMORY.TXT`, `ERROR.LOG` and `PLANO
 - **THEN** the terminal clears and shows a colored drawing of a telephone inside a closed space, taken from the supplied `PLANO.TXT`, fully visible in the default MS-DOS Prompt window
 
 ### Requirement: HELP shows simple instructions during a Chile session
-The system SHALL make the MS-DOS Prompt `HELP` command show exactly three instructions in Spanish while a Chile team's session is running.
+The system SHALL make the MS-DOS Prompt `HELP` command show the three requested instructions in Spanish first, followed by a short list of other useful instructions, while a Chile team's session is running.
 
 #### Scenario: HELP during the session
 - **GIVEN** a running Chile session and an MS-DOS Prompt window
 - **WHEN** the team types `HELP`
-- **THEN** it shows "DIR             Muestra los archivos disponibles.", "TYPE ARCHIVO    Abre un archivo de texto." and "CD CARPETA      Ingresa a una carpeta."
-- **AND** nothing else
+- **THEN** the first three lines are "DIR             Muestra los archivos disponibles.", "TYPE ARCHIVO    Abre un archivo de texto." and "CD CARPETA      Ingresa a una carpeta."
+- **AND** a short block follows with "CLS", "HELP" and "EXIT" and their Spanish descriptions
+- **AND** the usual English command list is not shown
 
 #### Scenario: HELP outside a Chile session
 - **GIVEN** no running Chile session, an Argentina session, or an admin

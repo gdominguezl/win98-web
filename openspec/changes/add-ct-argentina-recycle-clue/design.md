@@ -52,6 +52,7 @@ Running it again changes nothing visible (same item, one entry).
 
 ## Open Questions
 
-The image was received afterwards: a 1024x576 PNG (954 KB, a Fotolog page screenshot), at `/tmp/ct-assets/argentina-clue.png`. Defaults used and to confirm:
-- Name `IMG_0001.png`; original location `C:\My Documents`.
-- The restored copy is also removed when the session stops running.
+Confirmed with the user:
+- Original location `C:\My Documents`; the restored copy is also removed when the session stops running.
+
+Assumed (not asked): the file name `IMG_0001.png` (neutral). The image is the received 1024x576 PNG (954 KB, a Fotolog page screenshot) at `/tmp/ct-assets/argentina-clue.png`.

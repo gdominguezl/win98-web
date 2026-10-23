@@ -75,6 +75,8 @@ export default { id: "recycle-clue", apply: async (ctx) => manifest, remove: asy
 
 ## Open Questions
 
-Defaults used because the user did not answer these before the plan was written; each is one line to change:
-- Stations are removed as soon as the session stops running (finished, restarted, reset, new game) and stale ones are cleaned at boot when the tab has no team session. If the clues should stay visible after finishing, only remove them on restart or "Start a new game".
-- One team per computer is assumed.
+Confirmed with the user:
+- Stations are removed as soon as the session stops running (finished, restarted, reset, new game) and stale ones are cleaned at boot when the tab has no team session.
+
+Assumed (not asked):
+- One team per computer.
