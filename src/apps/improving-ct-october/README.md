@@ -9,7 +9,7 @@ The **Improving CT October** window starts a timed office session for the Y2K ga
 - **Desktop and Start menu entry**: An "Improving CT October" shortcut on the desktop, restored for returning users, and an entry directly under Start > Programs.
 - **Crew**: Office, team, and keyword. Enter and Start both begin the session. A wrong keyword stays editable. A second start keeps the original clock. After the patch is accepted, Start a new game returns to the team form on this computer. The finished team's result stays on the server.
 - **Countdown**: A retro timer on the right side of the desktop counts down from 60:00. At 00:00 it says Game over, and the window says the team can still enter the patch. When the server accepts the code, the window says whether the team made it inside the hour, the timer plays a short sign-off, and then the timer leaves. A new tab does not show it until that tab starts.
-- **Admin**: The office password opens the team list, a Refresh board, the podium, Restart on a running or finished team, and Reset all. Restart clears only that team's time. Reset all warns first when someone is still playing.
+- **Admin**: The office password opens the patch code field, the team list, a Refresh board, the podium, Restart on a running or finished team, and Reset all. Each office has its own patch code: the admin can view and save it at the top of the Admin view, and saving a new code retires the default immediately. Restart clears only that team's time. Reset all warns first when someone is still playing.
 
 ## How to Use
 

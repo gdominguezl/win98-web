@@ -12,8 +12,13 @@ export function freshCtState() {
     nextId: 4,
     resetCalls: 0,
     finishCalls: 0,
+    patchPutCalls: 0,
     activeTeamId: 1,
     adminOffice: "argentina",
+    patchCodes: {
+      argentina: { code: "Y2KPATCH99", isDefault: true, updatedAt: new Date().toISOString() },
+      chile: { code: "Y2KPATCH99", isDefault: true, updatedAt: new Date().toISOString() },
+    },
   };
 }
 
@@ -23,6 +28,18 @@ function activeId(state) {
 
 function normalizeCode(value) {
   return String(value ?? "").toUpperCase().replace(/[\s-]/g, "");
+}
+
+function validatePatchCode(input, defaults) {
+  if (input == null || String(input).trim() === "") return "Enter a code";
+  const raw = String(input).trim();
+  if (raw.length > 48 || !/^[A-Za-z0-9 -]+$/.test(raw)) {
+    return "Use only letters, numbers, spaces and dashes";
+  }
+  const normalized = normalizeCode(raw);
+  if (!/^[A-Z0-9]{4,32}$/.test(normalized)) return "Use 4 to 32 letters or numbers";
+  if (defaults.has(normalized)) return "Choose a code different from the default";
+  return null;
 }
 
 function view(row, now = Date.now()) {
@@ -121,7 +138,9 @@ async function handle(route, state) {
     state.finishCalls += 1;
     const row = sessionFor(state, activeId(state));
     if (!row.startedAt) return json(route, 409, { error: "team_reset" });
-    if (normalizeCode(body.code) !== "Y2KPATCH99") return json(route, 401, { error: "Wrong code" });
+    const team = state.teams.find((item) => item.id === activeId(state));
+    const expected = normalizeCode(state.patchCodes[team?.office || "argentina"].code);
+    if (normalizeCode(body.code) !== expected) return json(route, 401, { error: "Wrong code" });
     if (!row.finishedAt) row.finishedAt = new Date().toISOString();
     return json(route, 200, { session: view(row) });
   }
@@ -130,6 +149,24 @@ async function handle(route, state) {
     if (state.passwords[office] !== body.password) return json(route, 401, { error: "Wrong password" });
     state.adminOffice = office;
     return json(route, 200, { token: "admin-token" });
+  }
+
+  if (path.endsWith("/ct/admin/patch-code")) {
+    const token = request.headers()["authorization"] || "";
+    if (token !== "Bearer admin-token") return json(route, 401, { error: "Authentication required" });
+    const row = state.patchCodes[state.adminOffice];
+    if (method === "GET") {
+      return json(route, 200, { patchCode: row.code, isDefault: row.isDefault, updatedAt: row.updatedAt });
+    }
+    if (method === "PUT") {
+      state.patchPutCalls += 1;
+      const error = validatePatchCode(body.code, new Set(["Y2KPATCH99"]));
+      if (error) return json(route, 400, { error });
+      row.code = String(body.code).trim();
+      row.isDefault = false;
+      row.updatedAt = new Date().toISOString();
+      return json(route, 200, { patchCode: row.code, isDefault: false, updatedAt: row.updatedAt });
+    }
   }
 
   if (path.endsWith("/ct/admin/teams") && method === "GET") {

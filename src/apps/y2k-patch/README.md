@@ -7,7 +7,7 @@ The **Y2K Patch** window is where a team types the code recovered from the offic
 ## Key Features
 
 - **Desktop and Start menu entry**: A "Y2K Patch" shortcut on the desktop, restored for returning users, and an entry directly under Start > Programs.
-- **One shared code**: About 10 letters or digits. The server accepts `Y2K_PATCH_CODE`, or `Y2KPATCH99` when that variable is unset. Letter case, spaces, and dashes are ignored.
+- **One code per office**: Set by that office's admin in Improving CT October. Letter case, spaces, and dashes are ignored.
 - **A live session**: This tab has to start a team in Improving CT October first. A reset team is told to contact the admin or start again.
 - **Wrong code**: The window shows an error and the field stays editable. There is no lockout.
 - **Success**: A short install sequence covers the desktop, then says the patch is installed and files, memories, and messages will survive midnight. The same browser tab remembers that and does not play it again. A team the server already finished does not replay the sequence.

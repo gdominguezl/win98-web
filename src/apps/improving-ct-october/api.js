@@ -83,6 +83,14 @@ export function adminLogin(office, password) {
   });
 }
 
+export function adminPatchCode() {
+  return request("/admin/patch-code");
+}
+
+export function adminSetPatchCode(code) {
+  return request("/admin/patch-code", { method: "PUT", body: { code } });
+}
+
 export function adminTeams() {
   return request("/admin/teams");
 }
