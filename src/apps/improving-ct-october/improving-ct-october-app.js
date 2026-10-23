@@ -99,7 +99,7 @@ export class ImprovingCtOctoberApp extends Application {
     id: "improving-ct-october",
     title: "Improving CT October",
     description: "Start the office session.",
-    icon: ICONS.computer,
+    icon: ICONS.improvingCtOctober,
     category: "",
     width: 440,
     height: 380,
