@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792718226.925599,
-    "seen": 1792718240.595499,
-    "ast_hash": "a6866c2e5cee10f17b7f3f6d2b4d1bf3",
+    "mtime": 1792725736.961054,
+    "seen": 1792726084.6460679,
+    "ast_hash": "fabe4da881b60f983243015dd69c24a7",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -1074,9 +1074,9 @@
     "semantic_hash": ""
   },
   "src/main.js": {
-    "mtime": 1791317072.169568,
-    "seen": 1792608745.7332811,
-    "ast_hash": "b2f81cce9bead8af40f766af1156b3be",
+    "mtime": 1792725045.3599532,
+    "seen": 1792726084.6460779,
+    "ast_hash": "e282c6ee9fac00cb911db324befa2700",
     "semantic_hash": ""
   },
   "src/shared/components/animated-logo.js": {
@@ -1656,9 +1656,9 @@
     "semantic_hash": ""
   },
   "src/system/zenfs-init.js": {
-    "mtime": 1792717807.527001,
-    "seen": 1792718240.595561,
-    "ast_hash": "f8ad14c3fc2c98c8e12d800a1076051d",
+    "mtime": 1792725045.9087265,
+    "seen": 1792726084.646129,
+    "ast_hash": "850b34754ef977e3ccdd8066d185acb6",
     "semantic_hash": ""
   },
   "src/system/zenfs-utils.js": {
@@ -1878,9 +1878,9 @@
     "semantic_hash": ""
   },
   "src/apps/README.md": {
-    "mtime": 1792718157.899976,
-    "seen": 1792718240.595607,
-    "ast_hash": "ea0eba0ccfd1d6047573bd27231a7f7b",
+    "mtime": 1792725211.703958,
+    "seen": 1792726084.646178,
+    "ast_hash": "454ce75323693c947fc8ab0729c85b2e",
     "semantic_hash": ""
   },
   "src/apps/app-maker/README.md": {
@@ -6528,9 +6528,9 @@
     "semantic_hash": ""
   },
   "e2e/y2k_patch.spec.js": {
-    "mtime": 1792718117.5583286,
-    "seen": 1792718240.595422,
-    "ast_hash": "fd554539c11f7e1a3c8993b048cf5f29",
+    "mtime": 1792726072.2782722,
+    "seen": 1792726084.645987,
+    "ast_hash": "c14db6ec0d3850b62b67411d17742f61",
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/code.js": {
@@ -6540,39 +6540,9 @@
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/y2k-patch-app.js": {
-    "mtime": 1792717814.5161667,
-    "seen": 1792718240.595498,
-    "ast_hash": "754886ddd7280019d72af7bf8b6f6920",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-y2k-patch-app/.openspec.yaml": {
-    "mtime": 1792716692.3719587,
-    "seen": 1792718240.595572,
-    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-y2k-patch-app/design.md": {
-    "mtime": 1792716770.6102312,
-    "seen": 1792718240.595574,
-    "ast_hash": "e56345841775713cb43c6a1b6ccfb805",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-y2k-patch-app/proposal.md": {
-    "mtime": 1792716717.400092,
-    "seen": 1792718240.595575,
-    "ast_hash": "fa0157fbb55f220adbf7f4a09f1c921a",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-y2k-patch-app/specs/apps/y2k-patch/spec.md": {
-    "mtime": 1792716736.1796117,
-    "seen": 1792718240.595575,
-    "ast_hash": "f6066be95b1734b44f695bed153eae3a",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-y2k-patch-app/tasks.md": {
-    "mtime": 1792718212.8316052,
-    "seen": 1792718240.595576,
-    "ast_hash": "5e3c9f3e94be99b3a1ab0f0ce26c146f",
+    "mtime": 1792725060.9589596,
+    "seen": 1792726084.646067,
+    "ast_hash": "0643ba33b0863214c5d7267e75fc80e9",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/.openspec.yaml": {
@@ -6618,15 +6588,123 @@
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/README.md": {
-    "mtime": 1792718157.0127218,
-    "seen": 1792718240.5956302,
-    "ast_hash": "71e4cd5538a351070800616d9f3ef444",
+    "mtime": 1792725214.2322042,
+    "seen": 1792726084.646202,
+    "ast_hash": "75ccebab229509e9bc69334e17622b18",
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/screenshot.png": {
     "mtime": 1792718197.4060452,
     "seen": 1792718240.595685,
     "ast_hash": "26f3eca1f744c28d2cd948518f333735",
+    "semantic_hash": ""
+  },
+  "e2e/ct-mock.js": {
+    "mtime": 1792725086.4051607,
+    "seen": 1792726084.645972,
+    "ast_hash": "8d2b170d8afc811db00253526b309e59",
+    "semantic_hash": ""
+  },
+  "e2e/improving_ct_october.spec.js": {
+    "mtime": 1792725681.3940506,
+    "seen": 1792726084.645979,
+    "ast_hash": "ee45c4bc32335b73f4526020e3329380",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/api.js": {
+    "mtime": 1792725059.5303204,
+    "seen": 1792726084.646019,
+    "ast_hash": "66ff14e33efb7eaa1594528b7f321a4d",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/improving-ct-october-app.js": {
+    "mtime": 1792725043.0908196,
+    "seen": 1792726084.6460202,
+    "ast_hash": "636e23e4c020637d0dcd86f7efeb7a1f",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/timer.js": {
+    "mtime": 1792725069.0334733,
+    "seen": 1792726084.6460202,
+    "ast_hash": "5f5c1551846784eebce4ff87a29bd98e",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-improving-ct-october/.openspec.yaml": {
+    "mtime": 1792724084.3611467,
+    "seen": 1792726084.6461399,
+    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-improving-ct-october/design.md": {
+    "mtime": 1792724163.2713714,
+    "seen": 1792726084.6461408,
+    "ast_hash": "84ebf263dafb8d89cdcc00bda06231e5",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-improving-ct-october/proposal.md": {
+    "mtime": 1792724110.5375137,
+    "seen": 1792726084.6461408,
+    "ast_hash": "5bf5474814997b94338ea53c5f8c4d7f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-improving-ct-october/specs/apps/improving-ct-october/spec.md": {
+    "mtime": 1792724127.9574397,
+    "seen": 1792726084.646142,
+    "ast_hash": "7fac6f776b1c30f6bace3a3cb6f65679",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-improving-ct-october/specs/apps/y2k-patch/spec.md": {
+    "mtime": 1792724131.2774148,
+    "seen": 1792726084.646142,
+    "ast_hash": "7a7c660c542ac56e4931f8d91fef139f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-improving-ct-october/tasks.md": {
+    "mtime": 1792724170.782693,
+    "seen": 1792726084.646143,
+    "ast_hash": "0e17021d86faa2482fb41beac441b786",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-add-y2k-patch-app/.openspec.yaml": {
+    "mtime": 1792716692.3719587,
+    "seen": 1792726084.646157,
+    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-add-y2k-patch-app/design.md": {
+    "mtime": 1792716770.6102312,
+    "seen": 1792726084.646158,
+    "ast_hash": "e56345841775713cb43c6a1b6ccfb805",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-add-y2k-patch-app/proposal.md": {
+    "mtime": 1792716717.400092,
+    "seen": 1792726084.646158,
+    "ast_hash": "fa0157fbb55f220adbf7f4a09f1c921a",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-add-y2k-patch-app/specs/apps/y2k-patch/spec.md": {
+    "mtime": 1792716736.1796117,
+    "seen": 1792726084.6461592,
+    "ast_hash": "f6066be95b1734b44f695bed153eae3a",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-add-y2k-patch-app/tasks.md": {
+    "mtime": 1792718640.480124,
+    "seen": 1792726084.6461592,
+    "ast_hash": "71f3b37ee72daf54fe12e3fe4435217e",
+    "semantic_hash": ""
+  },
+  "openspec/specs/apps/y2k-patch/spec.md": {
+    "mtime": 1792721732.9540105,
+    "seen": 1792726084.6461692,
+    "ast_hash": "1c4af1018e502762b03c0f1520bd92a2",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/README.md": {
+    "mtime": 1792725211.5515053,
+    "seen": 1792726084.646189,
+    "ast_hash": "534c1ed2878ddbab8bafc1386a2f429b",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,198 @@
+import { test, expect } from "@playwright/test";
+import { freshCtState, installCt } from "./ct-mock.js";
+
+const ICON = '.desktop .explorer-icon[data-name="Improving CT October.lnk.json"]';
+const WINDOW = '.window[data-app-id="improving-ct-october"]';
+
+async function boot(page) {
+  await page.goto("/win98-web/");
+  await page.waitForSelector("#boot-screen", { state: "hidden", timeout: 60000 });
+}
+
+async function openCt(page) {
+  await page.locator(ICON).dblclick();
+  const win = page.locator(WINDOW);
+  await expect(win).toBeVisible({ timeout: 15000 });
+  await expect(win.locator("#ct-team option").first()).toBeAttached({ timeout: 10000 });
+  return win;
+}
+
+test.describe("Improving CT October", () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+
+  let state;
+
+  test.beforeEach(async ({ page }) => {
+    state = freshCtState();
+    await installCt(page, state);
+    await boot(page);
+  });
+
+  test("is on the desktop and under Start > Programs", async ({ page }) => {
+    await expect(page.locator(ICON)).toBeVisible();
+    await page.click('button:has-text("Start")');
+    const programs = page.locator('.start-menu-item:has-text("Programs")');
+    await expect(programs).toBeVisible({ timeout: 10000 });
+    await programs.dispatchEvent("pointerenter");
+    await expect(page.locator('.menu-item:has-text("Improving CT October")')).toBeVisible({
+      timeout: 10000,
+    });
+  });
+
+  test("opens one window", async ({ page }) => {
+    const win = await openCt(page);
+    await expect(win.locator(".window-title")).toHaveText("Improving CT October");
+    await page.locator(".desktop").click({ position: { x: 1100, y: 200 } });
+    await page.locator(ICON).dblclick();
+    await page.waitForTimeout(500);
+    await expect(page.locator(WINDOW)).toHaveCount(1);
+  });
+
+  test("starts a team and keeps the countdown after the window closes", async ({ page }) => {
+    const win = await openCt(page);
+    const field = win.locator("#ct-keyword");
+    await field.fill("nope");
+    await win.locator("#ct-start").click();
+    await expect(win.locator("#ct-error")).toBeVisible();
+    await expect(page.locator("#ct-timer")).toHaveCount(0);
+    await expect(field).toBeEnabled();
+    await expect(field).toHaveValue("nope");
+
+    await field.fill("onion");
+    await win.locator("#ct-start").click();
+    await expect(win.locator("#ct-status")).toHaveText("This team is running.");
+    await expect(page.locator("#ct-timer")).toBeVisible();
+    await expect(page.locator("#ct-timer-over")).toBeHidden();
+
+    await win.locator(".window-close-button, .window-action-close").click();
+    await expect(win).toHaveCount(0);
+    await expect(page.locator("#ct-timer")).toBeVisible();
+  });
+
+  test("resumes the original start and shows Game over after 60 minutes", async ({ page }) => {
+    state.sessions[1] = {
+      startedAt: new Date(Date.now() - 10 * 60 * 1000).toISOString(),
+      finishedAt: null,
+    };
+    await openCt(page);
+    const win = page.locator(WINDOW);
+    await win.locator("#ct-keyword").fill("onion");
+    await win.locator("#ct-start").click();
+    await expect(page.locator("#ct-timer-time")).toHaveText(/^(50:00|49:5\d)$/);
+
+    state.sessions[1].startedAt = new Date(Date.now() - 61 * 60 * 1000).toISOString();
+    await expect(page.locator("#ct-timer-time")).toHaveText("00:00", { timeout: 8000 });
+    await expect(page.locator("#ct-timer-over")).toHaveText("Game over");
+  });
+
+  test("freezes the clock when the server finishes the session", async ({ page }) => {
+    const win = await openCt(page);
+    await win.locator("#ct-keyword").fill("onion");
+    await win.locator("#ct-start").click();
+    await expect(page.locator("#ct-timer")).toHaveAttribute("data-status", "running");
+    state.sessions[1].finishedAt = new Date().toISOString();
+    await expect(page.locator("#ct-timer")).toHaveAttribute("data-status", "finished", { timeout: 8000 });
+    await expect(page.locator("#ct-timer-over")).toBeHidden();
+    const frozen = await page.locator("#ct-timer-time").textContent();
+    await page.waitForTimeout(1200);
+    await expect(page.locator("#ct-timer-time")).toHaveText(frozen);
+  });
+
+  test("a new tab has no countdown until that tab starts", async ({ page }) => {
+    test.setTimeout(120000);
+    const win = await openCt(page);
+    await win.locator("#ct-keyword").fill("onion");
+    await win.locator("#ct-start").click();
+    await expect(page.locator("#ct-timer")).toBeVisible();
+
+    const page2 = await page.context().newPage();
+    await installCt(page2, state);
+    await boot(page2);
+    await expect(page2.locator("#ct-timer")).toHaveCount(0);
+    await openCt(page2);
+    await page2.locator(`${WINDOW} #ct-keyword`).fill("onion");
+    await page2.locator(`${WINDOW} #ct-start`).click();
+    await expect(page2.locator("#ct-timer")).toBeVisible();
+    await page2.close();
+  });
+
+  test("an admin refreshes the board, edits teams, and resets", async ({ page }) => {
+    test.setTimeout(90000);
+    const now = Date.now();
+    state.teams.push({ id: 4, office: "argentina", name: "Team 4", keyword: "marble" });
+    state.sessions[1] = { startedAt: new Date(now - 5 * 60 * 1000).toISOString(), finishedAt: null };
+    state.sessions[2] = {
+      startedAt: new Date(now - 10 * 60 * 1000).toISOString(),
+      finishedAt: new Date(now).toISOString(),
+    };
+    state.sessions[4] = {
+      startedAt: new Date(now - 30 * 60 * 1000).toISOString(),
+      finishedAt: new Date(now).toISOString(),
+    };
+
+    const win = await openCt(page);
+    await win.locator("#ct-mode-admin").click();
+    await win.locator("#ct-password").fill("chile-secret");
+    await win.locator("#ct-admin-enter").click();
+    await expect(win.locator("#ct-admin")).toBeHidden();
+    await expect(win.locator("#ct-error")).toBeVisible();
+
+    await win.locator("#ct-password").fill("office-secret");
+    await win.locator("#ct-admin-enter").click();
+    await expect(win.locator("#ct-teams")).toBeVisible();
+    await expect(win.locator("#ct-board")).toContainText(/Team 1 — Running — \d+:\d{2}/);
+    await expect(win.locator("#ct-board")).toContainText(/Team 2 — Finished — \d+:\d{2}/);
+    await expect(win.locator("#ct-podium li").nth(0)).toHaveText("1. Team 2");
+    await expect(win.locator("#ct-podium li").nth(1)).toHaveText("2. Team 4");
+
+    await win.locator("#ct-new-name").fill("Team Extra");
+    await win.locator("#ct-new-keyword").fill("badge");
+    await win.locator("#ct-create").click();
+    const created = win.locator("#ct-teams .ct-row").last();
+    await expect(created.locator(".ct-name")).toHaveValue("Team Extra");
+    await created.locator(".ct-name").fill("Team Nine");
+    await created.locator(".ct-team-keyword").fill("badge-2");
+    await created.locator(".ct-save").click();
+    await expect(win.locator("#ct-teams .ct-name").last()).toHaveValue("Team Nine", { timeout: 10000 });
+    await win.locator("#ct-teams .ct-row").last().locator(".ct-delete").click();
+    await win.locator("#ct-refresh").click();
+    await expect(win.locator("#ct-board")).not.toContainText("Team Nine");
+    await expect(win.locator("#ct-teams .ct-name").first()).toHaveValue("Team 1");
+
+    let dialogPromise = page.waitForEvent("dialog");
+    await win.locator("#ct-reset").click();
+    let dialog = await dialogPromise;
+    const warning = dialog.message();
+    await dialog.dismiss();
+    expect(warning).toContain("still playing");
+    expect(state.resetCalls).toBe(0);
+
+    dialogPromise = page.waitForEvent("dialog");
+    await win.locator("#ct-reset").click();
+    dialog = await dialogPromise;
+    await dialog.accept();
+    await expect(win.locator("#ct-board")).toContainText("Team 1 — Not started");
+    await expect(win.locator("#ct-teams .ct-name").first()).toHaveValue("Team 1");
+    expect(state.resetCalls).toBe(1);
+
+    dialogPromise = page.waitForEvent("dialog");
+    await win.locator("#ct-reset").click();
+    dialog = await dialogPromise;
+    expect(dialog.message()).toContain("Team names will stay");
+    await dialog.accept();
+  });
+
+  test("restores the icon on a returning desktop", async ({ page }) => {
+    test.setTimeout(120000);
+    await page.evaluate(async () => {
+      try {
+        await window.fs.promises.unlink("/C:/WINDOWS/Desktop/Improving CT October.lnk.json");
+      } catch {
+        // already absent
+      }
+    });
+    await page.reload();
+    await page.waitForSelector("#boot-screen", { state: "hidden", timeout: 60000 });
+    await expect(page.locator(ICON)).toBeVisible();
+  });
+});

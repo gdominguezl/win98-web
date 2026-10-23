@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { freshCtState, installCt } from './ct-mock.js';
 
 const ICON = '.desktop .explorer-icon[data-name="Y2K Patch.lnk.json"]';
 const WINDOW = '.window[data-app-id="y2k-patch"]';
@@ -18,7 +19,16 @@ async function openPatch(page) {
 test.describe('Y2K Patch', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
+  let state;
+
   test.beforeEach(async ({ page }) => {
+    state = freshCtState();
+    state.sessions[1] = { startedAt: new Date().toISOString(), finishedAt: null };
+    await installCt(page, state);
+    await page.addInitScript(() => {
+      sessionStorage.setItem('ct-october-token', 'team-token');
+      sessionStorage.setItem('ct-october-role', 'team');
+    });
     await boot(page);
   });
 
@@ -66,7 +76,7 @@ test.describe('Y2K Patch', () => {
     await expect(field).toHaveValue('NOTTHECODE');
 
     await field.fill('Y2KPATCH99');
-    await win.locator('#y2k-ok').click();
+    await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
 
     const message = page.locator('#y2k-overlay-message');
     await expect(message).toBeVisible({ timeout: 10000 });
@@ -98,19 +108,75 @@ test.describe('Y2K Patch', () => {
     await expect(page.locator('#y2k-overlay-message')).toContainText('survive midnight');
   });
 
-  test('a new tab asks for the code again', async ({ page }) => {
+  test('a new tab does not replay the sequence for a finished team', async ({ page }) => {
     test.setTimeout(120000);
     const win = await openPatch(page);
     await win.locator('#y2k-code').fill('Y2KPATCH99');
-    await win.locator('#y2k-ok').click();
+    await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
     await expect(page.locator('#y2k-overlay-message')).toBeVisible({ timeout: 10000 });
 
     const page2 = await page.context().newPage();
+    await installCt(page2, state);
     await boot(page2);
+    await page2.locator('.desktop .explorer-icon[data-name="Improving CT October.lnk.json"]').dblclick();
+    const ct = page2.locator('.window[data-app-id="improving-ct-october"]');
+    await expect(ct).toBeVisible({ timeout: 15000 });
+    await expect(ct.locator('#ct-team option').first()).toBeAttached({ timeout: 10000 });
+    await ct.locator('#ct-keyword').fill('onion');
+    await ct.locator('#ct-start').click();
+    await expect(ct.locator('#ct-status')).toHaveText('This team has finished.');
+    await ct.locator('.window-close-button, .window-action-close').click();
+
+    const calls = state.finishCalls;
     const win2 = await openPatch(page2);
-    await expect(win2.locator('#y2k-code')).toBeVisible();
+    await win2.locator('#y2k-code').fill('Y2KPATCH99');
+    await win2.locator('#y2k-form').evaluate((form) => form.requestSubmit());
+    await expect(win2.locator('#y2k-installed')).toBeVisible();
     await expect(page2.locator('#y2k-overlay')).toHaveCount(0);
+    expect(state.finishCalls).toBe(calls);
     await page2.close();
+  });
+
+  test('asks for a session before accepting a code', async ({ page }) => {
+    await page.evaluate(() => {
+      sessionStorage.removeItem('ct-october-token');
+      sessionStorage.removeItem('ct-october-role');
+    });
+    const win = await openPatch(page);
+    await win.locator('#y2k-code').fill('Y2KPATCH99');
+    await win.locator('#y2k-ok').click();
+    await expect(win.locator('#y2k-status')).toHaveText(
+      'Start a session in Improving CT October first.',
+    );
+    await expect(page.locator('#y2k-overlay')).toHaveCount(0);
+    expect(state.finishCalls).toBe(0);
+  });
+
+  test('tells a reset team to start again', async ({ page }) => {
+    state.sessions[1] = { startedAt: null, finishedAt: null };
+    const win = await openPatch(page);
+    await win.locator('#y2k-code').fill('Y2KPATCH99');
+    await win.locator('#y2k-ok').click();
+    await expect(win.locator('#y2k-status')).toContainText('been reset');
+    await expect(win.locator('#y2k-status')).toContainText('start a new session');
+    await expect(page.locator('#y2k-overlay')).toHaveCount(0);
+    expect(state.finishCalls).toBe(1);
+  });
+
+  test('accepts the code after Game over', async ({ page }) => {
+    test.setTimeout(90000);
+    state.sessions[1].startedAt = new Date(Date.now() - 61 * 60 * 1000).toISOString();
+    await page.reload();
+    await page.waitForSelector('#boot-screen', { state: 'hidden', timeout: 60000 });
+    await expect(page.locator('#ct-timer-time')).toHaveText('00:00');
+    await expect(page.locator('#ct-timer-over')).toHaveText('Game over');
+
+    const win = await openPatch(page);
+    await win.locator('#y2k-code').fill('Y2KPATCH99');
+    await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
+    await expect(page.locator('#y2k-overlay-message')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('#ct-timer-over')).toBeHidden();
+    expect(state.finishCalls).toBe(1);
   });
 
   test('restores the icon on a returning desktop', async ({ page }) => {

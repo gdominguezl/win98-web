@@ -1,6 +1,7 @@
 import { Application } from "../../system/application.js";
 import { ICONS } from "../../config/icons.js";
-import { codesMatch } from "./code.js";
+import { finishPatch, getRole, getSession, getToken } from "../improving-ct-october/api.js";
+import { refreshCtTimer } from "../improving-ct-october/timer.js";
 import "./y2k-patch.css";
 
 const APPLIED_KEY = "y2k-patch-applied";
@@ -74,13 +75,7 @@ export class Y2kPatchApp extends Application {
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      if (codesMatch(field.value)) {
-        this._apply();
-        return;
-      }
-      status.hidden = false;
-      field.focus();
-      field.select();
+      this._submit(field, status);
     });
 
     field.focus();
@@ -88,6 +83,48 @@ export class Y2kPatchApp extends Application {
 
   _onClose() {
     if (this._installing) this._clearInstall(true);
+  }
+
+  _setStatus(status, message) {
+    status.hidden = false;
+    status.textContent = message;
+  }
+
+  async _submit(field, status) {
+    if (getRole() !== "team" || !getToken()) {
+      this._setStatus(status, "Start a session in Improving CT October first.");
+      return;
+    }
+    const current = await getSession();
+    if (current.status === 401) {
+      this._setStatus(status, "Start a session in Improving CT October first.");
+      return;
+    }
+    if (current.body?.session?.status === "finished") {
+      this._markInstalled();
+      return;
+    }
+    const result = await finishPatch(field.value);
+    if (result.status === 200) {
+      this._apply();
+      refreshCtTimer();
+      return;
+    }
+    if (result.status === 409 && result.body?.error === "team_reset") {
+      this._setStatus(
+        status,
+        "Sorry, your team has been reset. Please contact the admin or start a new session."
+      );
+      return;
+    }
+    this._setStatus(status, "The code was not accepted.");
+    field.focus();
+    field.select();
+  }
+
+  _markInstalled() {
+    sessionStorage.setItem(APPLIED_KEY, "1");
+    this.win.$content.html(INSTALLED_HTML);
   }
 
   _apply() {

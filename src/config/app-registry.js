@@ -327,6 +327,20 @@ export const appRegistry = {
   },
     importApp: () => import("../apps/image-viewer/image-viewer-app.js")
   },
+  "improving-ct-october": {
+    config: {
+    id: "improving-ct-october",
+    title: "Improving CT October",
+    description: "Start the office session.",
+    icon: ICONS.computer,
+    category: "",
+    width: 440,
+    height: 380,
+    resizable: false,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/improving-ct-october/improving-ct-october-app.js")
+  },
   "keen": {
     config: {
     id: "keen",

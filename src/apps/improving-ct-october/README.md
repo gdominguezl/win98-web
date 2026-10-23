@@ -1,0 +1,32 @@
+# Improving CT October
+
+## Purpose
+
+The **Improving CT October** window starts a timed office session for the Y2K game. A crew picks Argentina or Chile, picks a team, and types that team's keyword. An admin for that office manages the teams and reads the board.
+
+## Key Features
+
+- **Desktop and Start menu entry**: An "Improving CT October" shortcut on the desktop, restored for returning users, and an entry directly under Start > Programs.
+- **Crew**: Office, team, and keyword. Enter and Start both begin the session. A wrong keyword stays editable. A second start keeps the original clock.
+- **Countdown**: A retro timer on the right side of the desktop counts down from 60:00. At 00:00 it says Game over. The clock freezes when the server accepts the patch. A new tab does not show it until that tab starts.
+- **Admin**: The office password opens the team list, a Refresh board, the podium, and Reset. Reset warns first when someone is still playing.
+
+## How to Use
+
+1. Double-click **Improving CT October** on the desktop, or open Start > Programs > Improving CT October.
+2. Crew: pick the office and team, type the keyword, and press Start.
+3. Admin: choose Admin, pick the office, and enter that office's password.
+
+The patch code is still entered in Y2K Patch. This window only starts and manages the session.
+
+## Development
+
+```bash
+VITE_CT_API_URL=http://127.0.0.1:3001 bun run dev
+```
+
+Leave `VITE_CT_API_URL` unset when the desktop is served from the same origin as the API.
+
+## Screenshot
+
+![Screenshot of the Improving CT October app](./screenshot.png)

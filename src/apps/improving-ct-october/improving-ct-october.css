@@ -1,0 +1,102 @@
+.ct-app {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding: 8px;
+  background: var(--ButtonFace);
+  color: var(--ButtonText);
+  font-size: 11px;
+}
+
+.ct-app p,
+.ct-app h2 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.ct-modes,
+.ct-row,
+.ct-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.ct-app label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.ct-app input,
+.ct-app select {
+  flex: 1;
+  min-width: 0;
+}
+
+.ct-error {
+  margin: 0 0 6px;
+  padding: 4px 6px;
+  background: var(--Window);
+  color: var(--WindowText);
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow);
+}
+
+.ct-actions {
+  justify-content: flex-end;
+}
+
+.ct-actions button,
+.ct-row button {
+  min-width: 54px;
+}
+
+.ct-list,
+.ct-board-rows,
+.ct-podium {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.ct-board-rows li,
+.ct-podium li {
+  margin: 0 0 2px;
+}
+
+#ct-timer {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 4;
+  width: 112px;
+  padding: 8px;
+  background: var(--ButtonFace);
+  color: var(--ButtonText);
+  box-shadow:
+    inset -1px -1px var(--ButtonShadow),
+    inset 1px 1px var(--ButtonHilight),
+    inset -2px -2px var(--ButtonDkShadow),
+    inset 2px 2px var(--ButtonLight);
+}
+
+#ct-timer-time {
+  padding: 4px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  background: var(--Window);
+  color: var(--WindowText);
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow);
+}
+
+#ct-timer-over {
+  margin: 6px 0 0;
+  text-align: center;
+}

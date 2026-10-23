@@ -7,9 +7,10 @@ The **Y2K Patch** window is where a team types the code recovered from the offic
 ## Key Features
 
 - **Desktop and Start menu entry**: A "Y2K Patch" shortcut on the desktop, restored for returning users, and an entry directly under Start > Programs.
-- **One shared code**: About 10 letters or digits. The expected code is `VITE_Y2K_PATCH_CODE`, or `Y2KPATCH99` when that variable is unset. Letter case, spaces, and dashes are ignored.
+- **One shared code**: About 10 letters or digits. The server accepts `Y2K_PATCH_CODE`, or `Y2KPATCH99` when that variable is unset. Letter case, spaces, and dashes are ignored.
+- **A live session**: This tab has to start a team in Improving CT October first. A reset team is told to contact the admin or start again.
 - **Wrong code**: The window shows an error and the field stays editable. There is no lockout.
-- **Success**: A short install sequence covers the desktop, then says the patch is installed and files, memories, and messages will survive midnight. The same browser tab remembers that and does not play it again. A new tab asks for the code again.
+- **Success**: A short install sequence covers the desktop, then says the patch is installed and files, memories, and messages will survive midnight. The same browser tab remembers that and does not play it again. A team the server already finished does not replay the sequence.
 
 ## How to Use
 
@@ -19,10 +20,10 @@ The **Y2K Patch** window is where a team types the code recovered from the offic
 ## Development
 
 ```bash
-VITE_Y2K_PATCH_CODE=Y2KPATCH99 bun run dev
+VITE_CT_API_URL=http://127.0.0.1:3001 bun run dev
 ```
 
-The code is read in the client. A later change can select one code per office inside `code.js` without rewriting the window. Game sessions that show or hide the app are also a later change.
+The server decides whether the code is accepted. `code.js` only normalizes a code if a caller still needs that.
 
 ## Screenshot
 
