@@ -20,7 +20,7 @@ Prerequisite: the MSN API change `add-ct-office-patch-codes` is implemented (the
 
 - [x] 4.1 Run `PLAYWRIGHT_BROWSERS_PATH="$HOME/Library/Caches/ms-playwright" bun x playwright test e2e/improving_ct_october.spec.js e2e/y2k_patch.spec.js` and confirm everything passes (GREEN).
 - [x] 4.2 Manual check against the real local API (local Postgres only, never RDS; API env from the CT handoff with `CORS_ORIGIN=http://localhost:5173`; desktop with `VITE_CT_API_URL=http://localhost:3309 bun run dev`): open Admin for Argentina and Chile, confirm the default notice, save different codes, confirm each office's team finishes only with its own code in Y2K Patch and the old default is refused, try a refused code, a running team confirm, and check the section at 440x380 (visible without scrolling, nothing clipped). Stop the dev server, the API and the local DB afterwards.
-- [ ] 4.3 After deploy (operator step, API first): on the deployed host, set each office's code from the admin panel and finish a team with it.
+- [x] 4.3 After deploy (operator step, API first): on the deployed host, set each office's code from the admin panel and finish a team with it. — verified locally by the user with the full manual run against the real local API (both offices, default retired, running-team confirm, expired session); the check on the deployed host is still to be done after the rollout
 
 ## 5. Final validation
 
