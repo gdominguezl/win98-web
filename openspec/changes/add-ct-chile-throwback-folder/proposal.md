@@ -2,12 +2,12 @@
 
 ## Why
 
-Chile teams must find clues by exploring the system in MS-DOS Prompt: a `C:\THROWBACK` folder with three text files. The kitchen clue tells them to look for a plan, so they must open `PLANO.TXT`, which shows an ASCII drawing of a telephone inside a closed space. This is the second station built on the engine from `add-ct-station-engine`. It also needs two small MS-DOS Prompt behaviors: a simple Spanish `HELP` while a Chile team plays, and DOS-style case-insensitive names so `type plano.txt` works.
+Chile teams must find clues by exploring the system in MS-DOS Prompt: a `C:\THROWBACK` folder with three text files. The kitchen clue tells them to look for a plan, so they must open `PLANO.TXT`, which shows a colored ANSI drawing of a telephone inside a closed space. This is the second station built on the engine from `add-ct-station-engine`. It also needs two small MS-DOS Prompt behaviors: a simple Spanish `HELP` while a Chile team plays (the three requested instructions first, then a few other useful ones), and DOS-style case-insensitive names so `type plano.txt` works.
 
 ## What Changes
 
 - New station `throwback-folder` for office `chile` (`src/apps/improving-ct-october/stations/chile-throwback.js`), registered in `registry.js`. While a Chile team runs, `C:\THROWBACK` exists with `MEMORY.TXT`, `ERROR.LOG` and `PLANO.TXT`. It is removed, with everything inside it, when the session stops running.
-- MS-DOS Prompt (`src/system/dos-shell.js`) gains a help override: `setHelpOverride(lines | null)`. While a Chile team runs, `HELP` prints exactly three simple lines in Spanish (`DIR`, `TYPE ARCHIVO`, `CD CARPETA`). Outside a Chile session `HELP` is unchanged.
+- MS-DOS Prompt (`src/system/dos-shell.js`) gains a help override: `setHelpOverride(lines | null)`. While a Chile team runs, `HELP` prints the three requested lines in Spanish first (`DIR`, `TYPE ARCHIVO`, `CD CARPETA`), followed by a short block of other useful instructions (`CLS`, `HELP`, `EXIT`). Outside a Chile session `HELP` is unchanged.
 - MS-DOS Prompt resolves names case-insensitively as a fallback for `DIR`, `CD` and `TYPE`: when the exact path does not exist, a case-insensitive match is used, like real DOS. Exact matches behave exactly as before.
 - No server, MSN or nginx change.
 
