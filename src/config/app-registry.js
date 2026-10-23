@@ -610,4 +610,18 @@ export const appRegistry = {
   },
     importApp: () => import("../apps/wordpad/word-pad-app.js")
   },
+  "y2k-patch": {
+    config: {
+    id: "y2k-patch",
+    title: "Y2K Patch",
+    description: "Install the patch before midnight.",
+    icon: ICONS.key,
+    category: "",
+    width: 360,
+    height: 200,
+    resizable: false,
+    isSingleton: true,
+  },
+    importApp: () => import("../apps/y2k-patch/y2k-patch-app.js")
+  },
 };

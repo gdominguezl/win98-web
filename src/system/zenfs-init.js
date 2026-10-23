@@ -132,6 +132,7 @@ export async function initFileSystem(onProgress) {
       { name: "Agent.lnk.json", appId: "agent" },
       { name: "MSN Messenger.lnk.json", appId: "msn-messenger" },
       { name: "Fotolog.lnk.json", appId: "fotolog" },
+      { name: "Y2K Patch.lnk.json", appId: "y2k-patch" },
     ];
 
     for (const shortcut of defaultShortcuts) {

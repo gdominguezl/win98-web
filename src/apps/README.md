@@ -39,6 +39,7 @@ This guide provides instructions on how to add new applications to Windows 98 We
 | [Paint](./paint/README.md) | A classic drawing and image editing application. |
 | [PDF Viewer](./pdf-viewer/README.md) | A simple application for viewing PDF documents. |
 | [Theme to CSS](./theme-to-css/README.md) | A developer utility to convert `.theme` INI files into CSS. |
+| [Y2K Patch](./y2k-patch/README.md) | Install the patch before midnight. |
 
 ### Community & Support
 *Support the project and report issues.*

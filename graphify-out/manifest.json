@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792715100.9299119,
-    "seen": 1792715656.412228,
-    "ast_hash": "1263e8a2ce1a97bff6a02bad69dc9801",
+    "mtime": 1792718226.925599,
+    "seen": 1792718240.595499,
+    "ast_hash": "a6866c2e5cee10f17b7f3f6d2b4d1bf3",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -1656,9 +1656,9 @@
     "semantic_hash": ""
   },
   "src/system/zenfs-init.js": {
-    "mtime": 1792695418.533708,
-    "seen": 1792697270.0853162,
-    "ast_hash": "0e796f5b6a8eb44f1fb89dd4ab29a7b1",
+    "mtime": 1792717807.527001,
+    "seen": 1792718240.595561,
+    "ast_hash": "f8ad14c3fc2c98c8e12d800a1076051d",
     "semantic_hash": ""
   },
   "src/system/zenfs-utils.js": {
@@ -1878,9 +1878,9 @@
     "semantic_hash": ""
   },
   "src/apps/README.md": {
-    "mtime": 1792694515.2654886,
-    "seen": 1792695370.973092,
-    "ast_hash": "26c6b284243497c4ce8503551ec9bc6a",
+    "mtime": 1792718157.899976,
+    "seen": 1792718240.595607,
+    "ast_hash": "ea0eba0ccfd1d6047573bd27231a7f7b",
     "semantic_hash": ""
   },
   "src/apps/app-maker/README.md": {
@@ -6509,42 +6509,6 @@
     "ast_hash": "3caaaabf7ead9a657065d43b04f8e5b6",
     "semantic_hash": ""
   },
-  "openspec/changes/fit-msn-windows-to-desktop/.openspec.yaml": {
-    "mtime": 1792710023.5855138,
-    "seen": 1792715656.412313,
-    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
-    "semantic_hash": ""
-  },
-  "openspec/changes/fit-msn-windows-to-desktop/design.md": {
-    "mtime": 1792714582.2399745,
-    "seen": 1792715656.4123142,
-    "ast_hash": "66fe350bd5d7bd0a69035912023d3ded",
-    "semantic_hash": ""
-  },
-  "openspec/changes/fit-msn-windows-to-desktop/proposal.md": {
-    "mtime": 1792710072.509632,
-    "seen": 1792715656.4123142,
-    "ast_hash": "1f5650e826841eeeb2aa4f7d28325d3a",
-    "semantic_hash": ""
-  },
-  "openspec/changes/fit-msn-windows-to-desktop/specs/apps/msn-frame-sizing/spec.md": {
-    "mtime": 1792710072.5236695,
-    "seen": 1792715656.412315,
-    "ast_hash": "7f0771721fd480a9a2e8479a30c389cd",
-    "semantic_hash": ""
-  },
-  "openspec/changes/fit-msn-windows-to-desktop/specs/apps/winamp/spec.md": {
-    "mtime": 1792710072.5288846,
-    "seen": 1792715656.412315,
-    "ast_hash": "e28dfe62da490757311ce7498adac10d",
-    "semantic_hash": ""
-  },
-  "openspec/changes/fit-msn-windows-to-desktop/tasks.md": {
-    "mtime": 1792715649.8622124,
-    "seen": 1792715656.412315,
-    "ast_hash": "537eb91d5f884d586644dd786bfabbd5",
-    "semantic_hash": ""
-  },
   "openspec/specs/apps/fotolog/spec.md": {
     "mtime": 1792709958.9826884,
     "seen": 1792715656.4123158,
@@ -6558,9 +6522,111 @@
     "semantic_hash": ""
   },
   "openspec/specs/apps/winamp/spec.md": {
-    "mtime": 1792709959.4841,
-    "seen": 1792715656.412318,
-    "ast_hash": "7c1487ef3b36487be82cdf8aca15ee79",
+    "mtime": 1792717163.1256182,
+    "seen": 1792718240.5955992,
+    "ast_hash": "081861dcbd174ed61adca2eebedb04f3",
+    "semantic_hash": ""
+  },
+  "e2e/y2k_patch.spec.js": {
+    "mtime": 1792718117.5583286,
+    "seen": 1792718240.595422,
+    "ast_hash": "fd554539c11f7e1a3c8993b048cf5f29",
+    "semantic_hash": ""
+  },
+  "src/apps/y2k-patch/code.js": {
+    "mtime": 1792717782.1674395,
+    "seen": 1792718240.595498,
+    "ast_hash": "9d420e10282223b27ca9c25164ccbaa9",
+    "semantic_hash": ""
+  },
+  "src/apps/y2k-patch/y2k-patch-app.js": {
+    "mtime": 1792717814.5161667,
+    "seen": 1792718240.595498,
+    "ast_hash": "754886ddd7280019d72af7bf8b6f6920",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-y2k-patch-app/.openspec.yaml": {
+    "mtime": 1792716692.3719587,
+    "seen": 1792718240.595572,
+    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-y2k-patch-app/design.md": {
+    "mtime": 1792716770.6102312,
+    "seen": 1792718240.595574,
+    "ast_hash": "e56345841775713cb43c6a1b6ccfb805",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-y2k-patch-app/proposal.md": {
+    "mtime": 1792716717.400092,
+    "seen": 1792718240.595575,
+    "ast_hash": "fa0157fbb55f220adbf7f4a09f1c921a",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-y2k-patch-app/specs/apps/y2k-patch/spec.md": {
+    "mtime": 1792716736.1796117,
+    "seen": 1792718240.595575,
+    "ast_hash": "f6066be95b1734b44f695bed153eae3a",
+    "semantic_hash": ""
+  },
+  "openspec/changes/add-y2k-patch-app/tasks.md": {
+    "mtime": 1792718212.8316052,
+    "seen": 1792718240.595576,
+    "ast_hash": "5e3c9f3e94be99b3a1ab0f0ce26c146f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/.openspec.yaml": {
+    "mtime": 1792710023.5855138,
+    "seen": 1792718240.5955908,
+    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/design.md": {
+    "mtime": 1792714582.2399745,
+    "seen": 1792718240.5955908,
+    "ast_hash": "66fe350bd5d7bd0a69035912023d3ded",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/proposal.md": {
+    "mtime": 1792710072.509632,
+    "seen": 1792718240.595592,
+    "ast_hash": "1f5650e826841eeeb2aa4f7d28325d3a",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/specs/apps/msn-frame-sizing/spec.md": {
+    "mtime": 1792710072.5236695,
+    "seen": 1792718240.595592,
+    "ast_hash": "7f0771721fd480a9a2e8479a30c389cd",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/specs/apps/winamp/spec.md": {
+    "mtime": 1792710072.5288846,
+    "seen": 1792718240.595592,
+    "ast_hash": "e28dfe62da490757311ce7498adac10d",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/tasks.md": {
+    "mtime": 1792717162.956927,
+    "seen": 1792718240.595593,
+    "ast_hash": "9bf04e2649100245353427dbd286f46d",
+    "semantic_hash": ""
+  },
+  "openspec/specs/apps/msn-frame-sizing/spec.md": {
+    "mtime": 1792717167.3912532,
+    "seen": 1792718240.595597,
+    "ast_hash": "d862e516038c5eac6425b85ffb86a26d",
+    "semantic_hash": ""
+  },
+  "src/apps/y2k-patch/README.md": {
+    "mtime": 1792718157.0127218,
+    "seen": 1792718240.5956302,
+    "ast_hash": "71e4cd5538a351070800616d9f3ef444",
+    "semantic_hash": ""
+  },
+  "src/apps/y2k-patch/screenshot.png": {
+    "mtime": 1792718197.4060452,
+    "seen": 1792718240.595685,
+    "ast_hash": "26f3eca1f744c28d2cd948518f333735",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,84 @@
+.y2k-patch {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  background: var(--ButtonFace);
+  color: var(--ButtonText);
+}
+
+.y2k-patch p {
+  margin: 0 0 8px;
+}
+
+.y2k-patch label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.y2k-patch input {
+  flex: 1;
+  min-width: 0;
+}
+
+.y2k-status {
+  margin: 0 0 8px;
+  padding: 4px 6px;
+  background: var(--Window);
+  color: var(--WindowText);
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow);
+}
+
+.y2k-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.y2k-buttons button {
+  min-width: 75px;
+}
+
+#y2k-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ButtonFace);
+  color: var(--ButtonText);
+}
+
+.y2k-overlay-panel {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 16px;
+  background: var(--ButtonFace);
+  box-shadow:
+    inset -1px -1px var(--ButtonShadow),
+    inset 1px 1px var(--ButtonHilight),
+    inset -2px -2px var(--ButtonDkShadow),
+    inset 2px 2px var(--ButtonLight);
+}
+
+.y2k-overlay-panel .progress-indicator {
+  height: 18px;
+  margin-bottom: 12px;
+}
+
+.y2k-overlay-panel .progress-indicator-bar {
+  width: 0;
+  animation: y2k-install 2s linear forwards;
+}
+
+@keyframes y2k-install {
+  to {
+    width: 100%;
+  }
+}
