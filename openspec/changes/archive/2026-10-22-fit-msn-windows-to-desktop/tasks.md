@@ -33,7 +33,9 @@ Baseline: before editing, run `bun x playwright test e2e/msn_messenger.spec.js e
 - [x] 4.2 Manual headless check at 1280x600 and 1366x768 with screenshots of the three windows showing the bottom edge above the taskbar, and Winamp at 1440x900 against the real MSN CSS if the MSN dev server is available (confirm the desktop layout without scrolling).
 
   Headless screenshots: at 1280x600 all three windows end exactly at the taskbar (bottom 571). At 1366x768 MSN and Fotolog are fitted to the 739px work area; Winamp keeps a 901x592 frame (window 909x618) with its bottom at 679, above the taskbar at 739. At 1440x900 the Winamp frame is 901x592. The MSN dev server was not running, so the real Winamp desktop layout (no scroll) was not checked.
-- [ ] 4.3 After deploy (operator step): check on a 13 inch laptop or a short browser window that MSN, Fotolog and Winamp are fully visible, and that Winamp shows player, playlist and effects without scrolling.
+- [x] 4.3 After deploy (operator step): check on a 13 inch laptop or a short browser window that MSN, Fotolog and Winamp are fully visible, and that Winamp shows player, playlist and effects without scrolling.
+
+  Confirmed on the EC2 deploy: the three windows fit and Winamp shows the player, playlist, and effects without scrolling.
 
 ## 5. Final validation
 
