@@ -52,6 +52,6 @@ Running it again changes nothing visible (same item, one entry).
 
 ## Open Questions
 
-The image, its extension and name were not received before writing this plan (the attachment did not arrive in the conversation). Defaults used and to confirm:
-- Image supplied by the user before implementation; name `IMG_0001.<ext>`; original location `C:\My Documents`.
+The image was received afterwards: a 1024x576 PNG (954 KB, a Fotolog page screenshot), at `/tmp/ct-assets/argentina-clue.png`. Defaults used and to confirm:
+- Name `IMG_0001.png`; original location `C:\My Documents`.
 - The restored copy is also removed when the session stops running.

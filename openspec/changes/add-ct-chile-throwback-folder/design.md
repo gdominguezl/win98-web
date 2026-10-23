@@ -30,7 +30,8 @@ ACCESS RESERVED FOR FINAL DIAGNOSTIC.
 23:57 — LOCATION MAP CORRUPTED
 23:59 — AGE CALCULATION FAILED
 ```
-- `PLANO.TXT`: the ASCII drawing of a telephone inside a closed space, supplied by the user as a file (the attachment did not arrive when this plan was written). Stored as a string constant or as a `.txt` asset imported with `?raw` inside the station module. Characters, spacing and line breaks are preserved exactly; the file is written with `\n` line endings.
+- `PLANO.TXT`: the telephone drawing supplied by the user (`PLANO.TXT`, 5049 bytes, 20 lines, UTF-8, LF). It is ANSI art, not plain ASCII: it starts with `ESC[0m ESC[2J ESC[H` (reset, clear the screen, cursor home), uses 24-bit colors (`ESC[38;2;R;G;Bm`) and block characters (`█ ▓ ░ ▀ ▄ ▌`), and is at most 72 visible columns wide. It is stored byte for byte as a `.txt` asset imported with `?raw` inside the station module (never reformatted, trimmed or re-encoded) and written with `writeFile`. `TYPE` therefore clears the terminal and draws the picture in color, which is the author's intent; xterm.js supports these sequences.
+- Verify that the 640x480 MS-DOS Prompt window shows all 20 lines and 72 columns without wrapping, and that the block characters render in the terminal font (otherwise xterm falls back to another font, which is accepted).
 - Verify that the em dash in `ERROR.LOG` renders in the terminal font; if the IBM BIOS font lacks the glyph the xterm falls back to another font, which is accepted. If it renders as a broken glyph, tell the user before changing it.
 
 **3. Help override in the DOS shell.** `dos-shell.js` gets a module variable and an exported setter:
@@ -74,6 +75,6 @@ The override is `null` by default, in memory only, set by the station on apply a
 ## Open Questions
 
 Defaults used because the user did not answer before the plan was written, and the files did not arrive:
-- The `PLANO.TXT` drawing must be supplied before implementation; the task stops if it is missing.
+- `PLANO.TXT` was received (`/tmp/ct-assets/PLANO.TXT`, copy of `~/Downloads/PLANO.TXT`); it is ANSI art that clears the screen when typed.
 - `HELP` is replaced only during a Chile session (not for everyone, and not appended to the normal list).
 - The folder is removed whenever the session stops running (finished, restarted, reset, new game).

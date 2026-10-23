@@ -28,7 +28,7 @@ The system SHALL create `C:\THROWBACK` with `MEMORY.TXT`, `ERROR.LOG` and `PLANO
 #### Scenario: PLANO.TXT
 - **GIVEN** the running Chile session
 - **WHEN** the team opens `PLANO.TXT`
-- **THEN** it shows an ASCII drawing of a telephone inside a closed space
+- **THEN** the terminal clears and shows a colored drawing of a telephone inside a closed space, taken from the supplied `PLANO.TXT`, fully visible in the default MS-DOS Prompt window
 
 ### Requirement: HELP shows simple instructions during a Chile session
 The system SHALL make the MS-DOS Prompt `HELP` command show exactly three instructions in Spanish while a Chile team's session is running.

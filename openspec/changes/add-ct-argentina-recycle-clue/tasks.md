@@ -1,6 +1,6 @@
 # Tasks
 
-Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result recorded in that change. Before implementation the user must provide the clue image (the attachment did not arrive when this plan was written); save it as the asset in task 2.1. If it is still missing, stop and ask.
+Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result recorded in that change. The clue image was received (1024x576 PNG, 954 KB) and is at `/tmp/ct-assets/argentina-clue.png`; copy it unchanged to `src/apps/improving-ct-october/stations/assets/argentina-clue.png` in task 2.1.
 
 ## 1. Failing e2e spec (RED)
 
@@ -8,7 +8,7 @@ Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result r
 
 ## 2. Station
 
-- [ ] 2.1 Add the clue image to `src/apps/improving-ct-october/stations/assets/` (file provided by the user) and note its size and extension in the commit body.
+- [ ] 2.1 Add the clue image to `src/apps/improving-ct-october/stations/assets/` (copy `/tmp/ct-assets/argentina-clue.png` unchanged) and note its size and extension in the commit body.
 - [ ] 2.2 Create `src/apps/improving-ct-october/stations/argentina-recycle.js` per design decisions 1 to 3 (fixed id, idempotent `apply`, `remove` from the manifest, name and location constants). No new comments.
 - [ ] 2.3 Register it for `argentina` in `src/apps/improving-ct-october/stations/registry.js` (design decision 5).
 

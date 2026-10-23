@@ -1,6 +1,6 @@
 # Tasks
 
-Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result recorded in that change. Before implementation the user must provide the `PLANO.TXT` ASCII drawing (the attachment did not arrive when this plan was written); if it is still missing, stop and ask.
+Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result recorded in that change. The `PLANO.TXT` drawing was received and is at `/tmp/ct-assets/PLANO.TXT` (copy of `~/Downloads/PLANO.TXT`).
 
 ## 1. Failing e2e spec (RED)
 
@@ -14,7 +14,7 @@ Prerequisite: `add-ct-station-engine` is implemented. Baseline: use the result r
 
 ## 3. Station
 
-- [ ] 3.1 Create `src/apps/improving-ct-october/stations/chile-throwback.js` per design decisions 1 and 2, using the exact file contents and the supplied `PLANO.TXT` drawing (string constant or `?raw` asset).
+- [ ] 3.1 Create `src/apps/improving-ct-october/stations/chile-throwback.js` per design decisions 1 and 2, using the exact file contents and the supplied `PLANO.TXT` stored byte for byte as `src/apps/improving-ct-october/stations/assets/plano.txt` and imported with `?raw`; add a test that the file written to `/C:/THROWBACK/PLANO.TXT` is identical to the asset.
 - [ ] 3.2 Register it for `chile` in `src/apps/improving-ct-october/stations/registry.js`.
 
 ## 4. Docs
