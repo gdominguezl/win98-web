@@ -106,3 +106,7 @@ export function adminBoard() {
 export function adminReset() {
   return request("/admin/reset", { method: "POST" });
 }
+
+export function adminRestartTeam(id) {
+  return request(`/admin/teams/${id}/reset`, { method: "POST" });
+}

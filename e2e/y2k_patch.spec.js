@@ -124,7 +124,7 @@ test.describe('Y2K Patch', () => {
     await expect(ct.locator('#ct-team option').first()).toBeAttached({ timeout: 10000 });
     await ct.locator('#ct-keyword').fill('onion');
     await ct.locator('#ct-start').click();
-    await expect(ct.locator('#ct-status')).toHaveText('This team has finished.');
+    await expect(ct.locator('#ct-status')).toHaveText('This team has completed the challenge on time.');
     await ct.locator('.window-close-button, .window-action-close').click();
 
     const calls = state.finishCalls;
@@ -176,6 +176,9 @@ test.describe('Y2K Patch', () => {
     await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
     await expect(page.locator('#y2k-overlay-message')).toBeVisible({ timeout: 10000 });
     await expect(page.locator('#ct-timer-over')).toBeHidden();
+    await page.locator('#y2k-overlay-ok').click();
+    await expect(page.locator('#ct-timer-finale')).toHaveText('Patch accepted.');
+    await expect(page.locator('#ct-timer')).toHaveCount(0, { timeout: 4000 });
     expect(state.finishCalls).toBe(1);
   });
 

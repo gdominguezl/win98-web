@@ -91,11 +91,20 @@ test.describe("Improving CT October", () => {
     await win.locator("#ct-start").click();
     await expect(page.locator("#ct-timer")).toHaveAttribute("data-status", "running");
     state.sessions[1].finishedAt = new Date().toISOString();
-    await expect(page.locator("#ct-timer")).toHaveAttribute("data-status", "finished", { timeout: 8000 });
-    await expect(page.locator("#ct-timer-over")).toBeHidden();
-    const frozen = await page.locator("#ct-timer-time").textContent();
-    await page.waitForTimeout(1200);
-    await expect(page.locator("#ct-timer-time")).toHaveText(frozen);
+    await expect(win.locator("#ct-status")).toHaveText("This team has completed the challenge on time.", {
+      timeout: 8000,
+    });
+    await expect(page.locator("#ct-timer-finale")).toHaveText("Challenge complete.");
+    await expect(win.locator("#ct-new-game-button")).toBeVisible();
+    await win.locator("#ct-mode-admin").click();
+    await expect(win.locator("#ct-new-game-button")).toBeHidden();
+    await win.locator("#ct-mode-team").click();
+    await expect(win.locator("#ct-new-game-button")).toBeVisible();
+    await win.locator("#ct-new-game-button").click();
+    await expect(win.locator("#ct-keyword")).toBeVisible();
+    await expect(win.locator("#ct-status")).toBeHidden();
+    await expect(win.locator("#ct-new-game-button")).toBeHidden();
+    await expect(page.locator("#ct-timer")).toHaveCount(0, { timeout: 4000 });
   });
 
   test("a new tab has no countdown until that tab starts", async ({ page }) => {
@@ -160,8 +169,17 @@ test.describe("Improving CT October", () => {
     await expect(win.locator("#ct-teams .ct-name").first()).toHaveValue("Team 1");
 
     let dialogPromise = page.waitForEvent("dialog");
-    await win.locator("#ct-reset").click();
+    const restartClick = win.locator('#ct-board li:has-text("Team 2") .ct-restart').click();
     let dialog = await dialogPromise;
+    expect(dialog.message()).toContain("Restart Team 2");
+    await dialog.accept();
+    await restartClick;
+    await expect(win.locator("#ct-board")).toContainText("Team 2 — Not started");
+    await expect(win.locator("#ct-board")).toContainText(/Team 1 — Running/);
+
+    dialogPromise = page.waitForEvent("dialog");
+    await win.locator("#ct-reset").click();
+    dialog = await dialogPromise;
     const warning = dialog.message();
     await dialog.dismiss();
     expect(warning).toContain("still playing");

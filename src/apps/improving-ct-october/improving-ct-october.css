@@ -51,6 +51,10 @@
   justify-content: flex-end;
 }
 
+#ct-new-game[hidden] {
+  display: none;
+}
+
 .ct-actions button,
 .ct-row button {
   min-width: 54px;
@@ -67,6 +71,17 @@
 .ct-board-rows li,
 .ct-podium li {
   margin: 0 0 2px;
+}
+
+.ct-board-rows li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ct-board-rows li span {
+  flex: 1;
+  min-width: 0;
 }
 
 #ct-timer {
@@ -96,7 +111,39 @@
     inset 1px 1px var(--ButtonShadow);
 }
 
-#ct-timer-over {
+#ct-timer-over,
+#ct-timer-finale {
   margin: 6px 0 0;
   text-align: center;
+  font-weight: bold;
+}
+
+#ct-timer.ct-timer-finale {
+  width: 148px;
+}
+
+#ct-timer-finale {
+  margin: 0 0 6px;
+}
+
+.ct-finale-bar {
+  height: 14px;
+  background: var(--Window);
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow);
+}
+
+.ct-finale-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--Hilight);
+  animation: ct-finale-fill 1.6s linear forwards;
+}
+
+@keyframes ct-finale-fill {
+  to {
+    width: 100%;
+  }
 }

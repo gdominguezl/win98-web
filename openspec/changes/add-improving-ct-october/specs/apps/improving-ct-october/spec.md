@@ -54,10 +54,17 @@ While this tab has a running team session, the system SHALL show a retro countdo
 - **THEN** the countdown shows 00:00 and the words Game over
 
 #### Scenario: Finished
-- **GIVEN** the server has accepted the patch
+- **GIVEN** the server has accepted the patch inside 60 minutes
 - **WHEN** the countdown next refreshes
-- **THEN** the clock freezes
-- **AND** Game over is not shown
+- **THEN** the timer shows a short completion message and then leaves the desktop
+- **AND** the Improving CT October window says the team completed the challenge on time
+- **AND** Start a new game returns to the team form
+
+#### Scenario: Finished late
+- **GIVEN** the server has accepted the patch after 60 minutes
+- **WHEN** the countdown next refreshes
+- **THEN** the timer shows a short acceptance message and then leaves the desktop
+- **AND** the window says the team did not finish on time and that the patch was still accepted
 
 #### Scenario: New tab
 - **GIVEN** a session was started in another tab
@@ -93,14 +100,20 @@ The window SHALL let an admin pick an office, enter that office's password, and 
 - **WHEN** the admin creates a team, changes its name and keyword, and deletes a team
 - **THEN** the list matches those changes after Refresh
 
+#### Scenario: Restart one team
+- **GIVEN** one team has finished and another is still running
+- **WHEN** the admin restarts the finished team
+- **THEN** that team's time is cleared
+- **AND** the running team keeps its time
+
 #### Scenario: Reset with someone playing
 - **GIVEN** at least one team has started and not finished
-- **WHEN** the admin chooses Reset
+- **WHEN** the admin chooses Reset all
 - **THEN** a warning names that someone is still playing
 - **AND** the times are cleared only after the admin confirms
 
 #### Scenario: Reset with nobody playing
 - **GIVEN** no team is running
-- **WHEN** the admin confirms Reset
+- **WHEN** the admin confirms Reset all
 - **THEN** the times are cleared
 - **AND** the team names remain

@@ -4,9 +4,11 @@ import {
   adminBoard,
   adminLogin,
   adminReset,
+  adminRestartTeam,
   adminTeams,
   createTeam,
   deleteTeam,
+  clearSession,
   getRole,
   getSession,
   getToken,
@@ -16,7 +18,7 @@ import {
   teamStart,
   updateTeam,
 } from "./api.js";
-import { refreshCtTimer } from "./timer.js";
+import { refreshCtTimer, sessionStatusText } from "./timer.js";
 import "./improving-ct-october.css";
 
 function escapeText(value) {
@@ -47,6 +49,7 @@ const SHELL = `
       <button type="button" id="ct-mode-admin">Admin</button>
     </div>
     <p id="ct-error" class="ct-error" role="alert" hidden></p>
+    <div id="ct-team-panel">
     <form id="ct-crew">
       <label>Office
         <select id="ct-office">
@@ -59,6 +62,10 @@ const SHELL = `
       <div class="ct-actions"><button type="submit" id="ct-start">Start</button></div>
     </form>
     <p id="ct-status" hidden></p>
+    <div class="ct-actions" id="ct-new-game" hidden>
+      <button type="button" id="ct-new-game-button">Start a new game</button>
+    </div>
+    </div>
     <form id="ct-admin-login" hidden>
       <label>Office
         <select id="ct-admin-office">
@@ -82,7 +89,7 @@ const SHELL = `
       <ul id="ct-board" class="ct-board-rows"></ul>
       <h2>Podium</h2>
       <ol id="ct-podium" class="ct-podium"></ol>
-      <div class="ct-actions"><button type="button" id="ct-reset">Reset</button></div>
+      <div class="ct-actions"><button type="button" id="ct-reset">Reset all</button></div>
     </div>
   </div>
 `;
@@ -129,11 +136,23 @@ export class ImprovingCtOctoberApp extends Application {
     root.querySelector("#ct-create").addEventListener("click", () => this._createTeam());
     root.querySelector("#ct-refresh").addEventListener("click", () => this._loadBoard());
     root.querySelector("#ct-reset").addEventListener("click", () => this._reset());
+    root.querySelector("#ct-new-game-button").addEventListener("click", () => this._newGame());
+    this._onSession = (event) => {
+      const session = event.detail?.session;
+      if (!session || !this._root?.isConnected) return;
+      if (!this._teamTab()) return;
+      if (session.status === "running" || session.status === "finished") this._showStatus(session);
+    };
+    window.addEventListener("ct-october-session", this._onSession);
     if (getRole() === "admin" && getToken()) {
       this._showAdmin();
       return;
     }
     this._showCrew();
+  }
+
+  _onClose() {
+    if (this._onSession) window.removeEventListener("ct-october-session", this._onSession);
   }
 
   _error(message) {
@@ -142,13 +161,19 @@ export class ImprovingCtOctoberApp extends Application {
     error.textContent = message || "";
   }
 
+  _teamTab() {
+    return !this._root.querySelector("#ct-team-panel").hidden;
+  }
+
   _showCrew() {
     this._error("");
+    this._root.querySelector("#ct-team-panel").hidden = false;
     this._root.querySelector("#ct-admin-login").hidden = true;
     this._root.querySelector("#ct-admin").hidden = true;
     const status = this._root.querySelector("#ct-status");
     if (getRole() === "team" && getToken()) {
       getSession().then((result) => {
+        if (!this._teamTab()) return;
         const session = result.body?.session;
         if (session && session.status !== "ready") {
           this._showStatus(session);
@@ -156,12 +181,14 @@ export class ImprovingCtOctoberApp extends Application {
         }
         this._root.querySelector("#ct-crew").hidden = false;
         status.hidden = true;
+        this._root.querySelector("#ct-new-game").hidden = true;
         this._loadTeams();
       });
       return;
     }
     this._root.querySelector("#ct-crew").hidden = false;
     status.hidden = true;
+    this._root.querySelector("#ct-new-game").hidden = true;
     this._loadTeams();
   }
 
@@ -198,17 +225,31 @@ export class ImprovingCtOctoberApp extends Application {
   }
 
   _showStatus(session) {
+    if (!this._teamTab()) return;
     this._root.querySelector("#ct-crew").hidden = true;
     const status = this._root.querySelector("#ct-status");
     status.hidden = false;
-    status.textContent =
-      session?.status === "finished" ? "This team has finished." : "This team is running.";
+    status.textContent = sessionStatusText(session);
+    this._root.querySelector("#ct-new-game").hidden = session?.status !== "finished";
+  }
+
+  _newGame() {
+    clearSession();
+    try {
+      sessionStorage.removeItem("y2k-patch-applied");
+    } catch {
+      // This tab can still show the start form.
+    }
+    this._error("");
+    this._root.querySelector("#ct-status").hidden = true;
+    this._root.querySelector("#ct-new-game").hidden = true;
+    this._root.querySelector("#ct-crew").hidden = false;
+    this._loadTeams();
   }
 
   _showAdminLogin() {
     this._error("");
-    this._root.querySelector("#ct-crew").hidden = true;
-    this._root.querySelector("#ct-status").hidden = true;
+    this._root.querySelector("#ct-team-panel").hidden = true;
     this._root.querySelector("#ct-admin").hidden = true;
     this._root.querySelector("#ct-admin-login").hidden = false;
   }
@@ -228,8 +269,7 @@ export class ImprovingCtOctoberApp extends Application {
 
   _showAdmin() {
     this._error("");
-    this._root.querySelector("#ct-crew").hidden = true;
-    this._root.querySelector("#ct-status").hidden = true;
+    this._root.querySelector("#ct-team-panel").hidden = true;
     this._root.querySelector("#ct-admin-login").hidden = true;
     this._root.querySelector("#ct-admin").hidden = false;
     this._loadAdminTeams();
@@ -288,15 +328,33 @@ export class ImprovingCtOctoberApp extends Application {
   async _loadBoard() {
     const result = await adminBoard();
     const board = result.body || { teams: [], podium: [] };
-    this._root.querySelector("#ct-board").innerHTML = (board.teams || [])
+    const boardList = this._root.querySelector("#ct-board");
+    boardList.innerHTML = (board.teams || [])
       .map((team) => {
         const time = team.status === "ready" ? "" : ` — ${elapsedLabel(team.elapsedMs)}`;
-        return `<li>${escapeText(team.name)} — ${statusLabel(team.status)}${time}</li>`;
+        const restart = team.status === "ready" ? "" : `<button type="button" class="ct-restart">Restart</button>`;
+        return `<li data-team-id="${team.id}"><span>${escapeText(team.name)} — ${statusLabel(team.status)}${time}</span>${restart}</li>`;
       })
       .join("");
+    boardList.querySelectorAll(".ct-restart").forEach((button) => {
+      const row = button.closest("[data-team-id]");
+      const team = (board.teams || []).find((item) => String(item.id) === row.dataset.teamId);
+      button.addEventListener("click", () => this._restartTeam(team));
+    });
     this._root.querySelector("#ct-podium").innerHTML = (board.podium || [])
       .map((row) => `<li>${row.place}. ${escapeText(row.name)}</li>`)
       .join("");
+  }
+
+  async _restartTeam(team) {
+    if (!team) return;
+    const message =
+      team.status === "running"
+        ? `${team.name} is still playing. Restart this team anyway?`
+        : `Restart ${team.name}? Their time will be cleared.`;
+    if (!window.confirm(message)) return;
+    await adminRestartTeam(team.id);
+    this._loadBoard();
   }
 
   async _reset() {

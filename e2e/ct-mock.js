@@ -166,6 +166,14 @@ async function handle(route, state) {
     return json(route, 200, { ok: true });
   }
 
+  const restartMatch = path.match(/\/ct\/admin\/teams\/(\d+)\/reset$/);
+  if (restartMatch && method === "POST") {
+    const team = state.teams.find((item) => item.id === Number(restartMatch[1]) && item.office === state.adminOffice);
+    if (!team) return json(route, 404, { error: "Team not found" });
+    state.sessions[team.id] = { startedAt: null, finishedAt: null };
+    return json(route, 200, { runningCount: 0 });
+  }
+
   if (path.endsWith("/ct/admin/board") && method === "GET") {
     return json(route, 200, board(state, state.adminOffice));
   }
