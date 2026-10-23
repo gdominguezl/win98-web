@@ -1,12 +1,4 @@
-import { registerStation } from "./engine.js";
-
-const STATIONS = {
-  argentina: [],
+export const STATIONS = {
+  argentina: [{ id: "recycle-clue", load: () => import("./argentina-recycle.js") }],
   chile: [],
 };
-
-for (const office of Object.keys(STATIONS)) {
-  for (const entry of STATIONS[office]) {
-    registerStation(office, entry);
-  }
-}

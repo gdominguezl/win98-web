@@ -1,6 +1,6 @@
 import { fs, mounts } from "@zenfs/core";
 import { getOffice, getRole, getToken } from "../api.js";
-import "./registry.js";
+import { STATIONS } from "./registry.js";
 
 const MARKER = "/C:/.ct_stations.json";
 const OFFICES = ["argentina", "chile"];
@@ -13,6 +13,12 @@ let chain = Promise.resolve();
 export function registerStation(office, entry) {
   if (!OFFICES.includes(office) || !entry?.id || typeof entry.load !== "function") return;
   registry[office].push(entry);
+}
+
+for (const office of Object.keys(STATIONS)) {
+  for (const entry of STATIONS[office]) {
+    registerStation(office, entry);
+  }
 }
 
 function teamSession() {
