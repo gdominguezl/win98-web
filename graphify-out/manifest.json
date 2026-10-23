@@ -942,9 +942,9 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792725736.961054,
-    "seen": 1792726084.6460679,
-    "ast_hash": "fabe4da881b60f983243015dd69c24a7",
+    "mtime": 1792788864.4630404,
+    "seen": 1792788886.927042,
+    "ast_hash": "f699c8e4444ac75122936289a982efb2",
     "semantic_hash": ""
   },
   "src/config/apps.js": {
@@ -1002,9 +1002,9 @@
     "semantic_hash": ""
   },
   "src/config/icons.js": {
-    "mtime": 1792692174.0450153,
-    "seen": 1792693729.5223,
-    "ast_hash": "f1c284bf6209ef5e774d8caa39636bfb",
+    "mtime": 1792782899.8187113,
+    "seen": 1792788886.927047,
+    "ast_hash": "f37e20112ff089c54b3580f9d9f41585",
     "semantic_hash": ""
   },
   "src/config/languages.js": {
@@ -6528,9 +6528,9 @@
     "semantic_hash": ""
   },
   "e2e/y2k_patch.spec.js": {
-    "mtime": 1792726072.2782722,
-    "seen": 1792726084.645987,
-    "ast_hash": "c14db6ec0d3850b62b67411d17742f61",
+    "mtime": 1792778975.882574,
+    "seen": 1792788886.926966,
+    "ast_hash": "9d805eff94a8de41b8c78173a0dde863",
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/code.js": {
@@ -6588,9 +6588,9 @@
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/README.md": {
-    "mtime": 1792725214.2322042,
-    "seen": 1792726084.646202,
-    "ast_hash": "75ccebab229509e9bc69334e17622b18",
+    "mtime": 1792788116.2696326,
+    "seen": 1792788886.9271739,
+    "ast_hash": "71f431ac5ea52ca2ce27f5f2d4f54f63",
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/screenshot.png": {
@@ -6600,69 +6600,33 @@
     "semantic_hash": ""
   },
   "e2e/ct-mock.js": {
-    "mtime": 1792725086.4051607,
-    "seen": 1792726084.645972,
-    "ast_hash": "8d2b170d8afc811db00253526b309e59",
+    "mtime": 1792787268.452202,
+    "seen": 1792788886.926953,
+    "ast_hash": "47a72080783f986ca45cb9fb2ab2e176",
     "semantic_hash": ""
   },
   "e2e/improving_ct_october.spec.js": {
-    "mtime": 1792725681.3940506,
-    "seen": 1792726084.645979,
-    "ast_hash": "ee45c4bc32335b73f4526020e3329380",
+    "mtime": 1792788087.6694264,
+    "seen": 1792788886.926958,
+    "ast_hash": "ed5e2338b682f1cee105a332024b05d2",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/api.js": {
-    "mtime": 1792725059.5303204,
-    "seen": 1792726084.646019,
-    "ast_hash": "66ff14e33efb7eaa1594528b7f321a4d",
+    "mtime": 1792787753.88554,
+    "seen": 1792788886.926997,
+    "ast_hash": "71f218acb6eeafeeefad50f30ecacd63",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/improving-ct-october-app.js": {
-    "mtime": 1792725043.0908196,
-    "seen": 1792726084.6460202,
-    "ast_hash": "636e23e4c020637d0dcd86f7efeb7a1f",
+    "mtime": 1792787759.2517126,
+    "seen": 1792788886.926998,
+    "ast_hash": "939ced201599527a462c97c3add95c85",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/timer.js": {
-    "mtime": 1792725069.0334733,
-    "seen": 1792726084.6460202,
-    "ast_hash": "5f5c1551846784eebce4ff87a29bd98e",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-improving-ct-october/.openspec.yaml": {
-    "mtime": 1792724084.3611467,
-    "seen": 1792726084.6461399,
-    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-improving-ct-october/design.md": {
-    "mtime": 1792724163.2713714,
-    "seen": 1792726084.6461408,
-    "ast_hash": "84ebf263dafb8d89cdcc00bda06231e5",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-improving-ct-october/proposal.md": {
-    "mtime": 1792724110.5375137,
-    "seen": 1792726084.6461408,
-    "ast_hash": "5bf5474814997b94338ea53c5f8c4d7f",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-improving-ct-october/specs/apps/improving-ct-october/spec.md": {
-    "mtime": 1792724127.9574397,
-    "seen": 1792726084.646142,
-    "ast_hash": "7fac6f776b1c30f6bace3a3cb6f65679",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-improving-ct-october/specs/apps/y2k-patch/spec.md": {
-    "mtime": 1792724131.2774148,
-    "seen": 1792726084.646142,
-    "ast_hash": "7a7c660c542ac56e4931f8d91fef139f",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-improving-ct-october/tasks.md": {
-    "mtime": 1792724170.782693,
-    "seen": 1792726084.646143,
-    "ast_hash": "0e17021d86faa2482fb41beac441b786",
+    "mtime": 1792778997.8032353,
+    "seen": 1792788886.926998,
+    "ast_hash": "756d1920285886a1e9e2bdb4d44e04df",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-22-add-y2k-patch-app/.openspec.yaml": {
@@ -6696,15 +6660,105 @@
     "semantic_hash": ""
   },
   "openspec/specs/apps/y2k-patch/spec.md": {
-    "mtime": 1792721732.9540105,
-    "seen": 1792726084.6461692,
-    "ast_hash": "1c4af1018e502762b03c0f1520bd92a2",
+    "mtime": 1792783171.3079257,
+    "seen": 1792788886.9271429,
+    "ast_hash": "b93b8ecbbb65033ef91967b7648056af",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/README.md": {
-    "mtime": 1792725211.5515053,
-    "seen": 1792726084.646189,
-    "ast_hash": "534c1ed2878ddbab8bafc1386a2f429b",
+    "mtime": 1792788116.1836302,
+    "seen": 1792788886.9271622,
+    "ast_hash": "a28251553566ecda7f4801e0f6fefd48",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-add-improving-ct-october/.openspec.yaml": {
+    "mtime": 1792724084.3611467,
+    "seen": 1792788886.927134,
+    "ast_hash": "db874330e3bdf09469eb2e2124cebd99",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-add-improving-ct-october/design.md": {
+    "mtime": 1792780811.4616606,
+    "seen": 1792788886.927135,
+    "ast_hash": "8b1f148d6372e3ffc5f1ba905c775ef6",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-add-improving-ct-october/proposal.md": {
+    "mtime": 1792724110.5375137,
+    "seen": 1792788886.927135,
+    "ast_hash": "5bf5474814997b94338ea53c5f8c4d7f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-add-improving-ct-october/specs/apps/improving-ct-october/spec.md": {
+    "mtime": 1792780810.0204253,
+    "seen": 1792788886.927136,
+    "ast_hash": "fd24104e965ff222ee325a893190a10d",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-add-improving-ct-october/specs/apps/y2k-patch/spec.md": {
+    "mtime": 1792724131.2774148,
+    "seen": 1792788886.927136,
+    "ast_hash": "7a7c660c542ac56e4931f8d91fef139f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-23-add-improving-ct-october/tasks.md": {
+    "mtime": 1792726470.214093,
+    "seen": 1792788886.9271371,
+    "ast_hash": "98cffef1b8990367689a1ec5d45c8603",
+    "semantic_hash": ""
+  },
+  "openspec/changes/edit-ct-patch-code/.openspec.yaml": {
+    "mtime": 1792785048.681969,
+    "seen": 1792788886.9271371,
+    "ast_hash": "4a33b58f0c8a77f25b6316ea945adf72",
+    "semantic_hash": ""
+  },
+  "openspec/changes/edit-ct-patch-code/design.md": {
+    "mtime": 1792785049.2526023,
+    "seen": 1792788886.927138,
+    "ast_hash": "c4170e043ebae8f01d035934af7e4f12",
+    "semantic_hash": ""
+  },
+  "openspec/changes/edit-ct-patch-code/proposal.md": {
+    "mtime": 1792785049.240128,
+    "seen": 1792788886.927138,
+    "ast_hash": "67f1477caa9bf19b03572493e6e52335",
+    "semantic_hash": ""
+  },
+  "openspec/changes/edit-ct-patch-code/specs/apps/improving-ct-october/spec.md": {
+    "mtime": 1792785049.2621057,
+    "seen": 1792788886.927138,
+    "ast_hash": "567ee5dcb379dbd12181d869d3e5d4ed",
+    "semantic_hash": ""
+  },
+  "openspec/changes/edit-ct-patch-code/tasks.md": {
+    "mtime": 1792785049.2704666,
+    "seen": 1792788886.927139,
+    "ast_hash": "cb89004284fc844ed89ab0d3112edec2",
+    "semantic_hash": ""
+  },
+  "openspec/specs/apps/improving-ct-october/spec.md": {
+    "mtime": 1792783171.3068128,
+    "seen": 1792788886.92714,
+    "ast_hash": "8bed036c3d7876e2939edd146428e66a",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/screenshot.png": {
+    "mtime": 1792726451.8359416,
+    "seen": 1792788886.927201,
+    "ast_hash": "bcda0acc2e02c4a58c57bbcce5dc66cf",
+    "semantic_hash": ""
+  },
+  "src/assets/icons/improving-ct-october-16.png": {
+    "mtime": 1792782899.664048,
+    "seen": 1792788886.927283,
+    "ast_hash": "383d51fb1e7b37d72952982377ae25f8",
+    "semantic_hash": ""
+  },
+  "src/assets/icons/improving-ct-october-32.png": {
+    "mtime": 1792782899.6376526,
+    "seen": 1792788886.927284,
+    "ast_hash": "86a2d081b65c7b5addd618277dcb80b9",
     "semantic_hash": ""
   }
 }
