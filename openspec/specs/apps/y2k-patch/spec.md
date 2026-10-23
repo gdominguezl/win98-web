@@ -61,18 +61,26 @@ The system SHALL refuse a code that does not match the configured patch code and
 - **THEN** the same error is shown and the success message does not appear
 
 ### Requirement: A correct code saves the system
-The system SHALL accept the configured code ignoring letter case, spaces, and dashes, and SHALL then show a desktop-wide confirmation that the crash was stopped.
+The system SHALL send the typed code to the server, SHALL accept it only when the server accepts it, and SHALL then show the desktop confirmation that the crash was stopped.
 
 #### Scenario: Exact code
-- **GIVEN** the patch has not been applied in this tab
+- **GIVEN** this tab has a running team session and the patch has not been applied in this tab
 - **WHEN** the user submits the configured code
-- **THEN** a short install sequence plays over the desktop
+- **THEN** the server records the finish
+- **AND** a short install sequence plays over the desktop
 - **AND** the desktop then shows that the patch is installed and files, memories, and messages will survive midnight
 
 #### Scenario: Loose typing
-- **GIVEN** the configured code is letters and digits
-- **WHEN** the user submits that code with different letter case, extra spaces, or dashes
-- **THEN** it is accepted the same way as the exact code
+- **GIVEN** this tab has a running team session
+- **WHEN** the user submits the configured code with different letter case, extra spaces, or dashes
+- **THEN** the server accepts it the same way as the exact code
+
+#### Scenario: Past 60 minutes
+- **GIVEN** the desktop countdown shows Game over
+- **WHEN** the user submits the configured code
+- **THEN** the server records the finish
+- **AND** the success sequence plays
+- **AND** Game over is no longer shown
 
 #### Scenario: Same tab
 - **GIVEN** the patch was accepted in this browser tab
@@ -81,6 +89,22 @@ The system SHALL accept the configured code ignoring letter case, spaces, and da
 - **AND** it does not ask for the code again and does not replay the desktop sequence
 
 #### Scenario: New tab
-- **GIVEN** the patch was accepted in another tab
-- **WHEN** the user opens the desktop in a new tab
-- **THEN** Y2K Patch asks for the code again
+- **GIVEN** the server already finished this team's session
+- **WHEN** the user starts that team in a new tab and submits the code
+- **THEN** the window shows that the patch is already installed
+- **AND** the desktop sequence does not replay
+
+### Requirement: The patch needs a live session
+The window SHALL NOT play the success sequence when this tab has no team session, or when the server says the team was reset.
+
+#### Scenario: No session
+- **GIVEN** this tab has not started a team
+- **WHEN** the user submits a code
+- **THEN** the window tells them to start a session in Improving CT October
+- **AND** the success sequence does not play
+
+#### Scenario: Reset team
+- **GIVEN** the server says this team was reset
+- **WHEN** the user submits the configured code
+- **THEN** the window says the team was reset and to contact the admin or start a new session
+- **AND** the success sequence does not play
