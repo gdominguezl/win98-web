@@ -4,6 +4,18 @@ const ICON = '.desktop .explorer-icon[data-name="Fotolog.lnk.json"]';
 const WINDOW = '.window[data-app-id="fotolog"]';
 const TASKBAR_BUTTON = '.taskbar-button:has-text("Fotolog")';
 
+async function expectInsideDesktop(page, win) {
+  const winBox = await win.boundingBox();
+  const area = await page.locator('#desktop-area').boundingBox();
+  const taskbar = await page.locator('.taskbar').boundingBox();
+  expect(winBox.y).toBeGreaterThanOrEqual(area.y - 1);
+  expect(winBox.x).toBeGreaterThanOrEqual(area.x - 1);
+  expect(winBox.x + winBox.width).toBeLessThanOrEqual(area.x + area.width + 1);
+  expect(winBox.y + winBox.height).toBeLessThanOrEqual(area.y + area.height + 1);
+  expect(winBox.y + winBox.height).toBeLessThanOrEqual(taskbar.y + 1);
+  return winBox;
+}
+
 test.describe('Fotolog App', () => {
   // A 1440x900 desktop comfortably fits the 1024x768 window.
   test.use({ viewport: { width: 1440, height: 900 } });
@@ -156,5 +168,66 @@ test.describe('Fotolog App', () => {
       return [...cv.getContext('2d').getImageData(20, 20, 1, 1).data];
     }, shot.toString('base64'));
     expect(pixel).toEqual([255, 255, 255, 255]);
+  });
+});
+
+test.describe('Fotolog window fit', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.route(
+      (url) => url.pathname === '/fotolog',
+      (route) =>
+        route.fulfill({ contentType: 'text/html', body: '<title>fotolog-stub</title>' }),
+    );
+    await page.goto('/win98-web/');
+    await page.waitForSelector('#boot-screen', { state: 'hidden', timeout: 60000 });
+  });
+
+  test.describe('short desktop', () => {
+    test.use({ viewport: { width: 1280, height: 600 } });
+
+    test('opens inside the desktop and above the taskbar', async ({ page }) => {
+      await page.evaluate(() => window.System.launchApp('fotolog'));
+      const win = page.locator(WINDOW);
+      await expect(win).toBeVisible({ timeout: 15000 });
+      await expect(win).not.toHaveClass(/maximized/);
+      const winBox = await expectInsideDesktop(page, win);
+      expect(Math.round(winBox.width)).toBeLessThanOrEqual(1024);
+      expect(Math.round(winBox.height)).toBeLessThan(768);
+    });
+
+    test('maximize then restore returns to the fitted size', async ({ page }) => {
+      await page.evaluate(() => window.System.launchApp('fotolog'));
+      const win = page.locator(WINDOW);
+      await expect(win).toBeVisible({ timeout: 15000 });
+      const before = await expectInsideDesktop(page, win);
+
+      await win.locator('.window-maximize-button').click();
+      await expect(win).toHaveClass(/maximized/);
+      await win.locator('.window-maximize-button').click();
+      await expect(win).not.toHaveClass(/maximized/);
+
+      const after = await expectInsideDesktop(page, win);
+      expect(Math.round(after.width)).toBe(Math.round(before.width));
+      expect(Math.round(after.height)).toBe(Math.round(before.height));
+      expect(Math.abs(after.x - before.x)).toBeLessThanOrEqual(1);
+      expect(Math.abs(after.y - before.y)).toBeLessThanOrEqual(1);
+    });
+  });
+
+  test.describe('tiny desktop', () => {
+    test.use({ viewport: { width: 800, height: 400 } });
+
+    test('stays within the desktop and does not shrink below 240px', async ({ page }) => {
+      const errors = [];
+      page.on('pageerror', (error) => errors.push(String(error)));
+      await page.evaluate(() => window.System.launchApp('fotolog'));
+      const win = page.locator(WINDOW);
+      await expect(win).toBeVisible({ timeout: 15000 });
+      const winBox = await expectInsideDesktop(page, win);
+      const area = await page.locator('#desktop-area').boundingBox();
+      expect(winBox.width).toBeGreaterThanOrEqual(Math.min(240, area.width) - 1);
+      expect(winBox.height).toBeGreaterThanOrEqual(Math.min(240, area.height) - 1);
+      expect(errors).toEqual([]);
+    });
   });
 });

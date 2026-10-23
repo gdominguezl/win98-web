@@ -9,7 +9,7 @@ The classic Webamp-based player is archived in place under the `webamp` app id â
 ## Key Features
 
 - **Desktop and Start menu entry**: A "Winamp" shortcut on the desktop and an entry directly under Start > Programs. Existing users' old "Winamp" shortcuts are repointed to this app once, preserving the icon's position on the desktop.
-- **Compact window**: Opens as a 640x480 window; it can be resized and maximized like any other app. Note: the MSN Winamp page switches to its stacked mobile layout below ~760px wide, so at the default size it scrolls vertically.
+- **Content-sized window**: Opens with a 901x592 content area (the framed page), large enough for the desktop layout with the player, playlist and effects. On a short screen the window shrinks to the visible desktop so the title bar stays visible and the bottom edge stays above the taskbar. It can be resized and maximized like any other app.
 - **Single instance**: Launching it again focuses (or restores) the existing window instead of opening a second one or reloading the frame.
 - **Configurable URL**: The framed URL is the build-time variable `VITE_MSN_URL` plus `/winamp`, defaulting to `/winamp` on the same origin.
 - **Sign-in required**: Winamp is a private MSN route; signed-out users get the MSN login page inside the window. After signing in, MSN navigates to its home page, so close and reopen the window to reach Winamp.
@@ -20,7 +20,7 @@ The classic Webamp-based player is archived in place under the `webamp` app id â
 
 1. Double-click **Winamp** on the desktop (or open Start > Programs > Winamp).
 2. Sign in inside the window if prompted, then reopen the window to reach Winamp.
-3. Resize or maximize the window for a larger view (the page switches to its desktop layout at wider sizes).
+3. Resize or maximize the window if the screen is shorter than the page.
 
 ## Development
 

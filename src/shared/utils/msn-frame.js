@@ -4,6 +4,52 @@ const MSN_APP_IDS = {
   "/fotolog": "fotolog",
 };
 
+const MIN_EDGE = 240;
+
+function limitEdge(current, available) {
+  if (!(available > 0) || current <= available) {
+    return current;
+  }
+  if (available < MIN_EDGE) {
+    return available;
+  }
+  return available;
+}
+
+function positionInDesktop(win) {
+  const areaEl = document.getElementById("desktop-area");
+  if (!areaEl) {
+    return;
+  }
+  const area = areaEl.getBoundingClientRect();
+  const screen = document.getElementById("screen").getBoundingClientRect();
+  const width = win.outerWidth();
+  const height = win.outerHeight();
+  win.css({
+    left: area.left - screen.left + Math.max(0, (area.width - width) / 2),
+    top: area.top - screen.top + Math.max(0, (area.height - height) / 2),
+  });
+}
+
+function fitToDesktop(win) {
+  const areaEl = document.getElementById("desktop-area");
+  if (!areaEl) {
+    return;
+  }
+  const area = areaEl.getBoundingClientRect();
+  const outerWidth = limitEdge(win.outerWidth(), area.width);
+  const outerHeight = limitEdge(win.outerHeight(), area.height);
+  if (outerWidth !== win.outerWidth() || outerHeight !== win.outerHeight()) {
+    win.setDimensions({ outerWidth, outerHeight });
+  }
+  positionInDesktop(win);
+  const centerInScreen = win.center.bind(win);
+  win.center = () => {
+    centerInScreen();
+    positionInDesktop(win);
+  };
+}
+
 export function msnUrl(path) {
   const base = (import.meta.env.VITE_MSN_URL || "/").replace(/\/+$/, "");
   return base + path;
@@ -62,10 +108,19 @@ export function interceptAppShortcuts(iframe) {
 }
 
 export function createMsnFrameWindow(app, { path, title }) {
+  const hasInner =
+    app.config.innerWidth != null && app.config.innerHeight != null;
   const win = new $Window({
     title: app.title,
-    outerWidth: app.width,
-    outerHeight: app.height,
+    ...(hasInner
+      ? {
+          innerWidth: app.config.innerWidth,
+          innerHeight: app.config.innerHeight,
+        }
+      : {
+          outerWidth: app.width,
+          outerHeight: app.height,
+        }),
     resizable: app.resizable,
     icons: app.icon,
   });
@@ -86,6 +141,7 @@ export function createMsnFrameWindow(app, { path, title }) {
   app.iframe = win.$content.find("iframe")[0];
   app._setupIframeForInactivity(app.iframe);
   interceptAppShortcuts(app.iframe);
+  fitToDesktop(win);
 
   return win;
 }

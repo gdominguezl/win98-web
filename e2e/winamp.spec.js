@@ -22,8 +22,20 @@ async function readLnkAppId(page, path) {
   }, path);
 }
 
+async function expectInsideDesktop(page, win) {
+  const winBox = await win.boundingBox();
+  const area = await page.locator('#desktop-area').boundingBox();
+  const taskbar = await page.locator('.taskbar').boundingBox();
+  expect(winBox.y).toBeGreaterThanOrEqual(area.y - 1);
+  expect(winBox.x).toBeGreaterThanOrEqual(area.x - 1);
+  expect(winBox.x + winBox.width).toBeLessThanOrEqual(area.x + area.width + 1);
+  expect(winBox.y + winBox.height).toBeLessThanOrEqual(area.y + area.height + 1);
+  expect(winBox.y + winBox.height).toBeLessThanOrEqual(taskbar.y + 1);
+  return winBox;
+}
+
 test.describe('Winamp App', () => {
-  // A 1440x900 desktop comfortably fits the 640x480 window.
+  // A 1440x900 desktop comfortably fits the 901x592 content area.
   test.use({ viewport: { width: 1440, height: 900 } });
 
   test.beforeEach(async ({ page }) => {
@@ -56,11 +68,11 @@ test.describe('Winamp App', () => {
 
     await expect(page.locator(TASKBAR_BUTTON)).toBeVisible();
 
-    // 640x480, not maximized.
+    // Content area 901x592, not maximized.
     await expect(win).not.toHaveClass(/maximized/);
-    const winBox = await win.boundingBox();
-    expect(Math.round(winBox.width)).toBe(640);
-    expect(Math.round(winBox.height)).toBe(480);
+    const frameBox = await iframe.boundingBox();
+    expect(Math.abs(frameBox.width - 901)).toBeLessThanOrEqual(1);
+    expect(Math.abs(frameBox.height - 592)).toBeLessThanOrEqual(1);
   });
 
   test('Programs lists Winamp and not Winamp Classic', async ({ page }) => {
@@ -224,5 +236,64 @@ test.describe('Winamp App', () => {
 
     expect(await readLnkAppId(page, DESKTOP_LNK)).toBe('webamp');
     expect(await readLnkAppId(page, PROGRAMS_LNK)).toBe('webamp');
+  });
+});
+
+test.describe('Winamp window fit', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.route(
+      (url) => url.pathname === '/winamp',
+      (route) =>
+        route.fulfill({ contentType: 'text/html', body: '<title>winamp-stub</title>' }),
+    );
+    await page.goto('/win98-web/');
+    await page.waitForSelector('#boot-screen', { state: 'hidden', timeout: 60000 });
+  });
+
+  test.describe('short desktop', () => {
+    test.use({ viewport: { width: 1280, height: 600 } });
+
+    test('opens inside the desktop and above the taskbar', async ({ page }) => {
+      await page.evaluate(() => window.System.launchApp('winamp'));
+      const win = page.locator(WINDOW);
+      await expect(win).toBeVisible({ timeout: 15000 });
+      await expect(win).not.toHaveClass(/maximized/);
+      await expectInsideDesktop(page, win);
+    });
+
+    test('maximize then restore returns to the fitted size', async ({ page }) => {
+      await page.evaluate(() => window.System.launchApp('winamp'));
+      const win = page.locator(WINDOW);
+      await expect(win).toBeVisible({ timeout: 15000 });
+      const before = await expectInsideDesktop(page, win);
+
+      await win.locator('.window-maximize-button').click();
+      await expect(win).toHaveClass(/maximized/);
+      await win.locator('.window-maximize-button').click();
+      await expect(win).not.toHaveClass(/maximized/);
+
+      const after = await expectInsideDesktop(page, win);
+      expect(Math.round(after.width)).toBe(Math.round(before.width));
+      expect(Math.round(after.height)).toBe(Math.round(before.height));
+      expect(Math.abs(after.x - before.x)).toBeLessThanOrEqual(1);
+      expect(Math.abs(after.y - before.y)).toBeLessThanOrEqual(1);
+    });
+  });
+
+  test.describe('tiny desktop', () => {
+    test.use({ viewport: { width: 800, height: 400 } });
+
+    test('stays within the desktop and does not shrink below 240px', async ({ page }) => {
+      const errors = [];
+      page.on('pageerror', (error) => errors.push(String(error)));
+      await page.evaluate(() => window.System.launchApp('winamp'));
+      const win = page.locator(WINDOW);
+      await expect(win).toBeVisible({ timeout: 15000 });
+      const winBox = await expectInsideDesktop(page, win);
+      const area = await page.locator('#desktop-area').boundingBox();
+      expect(winBox.width).toBeGreaterThanOrEqual(Math.min(240, area.width) - 1);
+      expect(winBox.height).toBeGreaterThanOrEqual(Math.min(240, area.height) - 1);
+      expect(errors).toEqual([]);
+    });
   });
 });

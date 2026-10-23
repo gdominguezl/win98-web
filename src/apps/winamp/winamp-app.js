@@ -9,8 +9,8 @@ export class WinampApp extends IFrameApplication {
     description: "Listen to music with your friends.",
     icon: ICONS.webamp,
     category: "",
-    width: 640,
-    height: 480,
+    innerWidth: 901,
+    innerHeight: 592,
     resizable: true,
     isSingleton: true,
   };

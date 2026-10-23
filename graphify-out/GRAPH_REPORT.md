@@ -1,27 +1,27 @@
 # Graph Report - win98-web  (2026-10-22)
 
 ## Corpus Check
-- 373 files · ~519,348 words
+- 381 files · ~526,402 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 475 file(s) not represented in the graph (top: .cur 196, .ico 97, .css 80)
 
 ## Summary
-- 4172 nodes · 8840 edges · 243 communities (141 shown, 102 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 317 edges (avg confidence: 0.87)
+- 4315 nodes · 8986 edges · 248 communities (152 shown, 96 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 325 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `69c999c6`
+- Built from commit: `68a70d0e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - desktop-context-menu-builder.js
 - ADDED Requirements
-- local-storage.js
-- ShowDialogWindow
+- display-properties-app.js
+- Application
 - IconManager
-- ADDED Requirements
+- Requirements
 - explorer-app.js
 - initDesktop
 - theme-manager.js
@@ -43,21 +43,21 @@
 - resume
 - MenuBarBuilder
 - NotepadApp
-- joinPath
 - ADDED Requirements
 - Requirements
+- Requirements
 - enqueueRequest
-- sound-manager.js
+- taskbar.js
 - verify_container.sh
-- AboutApp
+- about-app.js
 - DisplayPropertiesApp
 - msn_app_links.spec.js
-- ADDED Requirements
+- solitaire-app.js
 - Image Resizer
-- show_error_message
-- getZenFSFileUrl
+- help.js
+- zenfs-utils.js
 - CalculatorLogic
-- Design
+- ADDED Requirements
 - zenfs-init.js
 - Sidebar
 - Tasks
@@ -67,36 +67,37 @@
 - generate_registry.js
 - MediaPlayerApp
 - MSN Messenger
-- FlashPlayerApp
-- IFrameApplication
-- ._showSingleProperties
-- IFrameApplication
+- Requirements
+- createMsnFrameWindow
+- DesktopThemesApp
+- Design
 - Proposal
 - asset-preloader.js
-- Tasks
+- Requirement: Windows never open under the taskbar
 - PinballApp
-- Proposal
+- AppMakerApp
 - parse-theme.js
-- Tasks
+- color-data.js
 - getPathName
 - Proposal
 - IconScheme
 - MinesweeperApp
 - simulate-random-gestures.js
-- ._onLaunch
+- Tasks
 - Proposal: Semantic HTML Improvements for Windows 98 Web Edition
 - DiabloApp
 - SpiderSolitaireApp
+- wallpapers.js
 - Changelog
 - getItem
 - Winamp
 - globals.d.ts
 - Theme to CSS App
 - DoomApp
-- ReportABugApp
+- QuakeApp
 - makeDraggable
 - Fotolog
-- setInstantPosition
+- load
 - eye-gaze-mode.js
 - NavigationHistory
 - scripts
@@ -105,13 +106,13 @@
 - DOSShell
 - Pile
 - App Maker
-- taskbar.js
+- Proposal
 - HelpApp
 - @playwright/test
-- Design
+- Proposal
 - Tool
-- system/floppy-manager.js
-- Tasks
+- Proposal
+- tip-of-the-day-app.js
 - DosGamesDownloaderApp
 - Game
 - agent.js
@@ -123,29 +124,35 @@
 - SolitaireApp
 - WordPadApp
 - color-schemes.js
-- busy-state-manager.js
+- releaseBusyState
 - TableauPile
 - IconScheme
 - KeenApp
 - PaintApp
-- Design
-- QuakeApp
-- TaskManagerApp
+- Tasks
+- Tasks
+- Requirement: Winamp window size and lifecycle
 - Game
 - Windows 98 Web Edition: AI Agent Development Guidelines
 - openspec-explore/SKILL.md
 - $Window
 - ask
-- BuyMeACoffeeApp
-- about.js
+- Screensaver
+- Design
 - winamp.spec.js
 - loadSpriteSheet
 - CursorItem
-- animated-logo.js
+- Tasks
+- setInstantPosition
 - Tooltip
 - How to Add a New Desktop Theme
-- enqueueRequest
+- constructor
+- Design
 - Toolbar
+- view_bitmap
+- FotologApp
+- MsnMessengerApp
+- WinampApp
 - spider-solitaire/game.js
 - Windows 98 Web Edition: AI Agent Development Guidelines
 - app-localization.js
@@ -177,7 +184,6 @@
 - Support the Project
 - MS-DOS Prompt
 - CursorExplorerApp
-- esheep.js
 - eSheep
 - Flash Player
 - FreeCell
@@ -192,7 +198,7 @@
 - Quake
 - Report a Bug
 - Solitaire
-- SoundSchemeExplorerApp
+- ShowDialogWindow
 - Spider Solitaire
 - Tip of the Day App
 - Webamp App
@@ -248,7 +254,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `ShowDialogWindow()` - 143 edges
-2. `Application` - 94 edges
+2. `Application` - 97 edges
 3. `getItem()` - 77 edges
 4. `ICONS` - 70 edges
 5. `setItem()` - 66 edges
@@ -260,15 +266,15 @@
 
 ## Surprising Connections (you probably didn't know these)
 - `Scenario: Known profile path` --references--> `resume()`  [INFERRED]
-  openspec/changes/archive/2026-10-21-add-container-image/specs/container-delivery/spec.md → ms-agent.js
-- `Scenario: Known profile path` --references--> `resume()`  [INFERRED]
   openspec/specs/container-delivery/spec.md → ms-agent.js
 - `Proposed Changes:` --references--> `ShowDialogWindow()`  [INFERRED]
   public/docs/semantic-html-proposal.md → src/shared/components/dialog-window.js
 - `Open Questions` --references--> `createMsnFrameWindow()`  [INFERRED]
-  openspec/changes/add-fotolog-app/design.md → src/shared/utils/msn-frame.js
-- `Risks / Trade-offs` --references--> `createMsnFrameWindow()`  [INFERRED]
-  openspec/changes/add-msn-winamp-app/design.md → src/shared/utils/msn-frame.js
+  openspec/changes/archive/2026-10-22-add-fotolog-app/design.md → src/shared/utils/msn-frame.js
+- `What Changes` --references--> `createMsnFrameWindow()`  [INFERRED]
+  openspec/changes/fit-msn-windows-to-desktop/proposal.md → src/shared/utils/msn-frame.js
+- `Core Systems (`src/system/`)` --references--> `RecycleBinManager`  [INFERRED]
+  AGENTS.md → src/shell/explorer/file-operations/recycle-bin-manager.js
 
 ## Import Cycles
 - 3-file cycle: `src/apps/paint/src/functions.js -> src/apps/paint/src/tools.js -> src/apps/paint/src/tool-options.js -> src/apps/paint/src/functions.js`
@@ -292,87 +298,91 @@
 - 4-file cycle: `src/shell/start-menu/start-menu-utils.js -> src/system/app-manager.js -> src/system/application.js -> src/shell/taskbar/taskbar.js -> src/shell/start-menu/start-menu-utils.js`
 - 4-file cycle: `src/apps/agent/agent.js -> src/system/app-manager.js -> src/config/apps.js -> src/config/app-registry.js -> src/apps/agent/agent.js`
 
-## Communities (243 total, 102 thin omitted)
+## Communities (248 total, 96 thin omitted)
 
 ### Community 2 - "desktop-context-menu-builder.js"
 Cohesion: 0.16
-Nodes (18): launchDisplayPropertiesApp(), PALETTES, settingsTab, DesktopContextMenuBuilder, applyColorMode(), COLOR_MODES, getColorModes(), getCurrentColorMode() (+10 more)
+Nodes (19): launchDisplayPropertiesApp(), PALETTES, settingsTab, applyColorMode(), COLOR_MODES, getColorModes(), getCurrentColorMode(), initColorModeManager() (+11 more)
 
 ### Community 3 - "ADDED Requirements"
 Cohesion: 0.05
 Nodes (37): ADDED Requirements, Purpose, Requirement: Double click opens Fotolog in a window, Requirement: Fotolog appears on the desktop, Requirement: Fotolog is listed under Start menu Programs, Requirement: Fotolog URL follows the MSN base URL, Requirement: Frame is usable, accessible and visually consistent, Requirement: Inactivity timer follows user activity in the frame (+29 more)
 
-### Community 4 - "local-storage.js"
-Cohesion: 0.11
-Nodes (4): SCREENSAVERS, appearanceTab, screensaverTab, Screensaver
+### Community 4 - "display-properties-app.js"
+Cohesion: 0.17
+Nodes (3): appearanceTab, backgroundTab, screensaverTab
 
-### Community 5 - "ShowDialogWindow"
-Cohesion: 0.06
-Nodes (23): @zenfs/emscripten, BuggyProgramApp, WAD_NAMES, EPISODE_NAMES, createPdfViewerContent(), HIGHLIGHT_JS_THEMES, ICONS, languages (+15 more)
+### Community 5 - "Application"
+Cohesion: 0.05
+Nodes (23): Decisions, @zenfs/emscripten, BuggyProgramApp, BuyMeACoffeeApp, CommandPromptApp, WAD_NAMES, ESheepApp, closeAllESheep() (+15 more)
 
 ### Community 6 - "IconManager"
 Cohesion: 0.08
 Nodes (3): IconManager, AddressBar, FilePicker
 
-### Community 7 - "ADDED Requirements"
-Cohesion: 0.06
-Nodes (31): ADDED Requirements, Purpose, Requirement: Classic Webamp is archived, not removed, Requirement: Existing users are migrated without losing layout, Requirement: Frame is usable, accessible and visually consistent, Requirement: Winamp on the desktop opens the MSN Winamp, Requirement: Winamp URL follows the MSN base URL and session, Requirement: Winamp window size and lifecycle (+23 more)
+### Community 7 - "Requirements"
+Cohesion: 0.05
+Nodes (37): apps/fotolog Specification, Purpose, Requirement: Double click opens Fotolog in a window, Requirement: Fotolog appears on the desktop, Requirement: Fotolog is listed under Start menu Programs, Requirement: Fotolog URL follows the MSN base URL, Requirement: Frame is usable, accessible and visually consistent, Requirement: Inactivity timer follows user activity in the frame (+29 more)
 
 ### Community 8 - "explorer-app.js"
-Cohesion: 0.11
-Nodes (24): @zenfs/core, fileAssociations, SHORTCUT_OVERLAY, networkNeighborhood, setupIcons(), ShellManager, ClipboardManager, sortFileInfos() (+16 more)
+Cohesion: 0.15
+Nodes (20): @zenfs/core, applyMonitorType(), getMonitorType(), NetworkNeighborhoodExtension, ShellManager, ClipboardManager, UndoManager, getIconForFile() (+12 more)
 
 ### Community 9 - "initDesktop"
-Cohesion: 0.16
-Nodes (7): applyMonitorType(), DesktopController, getMonitorType(), initDesktop(), refreshIcons(), updateCutIcons(), init()
+Cohesion: 0.13
+Nodes (8): DesktopController, initDesktop(), refreshIcons(), setupIcons(), updateCutIcons(), PropertiesManager, sortFileInfos(), DesktopContextMenuBuilder
 
 ### Community 10 - "theme-manager.js"
-Cohesion: 0.11
-Nodes (28): DesktopThemesApp, applyCssVariables(), applyPropertiesToPreview(), applyThemeToPreview(), fetchThemeCss(), parseCssVariables(), themeCssCache, applyCustomColorScheme() (+20 more)
+Cohesion: 0.17
+Nodes (27): applyCssVariables(), applyPropertiesToPreview(), applyThemeToPreview(), fetchThemeCss(), parseCssVariables(), themeCssCache, applyCustomColorScheme(), applyStylesheet() (+19 more)
 
 ### Community 11 - "image-manipulation.js"
-Cohesion: 0.05
-Nodes (55): extra_tools, render_canvas_view(), bresenham_dense_line(), bresenham_line(), compute_bezier(), copy_contents_within_polygon(), draw_bezier_curve(), draw_bezier_curve_without_pattern_support() (+47 more)
+Cohesion: 0.04
+Nodes (63): extra_tools, render_canvas_view(), set_magnification(), from_canvas_coords(), bresenham_dense_line(), bresenham_line(), clamp_brush_sizes(), compute_bezier() (+55 more)
 
 ### Community 12 - "ADDED Requirements"
 Cohesion: 0.06
 Nodes (34): ADDED Requirements, Purpose, Requirement: Double click opens MSN in a window, Requirement: Frame stays usable and accessible, Requirement: Inactivity timer follows user activity in the frame, Requirement: MSN being unavailable does not break the desktop, Requirement: MSN Messenger appears on the desktop, Requirement: MSN Messenger is listed under Start menu Programs (+26 more)
 
+### Community 13 - "ZenExplorerApp"
+Cohesion: 0.08
+Nodes (4): AnimatedLogo(), StatusBar, ZenExplorerApp, NavigationController
+
 ### Community 14 - "FreeCellApp"
-Cohesion: 0.05
+Cohesion: 0.06
 Nodes (9): Card, RANKS, FreeCellApp, Game, RANKS, SUITS, DEFAULTS, OptionsManager (+1 more)
 
 ### Community 15 - "app.js"
 Cohesion: 0.04
-Nodes (44): $app, $bottom, $canvas, $canvas_area, canvas_handles, canvas_pointer_move(), $colorbox, $H (+36 more)
+Nodes (50): $app, $bottom, $canvas, $canvas_area, canvas_handles, canvas_pointer_move(), $colorbox, $H (+42 more)
 
 ### Community 16 - "functions.js"
-Cohesion: 0.05
-Nodes (84): $about_paint_content, apply_file_format_and_palette_info(), are_you_sure(), change_some_url_params(), change_url_param(), choose_file_to_paste(), clear(), delete_selection() (+76 more)
+Cohesion: 0.06
+Nodes (80): $about_paint_content, apply_file_format_and_palette_info(), are_you_sure(), change_some_url_params(), change_url_param(), choose_file_to_paste(), clear(), delete_selection() (+72 more)
 
 ### Community 17 - "StartMenu"
 Cohesion: 0.08
-Nodes (3): showShutdownScreen(), StartMenu, Taskbar
+Nodes (5): AccessKeys, createShutdownDialogContent(), showShutdownScreen(), StartMenu, Taskbar
 
 ### Community 18 - "launchApp"
-Cohesion: 0.06
-Nodes (48): Decisions, 3. System, TipOfTheDayApp, tipOfTheDayContent, getWebampMenuItems(), appRegistry, appClasses, apps (+40 more)
+Cohesion: 0.13
+Nodes (22): apps, staticConfigs, systemApps, networkNeighborhood, SPECIAL_FOLDER_PATHS, startMenuConfig, ShowRunDialog(), CLASSES (+14 more)
 
 ### Community 19 - "releaseBusyState"
-Cohesion: 0.14
-Nodes (3): handleFileSystemError(), FileOperations, ProgressBarShowDialogWindow
+Cohesion: 0.11
+Nodes (5): handleFileSystemError(), FileOperations, RecycleBinManager, ProgressBarShowDialogWindow, joinPath()
 
 ### Community 20 - "helpers.js"
-Cohesion: 0.08
-Nodes (30): adjust_segments(), apply_segments(), $Component(), get_segments(), eachFont(), $FontBox(), $Toggle(), select_tools() (+22 more)
+Cohesion: 0.07
+Nodes (31): adjust_segments(), apply_segments(), $Component(), get_segments(), eachFont(), $FontBox(), $Toggle(), select_tools() (+23 more)
 
 ### Community 21 - "os-init.js"
 Cohesion: 0.09
-Nodes (25): profiles, createMainUI(), drawBIOSFooter(), drawBIOSHeader(), finalizeBootProcessStep(), getBase64Image(), getTerminal(), hideBootScreen() (+17 more)
+Nodes (24): profiles, createMainUI(), drawBIOSFooter(), drawBIOSHeader(), finalizeBootProcessStep(), getBase64Image(), getTerminal(), hideBootScreen() (+16 more)
 
 ### Community 22 - "edit-colors.js"
-Cohesion: 0.15
-Nodes (21): update_palette_from_theme(), basic_colors, color_ramp(), custom_colors, default_palette, get_winter_palette(), lerp(), monochrome_palette_as_colors (+13 more)
+Cohesion: 0.33
+Nodes (12): $ColorBox(), $Swatch(), update_$swatch(), choose_color(), show_edit_colors_window(), detect_monochrome(), image_invert_colors(), get_rgba_from_color (+4 more)
 
 ### Community 23 - "Requirements"
 Cohesion: 0.06
@@ -387,64 +397,72 @@ Cohesion: 0.04
 Nodes (23): decode(), decodeBlock(), decodeMonoBlock(), draw(), executeTransition(), getTTSVoices(), parse(), parseAnimationSection() (+15 more)
 
 ### Community 26 - "resume"
-Cohesion: 0.13
-Nodes (14): resume(), Context, Decisions, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs, 1. Container smoke test (written first) (+6 more)
+Cohesion: 0.11
+Nodes (18): resume(), Context, Decisions, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs, Requirement: Profile deep links boot the app (+10 more)
 
 ### Community 28 - "NotepadApp"
-Cohesion: 0.08
-Nodes (4): AppMakerApp, NotepadApp, NotepadEditor, ThemeToCssApp
+Cohesion: 0.10
+Nodes (3): NotepadApp, NotepadEditor, ThemeToCssApp
 
-### Community 30 - "ADDED Requirements"
-Cohesion: 0.08
-Nodes (25): ADDED Requirements, Purpose, Requirement: Cache policy keeps the PWA updatable, Requirement: Health endpoint for orchestration, Requirement: Missing files return the Blue Screen page, Requirement: Prefix redirect is host-agnostic, Requirement: Profile deep links boot the app, Requirement: Reproducible image build (+17 more)
+### Community 29 - "ADDED Requirements"
+Cohesion: 0.06
+Nodes (31): ADDED Requirements, Purpose, Requirement: Classic Webamp is archived, not removed, Requirement: Existing users are migrated without losing layout, Requirement: Frame is usable, accessible and visually consistent, Requirement: Winamp on the desktop opens the MSN Winamp, Requirement: Winamp URL follows the MSN base URL and session, Requirement: Winamp window size and lifecycle (+23 more)
+
+### Community 30 - "Requirements"
+Cohesion: 0.06
+Nodes (31): apps/winamp Specification, Purpose, Requirement: Classic Webamp is archived, not removed, Requirement: Existing users are migrated without losing layout, Requirement: Frame is usable, accessible and visually consistent, Requirement: Winamp on the desktop opens the MSN Winamp, Requirement: Winamp URL follows the MSN base URL and session, Requirement: Winamp window size and lifecycle (+23 more)
 
 ### Community 31 - "Requirements"
-Cohesion: 0.08
-Nodes (25): container-delivery Specification, Purpose, Requirement: Cache policy keeps the PWA updatable, Requirement: Health endpoint for orchestration, Requirement: Missing files return the Blue Screen page, Requirement: Prefix redirect is host-agnostic, Requirement: Profile deep links boot the app, Requirement: Reproducible image build (+17 more)
+Cohesion: 0.04
+Nodes (46): ADDED Requirements, Purpose, Requirement: Cache policy keeps the PWA updatable, Requirement: Health endpoint for orchestration, Requirement: Missing files return the Blue Screen page, Requirement: Prefix redirect is host-agnostic, Requirement: Reproducible image build, Requirement: Site is served under the /win98-web/ prefix (+38 more)
 
 ### Community 32 - "enqueueRequest"
-Cohesion: 0.20
-Nodes (15): delay(), enqueueRequest(), gestureAt(), getDirection(), handleIdleTick(), interruptAndPlayAnimation(), isIdleState(), lookAt() (+7 more)
+Cohesion: 0.17
+Nodes (17): animate(), animations(), delay(), enqueueRequest(), gestureAt(), getDirection(), hasAnimation(), interrupt() (+9 more)
 
-### Community 33 - "sound-manager.js"
-Cohesion: 0.21
-Nodes (7): createTaskbarButton(), removeTaskbarButton(), volumeControl, getMuted(), getVolume(), setMuted(), setVolume()
+### Community 33 - "taskbar.js"
+Cohesion: 0.08
+Nodes (21): WebampApp, CLASSES, createTaskbarButton(), createTrayIcon(), destroy(), hideStartMenu(), init(), removeTaskbarButton() (+13 more)
 
 ### Community 34 - "verify_container.sh"
 Cohesion: 0.46
 Nodes (7): body_of(), fail(), header_value(), headers_of(), pass(), verify_container.sh script, status_of()
 
+### Community 35 - "about-app.js"
+Cohesion: 0.19
+Nodes (3): aboutContent, AboutApp, launchAboutApp()
+
 ### Community 38 - "msn_app_links.spec.js"
 Cohesion: 0.20
 Nodes (6): clickLink(), FOTOLOG_LINK, frameDoc(), MSN_LINK, STUBS, WINAMP_LINK
 
-### Community 39 - "ADDED Requirements"
-Cohesion: 0.08
-Nodes (23): ADDED Requirements, Purpose, Requirement: Existing windows are reused, Requirement: Failure falls back to the original behavior, Requirement: Interception survives frame reloads, Requirement: Keyboard access keeps working, Requirement: Other interactions are not changed, Requirement: Switcher buttons open separate windows (+15 more)
+### Community 39 - "solitaire-app.js"
+Cohesion: 0.10
+Nodes (9): animatedCardBacks, findBestDropTarget(), DEFAULTS, getAllOptions(), getOption(), options, OPTIONS_KEYS, setAllOptions() (+1 more)
 
 ### Community 40 - "Image Resizer"
 Cohesion: 0.33
 Nodes (5): How to Use, Image Resizer, Key Features, Purpose, Screenshot
 
-### Community 41 - "show_error_message"
-Cohesion: 0.10
-Nodes (16): file_open(), file_print(), load_theme_from_text(), open_from_file(), show_error_message(), $Iframe(), open_help_viewer(), renderItem() (+8 more)
+### Community 41 - "help.js"
+Cohesion: 0.27
+Nodes (6): $Iframe(), open_help_viewer(), renderItem(), show_help(), exports, showMessageBox_implementation()
 
-### Community 42 - "getZenFSFileUrl"
-Cohesion: 0.39
-Nodes (8): backgroundTab, browseForWallpaper(), formatWallpaperName(), populateWallpaperList(), updatePreview(), getMimeType(), getZenFSFileAsBlob(), getZenFSFileUrl()
+### Community 42 - "zenfs-utils.js"
+Cohesion: 0.13
+Nodes (13): FlashPlayerApp, createPdfViewerContent(), ShowFilePicker(), applyWallpaper(), getWallpaperMode(), browseForWallpaper(), formatWallpaperName(), populateWallpaperList() (+5 more)
 
-### Community 44 - "Design"
-Cohesion: 0.29
-Nodes (6): Context, Decisions, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs
+### Community 44 - "ADDED Requirements"
+Cohesion: 0.08
+Nodes (23): ADDED Requirements, Purpose, Requirement: Existing windows are reused, Requirement: Failure falls back to the original behavior, Requirement: Interception survives frame reloads, Requirement: Keyboard access keeps working, Requirement: Other interactions are not changed, Requirement: Switcher buttons open separate windows (+15 more)
 
 ### Community 45 - "zenfs-init.js"
-Cohesion: 0.30
-Nodes (9): CDManager, FloppyManager, mountedDisks, RemovableDiskManager, DriveService, getAllDiskHandles(), openDB(), removeDiskHandle() (+1 more)
+Cohesion: 0.16
+Nodes (21): Decisions, 3. System, @zenfs/dom, CDManager, FloppyManager, mountedDisks, RemovableDiskManager, migrateToZenFS() (+13 more)
 
 ### Community 47 - "Tasks"
-Cohesion: 0.18
-Nodes (10): 1. Failing e2e spec (RED), 2. Config, 3. System, 4. The app, 5. Docs and screenshot, 6. Manual verification, 7. Final validation, 8. Size update requested after review (+2 more)
+Cohesion: 0.20
+Nodes (9): 1. Failing e2e spec (RED), 2. Config, 3. System, 5. Docs and screenshot, 6. Manual verification, 7. Final validation, 8. Size update requested after review, Tasks (+1 more)
 
 ### Community 48 - "electron-main.js"
 Cohesion: 0.10
@@ -462,41 +480,41 @@ Nodes (6): vite, vite-plugin-pwa, appsDirs, extractConfig(), generateRegistry(),
 Cohesion: 0.29
 Nodes (7): Development, How to Use, Key Features, MSN Messenger, Purpose, Screenshot, Technologies Used
 
-### Community 55 - "IFrameApplication"
-Cohesion: 0.14
-Nodes (8): Context, FotologApp, MsnMessengerApp, WinampApp, createMsnFrameWindow(), interceptAppShortcuts(), MSN_APP_IDS, msnUrl()
+### Community 54 - "Requirements"
+Cohesion: 0.08
+Nodes (23): apps/msn-shortcut-windows Specification, Purpose, Requirement: Existing windows are reused, Requirement: Failure falls back to the original behavior, Requirement: Interception survives frame reloads, Requirement: Keyboard access keeps working, Requirement: Other interactions are not changed, Requirement: Switcher buttons open separate windows (+15 more)
 
-### Community 57 - "IFrameApplication"
-Cohesion: 0.12
-Nodes (15): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-goals, Proposal, What Changes, Why (+7 more)
+### Community 55 - "createMsnFrameWindow"
+Cohesion: 0.22
+Nodes (12): Context, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs, createMsnFrameWindow(), fitToDesktop(), interceptAppShortcuts() (+4 more)
+
+### Community 57 - "Design"
+Cohesion: 0.13
+Nodes (13): Context, Decisions, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs, 4. The app, Context (+5 more)
 
 ### Community 58 - "Proposal"
 Cohesion: 0.22
 Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-goals, Proposal, What Changes, Why
 
 ### Community 59 - "asset-preloader.js"
-Cohesion: 0.39
-Nodes (6): themes, audioPreloadMap, preloadAudio(), preloadCursor(), preloadImage(), preloadThemeAssets()
+Cohesion: 0.53
+Nodes (5): audioPreloadMap, preloadAudio(), preloadCursor(), preloadImage(), preloadThemeAssets()
 
-### Community 60 - "Tasks"
-Cohesion: 0.22
-Nodes (8): 1. Failing e2e spec (RED), 2. Shared helper and icon (config and shared), 3. Apps, 4. System, 5. Docs, 6. Verification, 7. Final validation, Tasks
-
-### Community 62 - "Proposal"
-Cohesion: 0.22
-Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-goals, Proposal, What Changes, Why
+### Community 60 - "Requirement: Windows never open under the taskbar"
+Cohesion: 0.17
+Nodes (11): ADDED Requirements, Purpose, Requirement: Fitted windows stay fully usable, Requirement: Windows never open under the taskbar, Scenario: Enlarging, Scenario: Maximize and restore, Scenario: Small laptop screen, Scenario: Very small desktop (+3 more)
 
 ### Community 63 - "parse-theme.js"
 Cohesion: 0.09
 Nodes (22): applyCSSProperties(), generateThemePropertiesFromColors(), getColorsFromThemeFile(), getCursorsFromThemeFile(), getDesktopConfigFromThemeFile(), getIconsFromThemeFile(), getSoundsFromThemeFile(), getThemeCSSProperties() (+14 more)
 
-### Community 64 - "Tasks"
-Cohesion: 0.25
-Nodes (7): 1. Failing e2e specs (RED), 2. App (iframe) and archive of classic, 4. Docs, 5. Verification, 6. Manual verification, 7. Final validation, Tasks
+### Community 64 - "color-data.js"
+Cohesion: 0.27
+Nodes (8): update_palette_from_theme(), basic_colors, color_ramp(), custom_colors, get_winter_palette(), lerp(), monochrome_palette_as_colors, make_stripe_pattern()
 
 ### Community 65 - "getPathName"
-Cohesion: 0.07
-Nodes (4): ControlPanelExtension, DesktopExtension, NetworkNeighborhoodExtension, VirtualStats
+Cohesion: 0.08
+Nodes (3): ControlPanelExtension, DesktopExtension, VirtualStats
 
 ### Community 66 - "Proposal"
 Cohesion: 0.22
@@ -504,15 +522,19 @@ Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-go
 
 ### Community 67 - "IconScheme"
 Cohesion: 0.24
-Nodes (5): cursors, iconSchemes, soundSchemes, wallpapers, getIcon()
+Nodes (5): cursors, iconSchemes, SCREENSAVERS, soundSchemes, getIcon()
 
 ### Community 68 - "MinesweeperApp"
 Cohesion: 0.12
 Nodes (4): MinesweeperApp, MinesweeperGame, CHAR_MAP, SpriteDisplay
 
 ### Community 69 - "simulate-random-gestures.js"
-Cohesion: 0.20
-Nodes (16): cancel(), cleanup_bitmap_view(), view_bitmap(), onContextMenu(), onFullscreenChange(), onKeyDown(), onMouseDown(), choose() (+8 more)
+Cohesion: 0.33
+Nodes (10): cancel(), choose(), $cursor, cursor_image, isAnyMenuOpen(), seededRandom(), simulateRandomGesture(), simulateRandomGesturesPeriodically() (+2 more)
+
+### Community 70 - "Tasks"
+Cohesion: 0.22
+Nodes (8): 1. Failing e2e spec (RED), 2. Shared helper and icon (config and shared), 3. Apps, 4. System, 5. Docs, 6. Verification, 7. Final validation, Tasks
 
 ### Community 71 - "Proposal: Semantic HTML Improvements for Windows 98 Web Edition"
 Cohesion: 0.06
@@ -528,7 +550,7 @@ Nodes (29): [0.2.0](https://github.com/azayrahmad/win98-web/compare/win98-web-v0
 
 ### Community 76 - "getItem"
 Cohesion: 0.10
-Nodes (23): animatedCardBacks, findBestDropTarget(), DEFAULTS, getAllOptions(), getOption(), options, OPTIONS_KEYS, setAllOptions() (+15 more)
+Nodes (25): appClasses, HIGHLIGHT_JS_THEMES, languages, recycleBinContent, renderHTML(), handleDroppedFiles(), getItemFromIcon(), deleteCustomApp() (+17 more)
 
 ### Community 77 - "Winamp"
 Cohesion: 0.29
@@ -546,6 +568,10 @@ Nodes (5): How to Use, Key Features, Purpose, Screenshot, Theme to CSS App
 Cohesion: 0.11
 Nodes (9): DoomApp, DoomProgressDialog, Doom, How to Use, Key Features, Purpose, Screenshot, Technical Implementation (+1 more)
 
+### Community 81 - "QuakeApp"
+Cohesion: 0.16
+Nodes (3): QuakeApp, ReportABugApp, TaskManagerApp
+
 ### Community 82 - "makeDraggable"
 Cohesion: 0.62
 Nodes (7): makeDraggable(), calculateClickOffset(), dragMove(), finishDrag(), getEventCoords(), startDrag(), updateLocation()
@@ -554,9 +580,9 @@ Nodes (7): makeDraggable(), calculateClickOffset(), dragMove(), finishDrag(), ge
 Cohesion: 0.29
 Nodes (7): Development, Fotolog, How to Use, Key Features, Purpose, Screenshot, Technologies Used
 
-### Community 84 - "setInstantPosition"
-Cohesion: 0.13
-Nodes (16): getDefinition(), getPaletteColor(), getSpriteHeight(), getSpriteWidth(), i(), init(), load(), loadTransparencyColor() (+8 more)
+### Community 84 - "load"
+Cohesion: 0.25
+Nodes (8): getDefinition(), getPaletteColor(), init(), load(), loadTransparencyColor(), normalizeDefinition(), setDefinition(), startLoop()
 
 ### Community 85 - "eye-gaze-mode.js"
 Cohesion: 0.09
@@ -582,24 +608,24 @@ Nodes (6): RANKS, FoundationPile, Pile, TableauPile, WastePile, SUIT_MAP
 Cohesion: 0.33
 Nodes (5): App Maker, How to Use, Key Features, Purpose, Screenshot
 
-### Community 93 - "taskbar.js"
+### Community 93 - "Proposal"
 Cohesion: 0.22
-Nodes (9): CLASSES, destroy(), hideStartMenu(), removeTrayIcon(), SELECTORS, showDesktop(), showStartMenu(), toggleStartMenu() (+1 more)
+Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-goals, Proposal, What Changes, Why
 
 ### Community 94 - "HelpApp"
 Cohesion: 0.15
 Nodes (7): HelpApp, How to Use, Implementation Details, Key Features, Purpose, Technologies Used, Windows Help
 
-### Community 96 - "Design"
-Cohesion: 0.29
-Nodes (6): Context, Decisions, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs
+### Community 96 - "Proposal"
+Cohesion: 0.22
+Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-goals, Proposal, What Changes, Why
 
-### Community 99 - "Tasks"
-Cohesion: 0.25
-Nodes (7): 1. Failing e2e spec (RED), 2. Shared helper, 3. Docs, 4. Verification, 5. Manual verification, 6. Final validation, Tasks
+### Community 98 - "Proposal"
+Cohesion: 0.22
+Nodes (8): Capabilities, Impact, Modified Capabilities, New Capabilities, Non-goals, Proposal, What Changes, Why
 
 ### Community 102 - "agent.js"
-Cohesion: 0.16
+Cohesion: 0.17
 Nodes (14): AgentApp, askAgent(), findAndOpenFromStartMenu(), findIcon(), findWindowCloseButton(), getAgentMenuItems(), getElementCenter(), launchAgentApp() (+6 more)
 
 ### Community 103 - "electron-injected.js"
@@ -610,13 +636,21 @@ Nodes (3): { /*contextBridge,*/ ipcRenderer }, { isDev, isMacOS, initialFilePath
 Cohesion: 0.10
 Nodes (20): colorSchemes, ../shared/styles/color-schemes/60s-usa.css?inline, ../shared/styles/color-schemes/baseball.css?inline, ../shared/styles/color-schemes/blue.css?inline, ../shared/styles/color-schemes/dangerous-creatures.css?inline, ../shared/styles/color-schemes/inside-your-computer.css?inline, ../shared/styles/color-schemes/jungle.css?inline, ../shared/styles/color-schemes/leonardo-da-vinci.css?inline (+12 more)
 
-### Community 111 - "busy-state-manager.js"
-Cohesion: 0.25
-Nodes (4): updateScreensaverPreview(), DriveManager, releaseBusyState(), requestBusyState()
+### Community 111 - "releaseBusyState"
+Cohesion: 0.10
+Nodes (14): updateScreensaverPreview(), DriveManager, ContextMenuBuilder, KeyboardHandler, busyStateRequesters, releaseBusyState(), releaseState(), releaseWaitState() (+6 more)
 
-### Community 116 - "Design"
-Cohesion: 0.40
-Nodes (4): Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs
+### Community 116 - "Tasks"
+Cohesion: 0.25
+Nodes (7): 1. Failing e2e specs (RED), 2. App (iframe) and archive of classic, 4. Docs, 5. Verification, 6. Manual verification, 7. Final validation, Tasks
+
+### Community 117 - "Tasks"
+Cohesion: 0.25
+Nodes (7): 1. Failing e2e spec (RED), 2. Shared helper, 3. Docs, 4. Verification, 5. Manual verification, 6. Final validation, Tasks
+
+### Community 118 - "Requirement: Winamp window size and lifecycle"
+Cohesion: 0.25
+Nodes (7): MODIFIED Requirements, Requirement: Winamp window size and lifecycle, Scenario: Close, Scenario: Default size, Scenario: Launched twice or minimized, Scenario: Small screen, Spec Delta
 
 ### Community 120 - "Windows 98 Web Edition: AI Agent Development Guidelines"
 Cohesion: 0.11
@@ -631,12 +665,24 @@ Cohesion: 0.16
 Nodes (11): element_to_string(), find_tabstops(), $FormWindow(), $Window(), end_resize(), get_direction(), handle_pointermove(), make_focus_in_out_handler() (+3 more)
 
 ### Community 123 - "ask"
-Cohesion: 0.22
-Nodes (23): What You Might Do, a(), add(), ask(), b(), f(), g(), h() (+15 more)
+Cohesion: 0.26
+Nodes (19): What You Might Do, add(), ask(), b(), f(), g(), h(), m() (+11 more)
+
+### Community 125 - "Design"
+Cohesion: 0.29
+Nodes (6): Context, Decisions, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs
 
 ### Community 127 - "loadSpriteSheet"
 Cohesion: 0.19
 Nodes (15): bmpToCanvas(), getAudioBuffer(), getContext(), getSprite(), isMSADPCM(), loadInternal(), loadSounds(), loadSprite() (+7 more)
+
+### Community 129 - "Tasks"
+Cohesion: 0.29
+Nodes (6): 1. Failing e2e specs (RED), 2. Shared helper and app config, 3. Docs, 4. Verification, 5. Final validation, Tasks
+
+### Community 130 - "setInstantPosition"
+Cohesion: 0.40
+Nodes (6): getSpriteHeight(), getSpriteWidth(), setInstantPosition(), setScale(), setupCanvas(), updateCanvasSize()
 
 ### Community 131 - "Tooltip"
 Cohesion: 0.17
@@ -646,9 +692,17 @@ Nodes (7): blue, buttonDefinitions, magenta, red, scientificControlStyle, Calcul
 Cohesion: 0.12
 Nodes (15): 1\. `src/components/screensaver.js`, 1\. `src/config/wallpapers.js`, 2\. `src/config/sound-schemes.js`, 2\. `src/config/themes.js`, 3\. `src/config/icon-schemes.js`, 4\. `src/config/themes.js`, Before You Start: Required Assets, How to Add a New Desktop Theme (+7 more)
 
-### Community 133 - "enqueueRequest"
-Cohesion: 0.19
-Nodes (13): animate(), animations(), checkAndPlaySound(), checkAnimationCompletion(), completeAnimation(), emit(), getNextFrameDetails(), hasAnimation() (+5 more)
+### Community 133 - "constructor"
+Cohesion: 0.18
+Nodes (17): a(), checkAndPlaySound(), checkAnimationCompletion(), completeAnimation(), constructor(), emit(), getNextFrameDetails(), getStyles() (+9 more)
+
+### Community 134 - "Design"
+Cohesion: 0.33
+Nodes (5): Context, Design, Goals / Non-Goals, Open Questions, Risks / Trade-offs
+
+### Community 136 - "view_bitmap"
+Cohesion: 0.60
+Nodes (6): cleanup_bitmap_view(), view_bitmap(), onContextMenu(), onFullscreenChange(), onKeyDown(), onMouseDown()
 
 ### Community 144 - "spider-solitaire/game.js"
 Cohesion: 0.25
@@ -730,10 +784,6 @@ Nodes (6): How to Use, Key Features, Purpose, Screenshot, Support the Project, T
 Cohesion: 0.29
 Nodes (6): How to Use, Implementation Details, Key Features, MS-DOS Prompt, Purpose, Technologies Used
 
-### Community 213 - "esheep.js"
-Cohesion: 0.19
-Nodes (8): ESheepApp, closeAllESheep(), getESheepMenuItems(), launchESheepApp(), setupObserver(), sheepInstances, showESheepContextMenu(), appManager
-
 ### Community 214 - "eSheep"
 Cohesion: 0.29
 Nodes (6): eSheep, How to Use, Key Features, Purpose, Screenshot, Technologies Used
@@ -774,9 +824,9 @@ Nodes (6): How to Use, Implementation Details, Key Features, Purpose, Report a B
 Cohesion: 0.29
 Nodes (6): How to Use, Key Features, Purpose, Screenshot, Solitaire, Technologies Used
 
-### Community 228 - "SoundSchemeExplorerApp"
-Cohesion: 0.39
-Nodes (3): SoundSchemeExplorerApp, getSoundSchemeName(), setSoundScheme()
+### Community 228 - "ShowDialogWindow"
+Cohesion: 0.14
+Nodes (9): SoundSchemeExplorerApp, ShowComingSoonDialog(), ShowDialogWindow(), showError(), showInputDialog(), playSound(), getSoundSchemeName(), setSoundScheme() (+1 more)
 
 ### Community 230 - "Spider Solitaire"
 Cohesion: 0.29
@@ -791,8 +841,8 @@ Cohesion: 0.33
 Nodes (6): How to Use, Key Features, Purpose, Screenshot, Technologies Used, Webamp App
 
 ### Community 233 - "package.json"
-Cohesion: 0.11
-Nodes (17): devDependencies, @playwright/test, vite, vite-plugin-pwa, name, private, type, version (+9 more)
+Cohesion: 0.12
+Nodes (16): devDependencies, @playwright/test, vite, vite-plugin-pwa, name, private, type, version (+8 more)
 
 ### Community 240 - "batch_update_readmes.sh"
 Cohesion: 0.33
@@ -831,8 +881,8 @@ Cohesion: 0.33
 Nodes (3): BROWSE_UI_ICONS, BROWSE_UI_ICONS_GRAYSCALE, TOOLBAR_ICON_CONFIG
 
 ### Community 252 - "cursor-manager.js"
-Cohesion: 0.23
-Nodes (14): CursorScheme, getCursorThemes(), applyWallpaper(), getWallpaperMode(), applyAniCursorTheme(), applyBusyCursor(), applyCursorTheme(), applyWaitCursor() (+6 more)
+Cohesion: 0.32
+Nodes (9): CursorScheme, getCursorThemes(), applyAniCursorTheme(), applyBusyCursor(), applyCursorTheme(), applyWaitCursor(), clearAniCursor(), ensureGlobalStyles() (+1 more)
 
 ### Community 253 - "About App"
 Cohesion: 0.33
@@ -860,23 +910,23 @@ Nodes (3): articleIDs, articles, newsEl
 
 ## Knowledge Gaps
 - **43 isolated node(s):** `os-gui`, `windowless_apps`, `iframe_apps`, `custom_apps`, `file_apps` (+38 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1813 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **102 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1907 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **96 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Application` connect `ShowDialogWindow` to `local-storage.js`, `explorer-app.js`, `theme-manager.js`, `ZenExplorerApp`, `FreeCellApp`, `Windows 98 Web Edition: AI Agent Development Guidelines`, `launchApp`, `NotepadApp`, `ImageResizerApp`, `sound-manager.js`, `PdfViewerApp`, `AboutApp`, `DisplayPropertiesApp`, `Adding New Applications`, `Design`, `DosBoxApp`, `MediaPlayerApp`, `FlashPlayerApp`, `IFrameApplication`, `IFrameApplication`, `DXBallApp`, `MinesweeperApp`, `._onLaunch`, `DiabloApp`, `SpiderSolitaireApp`, `getItem`, `DoomApp`, `ReportABugApp`, `CursorExplorerApp`, `esheep.js`, `CalculatorApp`, `DOSShell`, `HelpApp`, `PrinceOfPersiaApp`, `DosGamesDownloaderApp`, `SoundSchemeExplorerApp`, `agent.js`, `DefragApp`, `ImageViewerApp`, `SolitaireApp`, `WordPadApp`, `KeenApp`, `PaintApp`, `Image Viewer`, `QuakeApp`, `TaskManagerApp`, `Windows 98 Web Edition: AI Agent Development Guidelines`?**
-  _High betweenness centrality (0.231) - this node is a cross-community bridge._
+- **Why does `Application` connect `Application` to `Tasks`, `display-properties-app.js`, `Design`, `explorer-app.js`, `theme-manager.js`, `ZenExplorerApp`, `FreeCellApp`, `Windows 98 Web Edition: AI Agent Development Guidelines`, `NotepadApp`, `ImageResizerApp`, `taskbar.js`, `PdfViewerApp`, `about-app.js`, `DisplayPropertiesApp`, `solitaire-app.js`, `Adding New Applications`, `zenfs-utils.js`, `DosBoxApp`, `MediaPlayerApp`, `DesktopThemesApp`, `AppMakerApp`, `DXBallApp`, `MinesweeperApp`, `DiabloApp`, `SpiderSolitaireApp`, `getItem`, `DoomApp`, `QuakeApp`, `CursorExplorerApp`, `CalculatorApp`, `HelpApp`, `PrinceOfPersiaApp`, `tip-of-the-day-app.js`, `ShowDialogWindow`, `DosGamesDownloaderApp`, `agent.js`, `DefragApp`, `ImageViewerApp`, `SolitaireApp`, `WordPadApp`, `KeenApp`, `PaintApp`, `Image Viewer`, `Windows 98 Web Edition: AI Agent Development Guidelines`, `Design`?**
+  _High betweenness centrality (0.228) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `ShowDialogWindow()` (e.g. with `Proposed Changes:` and `Technologies Used`) actually correct?**
   _`ShowDialogWindow()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `os-gui`, `windowless_apps`, `iframe_apps` to the rest of the system?**
   _43 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `sound-schemes.js` be split into smaller, more focused modules?**
   _Cohesion score 0.008264462809917356 - nodes in this community are weakly interconnected._
-- **Why does `ShowDialogWindow()` connect `ShowDialogWindow` to `IconManager`, `explorer-app.js`, `theme-manager.js`, `FreeCellApp`, `functions.js`, `StartMenu`, `launchApp`, `releaseBusyState`, `os-init.js`, `edit-colors.js`, `MenuBarBuilder`, `NotepadApp`, `joinPath`, `sound-manager.js`, `discord-activity-client.js`, `._updateMenuBar`, `show_error_message`, `.showWinDialog`, `Statistics`, `zenfs-init.js`, `DragDropManager`, `MediaPlayerApp`, `FlashPlayerApp`, `._showSingleProperties`, `PinballApp`, `Proposal: Semantic HTML Improvements for Windows 98 Web Edition`, `DiabloApp`, `SpiderSolitaireApp`, `getItem`, `DoomApp`, `ReportABugApp`, `CalculatorApp`, `PrinceOfPersiaApp`, `Report a Bug`, `DosGamesDownloaderApp`, `DefragApp`, `ImageViewerApp`, `WordPadApp`, `busy-state-manager.js`, `KeenApp`?**
-  _High betweenness centrality (0.167) - this node is a cross-community bridge._
-- **Are the 5 inferred relationships involving `Application` (e.g. with `Adding a New Application` and `Adding a New Application`) actually correct?**
-  _`Application` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `ShowDialogWindow()` connect `ShowDialogWindow` to `Application`, `IconManager`, `explorer-app.js`, `initDesktop`, `theme-manager.js`, `FreeCellApp`, `functions.js`, `StartMenu`, `launchApp`, `releaseBusyState`, `os-init.js`, `edit-colors.js`, `MenuBarBuilder`, `NotepadApp`, `taskbar.js`, `discord-activity-client.js`, `._updateMenuBar`, `solitaire-app.js`, `help.js`, `zenfs-utils.js`, `.showWinDialog`, `Statistics`, `zenfs-init.js`, `DragDropManager`, `MediaPlayerApp`, `DesktopThemesApp`, `PinballApp`, `AppMakerApp`, `Proposal: Semantic HTML Improvements for Windows 98 Web Edition`, `DiabloApp`, `SpiderSolitaireApp`, `getItem`, `DoomApp`, `QuakeApp`, `CalculatorApp`, `PrinceOfPersiaApp`, `Report a Bug`, `DosGamesDownloaderApp`, `DefragApp`, `ImageViewerApp`, `WordPadApp`, `releaseBusyState`, `KeenApp`?**
+  _High betweenness centrality (0.133) - this node is a cross-community bridge._
+- **Are the 8 inferred relationships involving `Application` (e.g. with `Adding a New Application` and `Adding a New Application`) actually correct?**
+  _`Application` has 8 INFERRED edges - model-reasoned connections that need verification._
 - **Should `cursors.js` be split into smaller, more focused modules?**
   _Cohesion score 0.0091324200913242 - nodes in this community are weakly interconnected._

@@ -7,7 +7,7 @@ The **Fotolog** app opens the Fotolog photo-sharing page of the running MSN web 
 ## Key Features
 
 - **Desktop and Start menu entry**: A "Fotolog" shortcut on the desktop (restored for returning users like the other defaults) and an entry directly under Start > Programs.
-- **Content-sized window**: Opens as a 1024x768 window suited to the wide Fotolog page; it can be resized and maximized like any other app.
+- **Content-sized window**: Opens as a 1024x768 window suited to the wide Fotolog page; it can be resized and maximized like any other app. On a short or narrow screen the window shrinks to the visible desktop so the title bar stays visible and the bottom edge stays above the taskbar.
 - **Single instance**: Launching it again focuses (or restores) the existing window instead of opening a second one or reloading the frame.
 - **Configurable URL**: The framed URL is the build-time variable `VITE_MSN_URL` plus `/fotolog`, defaulting to `/fotolog` on the same origin.
 - **Sign-in required**: Fotolog is a private MSN route; signed-out users get the MSN login page inside the window. After signing in, MSN navigates to its home page, so close and reopen the window to reach Fotolog.

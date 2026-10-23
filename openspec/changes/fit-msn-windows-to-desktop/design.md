@@ -25,7 +25,7 @@
 - Alternative: change `$Window.center()` to use `#desktop-area`. Rejected: shared by every app, and the project rules mark `public/os-gui` internals as stop-and-ask.
 - Alternative: auto-maximize on small screens. Rejected: hides the desktop and breaks the "separate program" feel.
 
-**2. Position inside the work area.** After fitting, set `left = max(0, (area.width - outerWidth) / 2)` and `top = max(0, (area.height - outerHeight) / 2)` using the desktop area rect, so the window is centered in the visible desktop and its bottom edge is never below the taskbar. Windows that fit keep being centered, but now in the work area instead of the full screen, so the vertical position shifts up by half the taskbar height (about 14 px). This is accepted and intended; assertions in the existing specs do not depend on it (checked in task 1.1).
+**2. Position inside the work area.** After fitting, set `left = max(0, (area.width - outerWidth) / 2)` and `top = max(0, (area.height - outerHeight) / 2)` using the desktop area rect, so the window is centered in the visible desktop and its bottom edge is never below the taskbar. Windows that fit keep being centered, but now in the work area instead of the full screen, so the vertical position shifts up by half the taskbar height (about 14 px). This is accepted and intended; assertions in the existing specs do not depend on it (checked in task 1.1). `Application._setupWindow` calls `win.center()` after `_createWindow`, which would put the window back inside `#screen`. The helper wraps `center` so that call (and any later one) lands in the desktop area.
 
 **3. Winamp content-size config.** Config literal for `winamp`: `innerWidth: 901`, `innerHeight: 592`, and no `width` and `height` (the outer size is derived). The helper passes `innerWidth` and `innerHeight` to `$Window` when present, else `outerWidth` and `outerHeight` as now. `app.width` and `app.height` remain `undefined` for Winamp; the only readers found are the helper and `Application`'s own assignment (checked by grep). If another reader appears, stop and report.
 - Why content size: the user asked for the iframe to be about 901x592; sizing by content makes that exact regardless of theme borders.
@@ -54,4 +54,4 @@
 
 ## Open Questions
 
-- Is the 901x592 figure the iframe content size (assumed here) or the whole window? If it is the whole window, change two numbers to `width` and `height` and drop the inner keys; the fit logic does not change.
+- Resolved: 901x592 is the iframe content size (confirmed). The content-size config stays.
