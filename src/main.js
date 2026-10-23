@@ -6,6 +6,8 @@ import "./shell/shutdown-screen.css";
 
 import { initializeOS } from './system/os-init.js';
 import { startCtTimer } from './apps/improving-ct-october/timer.js';
+import { startCtStations } from './apps/improving-ct-october/stations/engine.js';
 
 initializeOS();
 startCtTimer();
+startCtStations();

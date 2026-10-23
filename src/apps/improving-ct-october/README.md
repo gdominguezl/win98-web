@@ -19,6 +19,10 @@ The **Improving CT October** window starts a timed office session for the Y2K ga
 
 The patch code is still entered in Y2K Patch. This window only starts and manages the session.
 
+## Stations
+
+While a team's session is running, the station engine (`stations/engine.js`) applies that office's stations and removes them when the session stops running (patch accepted, admin restart or reset, Start a new game). A station is a module with `{ id, apply(ctx), remove(ctx, manifest) }`; `ctx` is `{ fs, office }`. `apply` must be idempotent and returns a JSON manifest of what it created; `remove` deletes exactly that. Applied stations are recorded in `/C:/.ct_stations.json` and leftovers are cleaned at boot on a tab with no team session. To add one, create `stations/<name>.js` and add `{ id, load: () => import("./<name>.js") }` to its office list in `stations/registry.js`.
+
 ## Development
 
 ```bash

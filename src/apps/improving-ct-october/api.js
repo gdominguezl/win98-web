@@ -1,5 +1,6 @@
 const TOKEN_KEY = "ct-october-token";
 const ROLE_KEY = "ct-october-role";
+const OFFICE_KEY = "ct-october-office";
 
 function base() {
   const configured = import.meta.env.VITE_CT_API_URL;
@@ -22,14 +23,27 @@ export function getRole() {
   }
 }
 
-export function saveSession(token, role) {
+export function getOffice() {
+  try {
+    return sessionStorage.getItem(OFFICE_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+export function saveSession(token, role, office) {
   sessionStorage.setItem(TOKEN_KEY, token);
   sessionStorage.setItem(ROLE_KEY, role);
+  if (office) sessionStorage.setItem(OFFICE_KEY, office);
+  else sessionStorage.removeItem(OFFICE_KEY);
+  window.dispatchEvent(new CustomEvent("ct-october-auth"));
 }
 
 export function clearSession() {
   sessionStorage.removeItem(TOKEN_KEY);
   sessionStorage.removeItem(ROLE_KEY);
+  sessionStorage.removeItem(OFFICE_KEY);
+  window.dispatchEvent(new CustomEvent("ct-october-auth"));
 }
 
 async function request(path, { method = "GET", body, auth = true, clearOnUnauthorized = true } = {}) {

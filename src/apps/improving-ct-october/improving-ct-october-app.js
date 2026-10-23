@@ -228,7 +228,7 @@ export class ImprovingCtOctoberApp extends Application {
       field.select();
       return;
     }
-    saveSession(login.body.token, "team");
+    saveSession(login.body.token, "team", office);
     const started = await teamStart();
     if (started.status !== 200) {
       this._error("The session could not be started.");
