@@ -142,9 +142,14 @@ test.describe("CT stations", () => {
     await registerProbe(page);
     await startTeam(page, { office: "chile", keyword: "river" });
     await expectPath(page, "/C:/THROWBACK/PLANO.TXT", true);
+    await expect
+      .poll(
+        async () => Object.keys((await readMarker(page))?.stations || {}).sort(),
+        { timeout: 15000 },
+      )
+      .toEqual(["minesweeper", "morse-file", "paint-puerta", "recycle-clue", "throwback-folder", "y2k-memory"]);
     const marker = await readMarker(page);
     expect(marker?.office).toBe("chile");
-    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["minesweeper", "morse-file", "recycle-clue", "throwback-folder", "y2k-memory"]);
     expect(await fsExists(page, PROBE_DIR)).toBe(false);
   });
 

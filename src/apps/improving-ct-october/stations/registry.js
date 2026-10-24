@@ -14,5 +14,6 @@ export const STATIONS = {
     { id: "minesweeper", load: () => import("./minesweeper.js") },
     { id: "recycle-clue", load: () => import("./chile-recycle.js") },
     { id: "y2k-memory", load: () => import("./chile-y2k.js") },
+    { id: "paint-puerta", load: () => import("./chile-paint.js") },
   ],
 };
