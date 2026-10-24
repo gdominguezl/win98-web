@@ -144,7 +144,7 @@ test.describe("CT stations", () => {
     await expectPath(page, "/C:/THROWBACK/PLANO.TXT", true);
     const marker = await readMarker(page);
     expect(marker?.office).toBe("chile");
-    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["minesweeper", "morse-file", "throwback-folder"]);
+    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["minesweeper", "morse-file", "recycle-clue", "throwback-folder", "y2k-memory"]);
     expect(await fsExists(page, PROBE_DIR)).toBe(false);
   });
 

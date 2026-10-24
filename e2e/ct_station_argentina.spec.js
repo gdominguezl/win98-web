@@ -274,7 +274,8 @@ test.describe("CT station: Argentina recycle clue", () => {
     await startTeam(page, { office: "chile", keyword: "river" });
     await page.waitForTimeout(2500);
     expect(await fsExists(page, BIN_ITEM)).toBe(false);
-    expect(await binIsFull(page)).toBe(false);
+    const names = (await binEntries(page)).map((e) => e.originalName);
+    expect(names).not.toContain("IMG_0001.png");
   });
 
   test("reload keeps one item; a prior restore is not duplicated", async ({

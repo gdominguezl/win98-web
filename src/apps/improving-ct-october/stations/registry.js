@@ -12,5 +12,7 @@ export const STATIONS = {
     { id: "throwback-folder", load: () => import("./chile-throwback.js") },
     { id: "morse-file", load: () => import("./chile-morse.js") },
     { id: "minesweeper", load: () => import("./minesweeper.js") },
+    { id: "recycle-clue", load: () => import("./chile-recycle.js") },
+    { id: "y2k-memory", load: () => import("./chile-y2k.js") },
   ],
 };
