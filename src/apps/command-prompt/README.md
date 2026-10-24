@@ -30,3 +30,6 @@ The **MS-DOS Prompt** provides a command-line interface (CLI) for interacting wi
 ## Implementation Details
 
 The application maintains its own state for the current working directory and command history. It resolves paths relative to the current directory and interacts directly with `fs.promises` from `@zenfs/core`. When a command is not recognized as an internal DOS command, it attempts to find a matching application in the system registry or a file association for a local file.
+
+The `HELP` listing can be replaced at runtime through `setHelpOverride(lines)` from `src/system/dos-shell.js` (used by the Chile station of Improving CT October); `null` restores the default list.
+`DIR`, `CD` and `TYPE` resolve names case-insensitively when the exact path does not exist, and `CD` adopts the real on-disk casing.

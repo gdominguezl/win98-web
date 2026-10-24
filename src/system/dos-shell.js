@@ -3,6 +3,12 @@ import { apps } from "../config/apps.js";
 import { getAssociation } from "./directory.js";
 import { launchApp } from "./app-manager.js";
 
+let helpOverride = null;
+
+export function setHelpOverride(lines) {
+  helpOverride = lines;
+}
+
 export class DOSShell {
   constructor(terminal, options = {}) {
     this.terminal = terminal;
@@ -98,6 +104,12 @@ export class DOSShell {
 
     switch (cmd.toLowerCase()) {
       case "help":
+        if (helpOverride) {
+          for (const line of helpOverride) {
+            this.terminal.write(`${line}\r\n`);
+          }
+          break;
+        }
         this.terminal.write("Available commands:\r\n");
         this.terminal.write(
           "  DIR [path]        - Lists files and directories\r\n",
@@ -133,8 +145,9 @@ export class DOSShell {
         break;
 
       case "dir":
-        const dirPath =
-          args.length > 0 ? this.resolvePath(args[0]) : this.currentDirectory;
+        const dirPath = await this._findExisting(
+          args.length > 0 ? this.resolvePath(args[0]) : this.currentDirectory,
+        );
         if (dirPath === null) {
           this.terminal.write("Invalid directory\r\n");
           break;
@@ -181,7 +194,7 @@ export class DOSShell {
           break;
         }
 
-        const newPath = this.resolvePath(args[0]);
+        const newPath = await this._findExisting(this.resolvePath(args[0]));
         if (newPath === null) {
           this.terminal.write("Invalid directory\r\n");
           break;
@@ -270,7 +283,7 @@ export class DOSShell {
         }
         try {
           const content = await fs.promises.readFile(
-            this.resolvePath(args[0]),
+            await this._findExisting(this.resolvePath(args[0])),
             "utf8",
           );
           this.terminal.write(content.replace(/\n/g, "\r\n") + "\r\n");
@@ -471,6 +484,39 @@ export class DOSShell {
 
   prompt() {
     this.terminal.write(`${this._getDisplayPath(this.currentDirectory)}>`);
+  }
+
+  async _findExisting(path) {
+    if (path === null) return null;
+    try {
+      await fs.promises.stat(path);
+      return path;
+    } catch {}
+    const parts = path.split("/").filter((p) => p !== "");
+    let current = "";
+    for (const seg of parts) {
+      if (current === "" && /^[A-Za-z]:$/.test(seg)) {
+        current = "/" + seg.toUpperCase();
+        continue;
+      }
+      let entries;
+      try {
+        entries = await fs.promises.readdir(current === "" ? "/" : current);
+      } catch {
+        return path;
+      }
+      const match =
+        entries.find((e) => e === seg) ??
+        entries.find((e) => e.toLowerCase() === seg.toLowerCase());
+      if (match === undefined) return path;
+      current += "/" + match;
+    }
+    try {
+      await fs.promises.stat(current);
+      return current;
+    } catch {
+      return path;
+    }
   }
 
   resolvePath(path) {

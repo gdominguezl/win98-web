@@ -141,8 +141,10 @@ test.describe("CT stations", () => {
   test("a team of the other office gets no station", async ({ page }) => {
     await registerProbe(page);
     await startTeam(page, { office: "chile", keyword: "river" });
-    await page.waitForTimeout(2500);
-    expect(await fsExists(page, MARKER)).toBe(false);
+    await expectPath(page, "/C:/THROWBACK/PLANO.TXT", true);
+    const marker = await readMarker(page);
+    expect(marker?.office).toBe("chile");
+    expect(Object.keys(marker?.stations || {})).toEqual(["throwback-folder"]);
     expect(await fsExists(page, PROBE_DIR)).toBe(false);
   });
 
