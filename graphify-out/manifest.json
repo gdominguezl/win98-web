@@ -942,8 +942,8 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792816186.5725498,
-    "seen": 1792816193.175091,
+    "mtime": 1792817830.3402562,
+    "seen": 1792817834.3113558,
     "ast_hash": "adde1b2c31533b11bcf4394ffaeac2ae",
     "semantic_hash": ""
   },
@@ -6666,9 +6666,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/README.md": {
-    "mtime": 1792815855.1345427,
-    "seen": 1792816193.175238,
-    "ast_hash": "fe3f8c542b28f87f9cc48097c309d00b",
+    "mtime": 1792816727.7515833,
+    "seen": 1792817834.3115032,
+    "ast_hash": "ac2dd96ac29cff21ef70549d1e2ffb4f",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-add-improving-ct-october/.openspec.yaml": {
@@ -6732,9 +6732,9 @@
     "semantic_hash": ""
   },
   "e2e/ct_stations.spec.js": {
-    "mtime": 1792815411.1632764,
-    "seen": 1792816193.174995,
-    "ast_hash": "e936c7293f8ba87f87263733a3e862ee",
+    "mtime": 1792817512.558632,
+    "seen": 1792817834.311253,
+    "ast_hash": "af04a5b59a60e0b975d8a4921120b708",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/engine.js": {
@@ -6744,9 +6744,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/registry.js": {
-    "mtime": 1792815402.4187007,
-    "seen": 1792816193.175045,
-    "ast_hash": "1347105db37613906759d24006ffc442",
+    "mtime": 1792816727.752096,
+    "seen": 1792817834.311307,
+    "ast_hash": "2fe1df94703c8d831d3d94bf5d3daa01",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-edit-ct-patch-code/.openspec.yaml": {
@@ -6870,9 +6870,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-chile-paint-challenge/tasks.md": {
-    "mtime": 1792812138.0200882,
-    "seen": 1792813711.2005289,
-    "ast_hash": "ddd792cae2a734746eac51c9eb0f7d62",
+    "mtime": 1792817816.9319868,
+    "seen": 1792817834.311435,
+    "ast_hash": "3687ebc6efa13ea5de0e6ecbd70e681b",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-chile-recycle-and-y2k-clues/design.md": {
@@ -7149,6 +7149,18 @@
     "mtime": 1792814065.9481707,
     "seen": 1792816193.175241,
     "ast_hash": "927a965f2b498a1cf1afd85d838664c8",
+    "semantic_hash": ""
+  },
+  "e2e/ct_station_chile_paint.spec.js": {
+    "mtime": 1792816887.6582146,
+    "seen": 1792817834.311251,
+    "ast_hash": "d50d3557c4d89caa324af35f28d9c81c",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/chile-paint.js": {
+    "mtime": 1792816723.4103756,
+    "seen": 1792817834.311303,
+    "ast_hash": "7594f49740e7f4fdd31de8e36393b1ae",
     "semantic_hash": ""
   }
 }
