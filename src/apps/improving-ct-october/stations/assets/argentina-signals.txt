@@ -1,0 +1,35 @@
+==================================================
+        SIGNALS.TXT - MORSE REFERENCE
+        Y2K EMERGENCY COMMUNICATION SYSTEM
+==================================================
+
+ALFABETO / MORSE
+
+A  .-        N  -.        Ñ  --.--
+B  -...      O  ---       P  .--.
+C  -.-.      Q  --.-      R  .-.
+D  -..       S  ...       T  -
+E  .         U  ..-       V  ...-
+F  ..-.      W  .--       X  -..-
+G  --.       Y  -.--      Z  --..
+H  ....      I  ..        J  .---
+K  -.-       L  .-..      M  --
+
+NUMEROS
+
+0  -----     5  .....
+1  .----     6  -....
+2  ..---     7  --...
+3  ...--     8  ---..
+4  ....-     9  ----.
+
+INSTRUCCIONES
+- Un punto (.) representa una señal corta.
+- Un guion (-) representa una señal larga.
+- Un espacio separa las letras.
+- Una barra (/) separa las palabras.
+- Lee los grupos de izquierda a derecha.
+
+==================================================
+END OF FILE
+==================================================
