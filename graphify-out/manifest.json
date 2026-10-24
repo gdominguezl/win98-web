@@ -942,8 +942,8 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792817830.3402562,
-    "seen": 1792817834.3113558,
+    "mtime": 1792849110.5875225,
+    "seen": 1792849118.4439921,
     "ast_hash": "adde1b2c31533b11bcf4394ffaeac2ae",
     "semantic_hash": ""
   },
@@ -6666,9 +6666,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/README.md": {
-    "mtime": 1792816727.7515833,
-    "seen": 1792817834.3115032,
-    "ast_hash": "ac2dd96ac29cff21ef70549d1e2ffb4f",
+    "mtime": 1792848218.0413797,
+    "seen": 1792849118.444143,
+    "ast_hash": "77d8b42f93a17c565376268b568d711d",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-add-improving-ct-october/.openspec.yaml": {
@@ -6786,9 +6786,9 @@
     "semantic_hash": ""
   },
   "e2e/ct_station_chile.spec.js": {
-    "mtime": 1792813361.320772,
-    "seen": 1792813711.200366,
-    "ast_hash": "29a1bb94c3e32a71145e7bb0fbb0828d",
+    "mtime": 1792849062.7144501,
+    "seen": 1792849118.4438882,
+    "ast_hash": "7ea6085f37302d2b0a11103692f91c53",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/argentina-recycle.js": {
@@ -6816,33 +6816,33 @@
     "semantic_hash": ""
   },
   "e2e/ct_station_argentina_dos.spec.js": {
-    "mtime": 1792813361.1716413,
-    "seen": 1792813711.200364,
-    "ast_hash": "13128f2a93cf3e8c5628399a26aff39d",
+    "mtime": 1792848516.2762432,
+    "seen": 1792849118.443887,
+    "ast_hash": "1f3d6792fadecb0ae811af5565a3bf09",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/argentina-throwback.js": {
-    "mtime": 1792813106.2428672,
-    "seen": 1792813711.2004101,
-    "ast_hash": "87a2be0b322e7a5aac0de540a2844f47",
+    "mtime": 1792848178.3554792,
+    "seen": 1792849118.443938,
+    "ast_hash": "e0766eb4bd050e6d4a7d89540c048b49",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-argentina-dos-challenge/design.md": {
-    "mtime": 1792812750.5514977,
-    "seen": 1792813711.200526,
-    "ast_hash": "83e862b0e950c4f24170221a809223fd",
+    "mtime": 1792848216.4367502,
+    "seen": 1792849118.444064,
+    "ast_hash": "f22076ff59f81f79949135cd2553ef8b",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-argentina-dos-challenge/proposal.md": {
-    "mtime": 1792812750.547395,
-    "seen": 1792813711.200526,
-    "ast_hash": "52e2a395e2e6328033d0f069413eb0bb",
+    "mtime": 1792848216.436491,
+    "seen": 1792849118.444065,
+    "ast_hash": "d73c642935fc275d48b56604235c0e06",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-argentina-dos-challenge/specs/apps/ct-station-argentina/spec.md": {
-    "mtime": 1792812750.551696,
-    "seen": 1792813711.2005272,
-    "ast_hash": "35d62b741a6ab72e26358fb6b8a39b5b",
+    "mtime": 1792848211.4677286,
+    "seen": 1792849118.444065,
+    "ast_hash": "04b4a56bb54d247bd7bcdf2222195a37",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-argentina-dos-challenge/tasks.md": {
@@ -7161,6 +7161,12 @@
     "mtime": 1792816723.4103756,
     "seen": 1792817834.311303,
     "ast_hash": "7594f49740e7f4fdd31de8e36393b1ae",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/assets/argentina-help-dos.txt": {
+    "mtime": 1792848159.9296088,
+    "seen": 1792849118.444144,
+    "ast_hash": "a712746ddcd49000923c2ea0f69fda54",
     "semantic_hash": ""
   }
 }
