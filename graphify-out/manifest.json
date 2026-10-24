@@ -942,8 +942,8 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792792917.1997354,
-    "seen": 1792792922.7334158,
+    "mtime": 1792800517.4042473,
+    "seen": 1792800523.948134,
     "ast_hash": "adde1b2c31533b11bcf4394ffaeac2ae",
     "semantic_hash": ""
   },
@@ -1542,9 +1542,9 @@
     "semantic_hash": ""
   },
   "src/system/dos-shell.js": {
-    "mtime": 1792597455.3474758,
-    "seen": 1792608745.733307,
-    "ast_hash": "1d1179333712484d8a45764fb5c2f6bf",
+    "mtime": 1792800308.0716534,
+    "seen": 1792800523.948184,
+    "ast_hash": "cb2866f1801060896419e85dd228602e",
     "semantic_hash": ""
   },
   "src/system/drive-service.js": {
@@ -1908,9 +1908,9 @@
     "semantic_hash": ""
   },
   "src/apps/command-prompt/README.md": {
-    "mtime": 1791317072.001376,
-    "seen": 1792608745.733351,
-    "ast_hash": "26205b7e9f0bde44eb6212e2864f7e37",
+    "mtime": 1792800439.3718734,
+    "seen": 1792800523.948255,
+    "ast_hash": "5ddbeed158c7f32d676c626f27de8b88",
     "semantic_hash": ""
   },
   "src/apps/cursor-explorer/README.md": {
@@ -6666,9 +6666,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/README.md": {
-    "mtime": 1792792467.4168344,
-    "seen": 1792792922.733543,
-    "ast_hash": "162cbdca9c3eb3646d107ab40ea996f6",
+    "mtime": 1792800437.4852622,
+    "seen": 1792800523.948263,
+    "ast_hash": "25cfbe0607032418b1612df7ee9ede83",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-add-improving-ct-october/.openspec.yaml": {
@@ -6732,21 +6732,21 @@
     "semantic_hash": ""
   },
   "e2e/ct_stations.spec.js": {
-    "mtime": 1792792169.0290086,
-    "seen": 1792792922.733325,
-    "ast_hash": "cd095085a27694f9a04ad5a3a6c2d5e6",
+    "mtime": 1792800308.0712862,
+    "seen": 1792800523.948043,
+    "ast_hash": "252eed8d2674c257f6d708eb0d4a578a",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/engine.js": {
-    "mtime": 1792792165.7637587,
-    "seen": 1792792922.733369,
-    "ast_hash": "5ce3fa8bb45605cc75c504533610b3f4",
+    "mtime": 1792793670.8163025,
+    "seen": 1792800523.9480882,
+    "ast_hash": "cb46a8a055d95674e02dbd8f900eaef8",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/registry.js": {
-    "mtime": 1792791219.113945,
-    "seen": 1792792922.73337,
-    "ast_hash": "9f75c5404dbabaa9d20a17e26c3364e0",
+    "mtime": 1792800308.0714488,
+    "seen": 1792800523.9480891,
+    "ast_hash": "4f27469df8935dc0e58262c2b0a05a7a",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-argentina-recycle-clue/.openspec.yaml": {
@@ -6774,9 +6774,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-argentina-recycle-clue/tasks.md": {
-    "mtime": 1792790869.2050505,
-    "seen": 1792792922.7334871,
-    "ast_hash": "00ee9bd38ea597dc8e3bcccb5611a74c",
+    "mtime": 1792798935.2596855,
+    "seen": 1792800523.9482062,
+    "ast_hash": "e30dd849cb54ec1d86699b0f1d6f3ac9",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-chile-throwback-folder/.openspec.yaml": {
@@ -6804,9 +6804,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-chile-throwback-folder/tasks.md": {
-    "mtime": 1792791675.8758616,
-    "seen": 1792792922.73349,
-    "ast_hash": "069a1f15ba06f5020991045a26b24deb",
+    "mtime": 1792800501.1660168,
+    "seen": 1792800523.94821,
+    "ast_hash": "6c39549b1564ded74c3c14f03ff58a5b",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-station-engine/.openspec.yaml": {
@@ -6834,9 +6834,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-station-engine/tasks.md": {
-    "mtime": 1792790706.6130373,
-    "seen": 1792792922.733492,
-    "ast_hash": "d0ae079565f07d38e5308b31967e4eff",
+    "mtime": 1792792922.8547742,
+    "seen": 1792800523.948213,
+    "ast_hash": "960368e855f355d2c1160833d499e038",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-edit-ct-patch-code/.openspec.yaml": {
@@ -6867,6 +6867,42 @@
     "mtime": 1792790162.057725,
     "seen": 1792792922.7335198,
     "ast_hash": "f4c00b2bd6956e997b7ef74cddd815c2",
+    "semantic_hash": ""
+  },
+  "e2e/ct_station_argentina.spec.js": {
+    "mtime": 1792797968.0778465,
+    "seen": 1792800523.948041,
+    "ast_hash": "ced00f0e92a1fd8de5397b6cdcf15fba",
+    "semantic_hash": ""
+  },
+  "e2e/ct_station_chile.spec.js": {
+    "mtime": 1792800308.0830204,
+    "seen": 1792800523.948042,
+    "ast_hash": "0528b9b5bb96442b5ece1e6d369272cf",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/argentina-recycle.js": {
+    "mtime": 1792797964.7752142,
+    "seen": 1792800523.948087,
+    "ast_hash": "42c0eb79a40d64367b5a284d0b131055",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/chile-throwback.js": {
+    "mtime": 1792800308.0832775,
+    "seen": 1792800523.9480882,
+    "ast_hash": "646d883c0c555fce915858823b81eddd",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/assets/plano.txt": {
+    "mtime": 1792800308.0831711,
+    "seen": 1792800523.948264,
+    "ast_hash": "dde4ae06ee411132adde5090acfb4543",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/assets/argentina-clue.png": {
+    "mtime": 1792793010.5338023,
+    "seen": 1792800523.948304,
+    "ast_hash": "a3e796b5a1d999c16fa3182468a2b85d",
     "semantic_hash": ""
   }
 }
