@@ -34,3 +34,7 @@
 ## Screenshot
 
 ![Screenshot of the minesweeper app](./screenshot.png)
+
+## Challenge mode
+
+`challenge.js` exposes `setMinesweeperChallenge(config | null)`. While a config is set the app opens on the configured board, the Game menu difficulty items are disabled, a win shows `winText` in a dialog instead of the high-score prompt (once per page load), and consecutive losses beyond `tauntAfterLosses` show a taunt from `taunts` (edited in `challenge.js`). With `null` the app behaves exactly as before. Used by the Improving CT October stations.

@@ -4,6 +4,11 @@ import { getItem, setItem } from '../../system/local-storage.js';
 import { SpriteDisplay } from './sprite-display.js';
 import "./minesweeper.css";
 import { ICONS } from '../../config/icons.js';
+import {
+  getMinesweeperChallenge,
+  wasChallengeRevealed,
+  markChallengeRevealed,
+} from './challenge.js';
 
 const HIGH_SCORES_KEY = "minesweeper_high_scores";
 const STYLE_KEY = "minesweeper.use98style";
@@ -37,10 +42,26 @@ export class MinesweeperApp extends Application {
         "MENU_DIVIDER",
         {
           radioItems: [
-            { label: "Beginner", value: "beginner" },
-            { label: "Intermediate", value: "intermediate" },
-            { label: "Expert", value: "expert" },
-            { label: "Custom...", value: "custom" },
+            {
+              label: "Beginner",
+              value: "beginner",
+              enabled: () => !getMinesweeperChallenge(),
+            },
+            {
+              label: "Intermediate",
+              value: "intermediate",
+              enabled: () => !getMinesweeperChallenge(),
+            },
+            {
+              label: "Expert",
+              value: "expert",
+              enabled: () => !getMinesweeperChallenge(),
+            },
+            {
+              label: "Custom...",
+              value: "custom",
+              enabled: () => !getMinesweeperChallenge(),
+            },
           ],
           getValue: () => this.difficulty,
           setValue: (value) => {
@@ -119,8 +140,20 @@ export class MinesweeperApp extends Application {
       };
     }
     this.explodedMine = null;
+    this.challengeLosses = 0;
+    this.lastTaunt = null;
 
-    this.setDifficulty(9, 9, 10, "beginner");
+    const challenge = getMinesweeperChallenge();
+    if (challenge) {
+      this.setDifficulty(
+        challenge.width,
+        challenge.height,
+        challenge.mines,
+        "challenge",
+      );
+    } else {
+      this.setDifficulty(9, 9, 10, "beginner");
+    }
 
     this.boardEl = win.$content.find(".game-board");
     if (this.use98Style) {
@@ -401,6 +434,26 @@ export class MinesweeperApp extends Application {
         "backgroundImage",
         `url(${new URL("./assets/minesweeper-smiley-lose.png", import.meta.url).href})`,
       );
+      const challenge = getMinesweeperChallenge();
+      if (challenge) {
+        this.challengeLosses++;
+        const taunts = challenge.taunts || [];
+        const threshold = challenge.tauntAfterLosses ?? 3;
+        if (taunts.length > 0 && this.challengeLosses >= threshold) {
+          let taunt = this.lastTaunt;
+          while (taunt === this.lastTaunt) {
+            taunt = taunts[Math.floor(Math.random() * taunts.length)];
+            if (taunts.length === 1) break;
+          }
+          this.lastTaunt = taunt;
+          ShowDialogWindow({
+            title: "Minesweeper",
+            text: taunt,
+            modal: true,
+            buttons: [{ label: "OK", isDefault: true }],
+          });
+        }
+      }
       this.renderBoard();
     } else if (result === "win") {
       this.game.isGameOver = true;
@@ -409,7 +462,19 @@ export class MinesweeperApp extends Application {
         "backgroundImage",
         `url(${new URL("./assets/minesweeper-smiley-win.png", import.meta.url).href})`,
       );
-      if (
+      const challenge = getMinesweeperChallenge();
+      if (challenge) {
+        this.challengeLosses = 0;
+        if (!wasChallengeRevealed()) {
+          markChallengeRevealed();
+          ShowDialogWindow({
+            title: challenge.winTitle,
+            text: challenge.winText,
+            modal: true,
+            buttons: [{ label: "OK", isDefault: true }],
+          });
+        }
+      } else if (
         this.difficulty !== "custom" &&
         this.timer < this.highScores[this.difficulty].time
       ) {
