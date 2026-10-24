@@ -444,9 +444,9 @@
     "semantic_hash": ""
   },
   "src/apps/minesweeper/minesweeper-app.js": {
-    "mtime": 1791317072.0130737,
-    "seen": 1792608745.7332458,
-    "ast_hash": "e6cddc78f64ff4b0be482a41e0acef59",
+    "mtime": 1792814796.2204132,
+    "seen": 1792816193.1750479,
+    "ast_hash": "4e65efc30a8fec88c612bb7a8ccb8b5c",
     "semantic_hash": ""
   },
   "src/apps/minesweeper/minesweeper-game.js": {
@@ -942,8 +942,8 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792813686.4565349,
-    "seen": 1792813711.2004569,
+    "mtime": 1792816186.5725498,
+    "seen": 1792816193.175091,
     "ast_hash": "adde1b2c31533b11bcf4394ffaeac2ae",
     "semantic_hash": ""
   },
@@ -2022,9 +2022,9 @@
     "semantic_hash": ""
   },
   "src/apps/minesweeper/README.md": {
-    "mtime": 1791317072.0111897,
-    "seen": 1792608745.733357,
-    "ast_hash": "056ccfe1e9dd010a2ba8cffdd24b269d",
+    "mtime": 1792815037.6715286,
+    "seen": 1792816193.175244,
+    "ast_hash": "d259e322593deec30dfe4f4d2940445e",
     "semantic_hash": ""
   },
   "src/apps/notepad/README.md": {
@@ -6666,9 +6666,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/README.md": {
-    "mtime": 1792813665.4548566,
-    "seen": 1792813711.200593,
-    "ast_hash": "cb411f2a3537c6575a9ea164542ff593",
+    "mtime": 1792815855.1345427,
+    "seen": 1792816193.175238,
+    "ast_hash": "fe3f8c542b28f87f9cc48097c309d00b",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-add-improving-ct-october/.openspec.yaml": {
@@ -6732,9 +6732,9 @@
     "semantic_hash": ""
   },
   "e2e/ct_stations.spec.js": {
-    "mtime": 1792813112.788472,
-    "seen": 1792813711.2003672,
-    "ast_hash": "950989e1397e6d9503d3cf5b43c3cd97",
+    "mtime": 1792815411.1632764,
+    "seen": 1792816193.174995,
+    "ast_hash": "e936c7293f8ba87f87263733a3e862ee",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/engine.js": {
@@ -6744,9 +6744,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/registry.js": {
-    "mtime": 1792813106.338526,
-    "seen": 1792813711.2004118,
-    "ast_hash": "94c5904bd8b4c7280dedd7a47e1d2535",
+    "mtime": 1792815402.4187007,
+    "seen": 1792816193.175045,
+    "ast_hash": "1347105db37613906759d24006ffc442",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-edit-ct-patch-code/.openspec.yaml": {
@@ -6780,9 +6780,9 @@
     "semantic_hash": ""
   },
   "e2e/ct_station_argentina.spec.js": {
-    "mtime": 1792797968.0778465,
-    "seen": 1792800523.948041,
-    "ast_hash": "ced00f0e92a1fd8de5397b6cdcf15fba",
+    "mtime": 1792815419.7343495,
+    "seen": 1792816193.1749902,
+    "ast_hash": "27e7e2a89992d28a0591ad6d36fb06da",
     "semantic_hash": ""
   },
   "e2e/ct_station_chile.spec.js": {
@@ -6792,9 +6792,9 @@
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/argentina-recycle.js": {
-    "mtime": 1792797964.7752142,
-    "seen": 1792800523.948087,
-    "ast_hash": "42c0eb79a40d64367b5a284d0b131055",
+    "mtime": 1792815146.604936,
+    "seen": 1792816193.175039,
+    "ast_hash": "10c1e1f08c26c7b05009781b8b3bda82",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/stations/chile-throwback.js": {
@@ -6894,9 +6894,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-chile-recycle-and-y2k-clues/tasks.md": {
-    "mtime": 1792812138.0407553,
-    "seen": 1792813711.200531,
-    "ast_hash": "108fdee48bbe06ee39b39a7c99a45a91",
+    "mtime": 1792815888.7920473,
+    "seen": 1792816193.175172,
+    "ast_hash": "d63342be41a022cebb07616e93add8e6",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-minesweeper-challenge/design.md": {
@@ -6918,9 +6918,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-minesweeper-challenge/tasks.md": {
-    "mtime": 1792812137.995563,
-    "seen": 1792813711.200533,
-    "ast_hash": "81f5610f6cdc7bbd38e9d6bf3bd977a8",
+    "mtime": 1792815094.8999028,
+    "seen": 1792816193.175175,
+    "ast_hash": "1566cf0cd4b9c998cfe867bbd85273a5",
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-morse-signals/design.md": {
@@ -6948,9 +6948,9 @@
     "semantic_hash": ""
   },
   "openspec/changes/add-ct-morse-signals/tasks.md": {
-    "mtime": 1792812137.9609594,
-    "seen": 1792813711.200535,
-    "ast_hash": "43ee6b8af3891bc9d8b5adab2ed7659d",
+    "mtime": 1792814546.5142868,
+    "seen": 1792816193.175178,
+    "ast_hash": "d1d3ec6e5f3e7437f6c5841520a5f009",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-23-add-ct-argentina-recycle-clue/.openspec.yaml": {
@@ -7077,6 +7077,78 @@
     "mtime": 1792812782.1600215,
     "seen": 1792813711.200594,
     "ast_hash": "e7af934b043dfc57047063a75890d183",
+    "semantic_hash": ""
+  },
+  "e2e/ct_minesweeper_challenge.spec.js": {
+    "mtime": 1792814770.3888865,
+    "seen": 1792816193.174989,
+    "ast_hash": "dfa0921c56298d89b6bdc3ba55ce3d17",
+    "semantic_hash": ""
+  },
+  "e2e/ct_station_chile_clues.spec.js": {
+    "mtime": 1792815174.9777784,
+    "seen": 1792816193.1749928,
+    "ast_hash": "3eba55f6b734270e8d3f2df3cef3c30f",
+    "semantic_hash": ""
+  },
+  "e2e/ct_station_morse.spec.js": {
+    "mtime": 1792814061.9103594,
+    "seen": 1792816193.174994,
+    "ast_hash": "3898243156fd1d3e94a6992b42260d6c",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/argentina-signals.js": {
+    "mtime": 1792814248.2144268,
+    "seen": 1792816193.175039,
+    "ast_hash": "b0a57f043d84bff73266a06b54a5a1f8",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/chile-morse.js": {
+    "mtime": 1792814248.3696074,
+    "seen": 1792816193.175041,
+    "ast_hash": "3ce9bfdf89960223d4ac477de352c83b",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/chile-recycle.js": {
+    "mtime": 1792815411.0857677,
+    "seen": 1792816193.175041,
+    "ast_hash": "3210c9a68c27f1f5342895f77a3bf352",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/chile-y2k.js": {
+    "mtime": 1792815402.2534137,
+    "seen": 1792816193.175043,
+    "ast_hash": "b252022a39694ca52abf9962117618e6",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/lib/recycle.js": {
+    "mtime": 1792815146.4448118,
+    "seen": 1792816193.175043,
+    "ast_hash": "9d53616937c7527f3e4cf61e21960933",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/minesweeper.js": {
+    "mtime": 1792814804.9233959,
+    "seen": 1792816193.175044,
+    "ast_hash": "ac653574ba8635f64e3b3d9893072c7a",
+    "semantic_hash": ""
+  },
+  "src/apps/minesweeper/challenge.js": {
+    "mtime": 1792814795.3879254,
+    "seen": 1792816193.175047,
+    "ast_hash": "f531f83f5641e5f3a18a7bb2e798e4f3",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/assets/argentina-signals.txt": {
+    "mtime": 1792814065.7622561,
+    "seen": 1792816193.175241,
+    "ast_hash": "5ba051dc53243829d0a7b3aafae16d98",
+    "semantic_hash": ""
+  },
+  "src/apps/improving-ct-october/stations/assets/chile-morse.txt": {
+    "mtime": 1792814065.9481707,
+    "seen": 1792816193.175241,
+    "ast_hash": "927a965f2b498a1cf1afd85d838664c8",
     "semantic_hash": ""
   }
 }
