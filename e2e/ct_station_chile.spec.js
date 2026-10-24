@@ -195,15 +195,20 @@ test.describe("CT station: Chile throwback folder", () => {
     await expectPath(page, FOLDER, false);
   });
 
-  test("argentina team and no session get no folder and default HELP", async ({
+  test("argentina team gets its own folder and help, not Chile's", async ({
     page,
   }) => {
     await startTeam(page, { office: "argentina", keyword: "onion" });
-    await page.waitForTimeout(2500);
-    expect(await fsExists(page, FOLDER)).toBe(false);
+    await expectPath(page, FOLDER, true);
+    const entries = await page.evaluate(async () =>
+      window.fs.promises.readdir("/C:/THROWBACK"),
+    );
+    expect(entries.sort()).toEqual(["ERROR.LOG", "MEMORY.TXT", "PLANO.TXT"]);
     const win = await openDos(page);
     await type(page, "HELP");
-    await expect(win).toContainText("Available commands:", { timeout: 10000 });
+    await expect(win).toContainText("Opens the THROWBACK directory.", {
+      timeout: 10000,
+    });
     await expect(win).not.toContainText(HELP_LINES[0]);
   });
 

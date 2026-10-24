@@ -1,4 +1,7 @@
-import { setHelpOverride } from "../../../system/dos-shell.js";
+import {
+  setHelpOverride,
+  setStartDirOverride,
+} from "../../../system/dos-shell.js";
 import planoText from "./assets/plano.txt?raw";
 
 const FOLDER = "/C:/THROWBACK";
@@ -55,6 +58,7 @@ export async function apply(ctx) {
   await writeVerified(fs, `${FOLDER}/PLANO.TXT`, planoText, encoder.encode(planoText));
 
   setHelpOverride(HELP_LINES);
+  setStartDirOverride("C:\\");
   return { folder: FOLDER };
 }
 
@@ -70,4 +74,5 @@ export async function remove(ctx) {
     await fs.promises.rmdir(FOLDER);
   } catch {}
   setHelpOverride(null);
+  setStartDirOverride(null);
 }

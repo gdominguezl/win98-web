@@ -23,7 +23,7 @@ The patch code is still entered in Y2K Patch. This window only starts and manage
 
 While a team's session is running, the station engine (`stations/engine.js`) applies that office's stations and removes them when the session stops running (patch accepted, admin restart or reset, Start a new game). A station is a module with `{ id, apply(ctx), remove(ctx, manifest) }`; `ctx` is `{ fs, office }`. `apply` must be idempotent and returns a JSON manifest of what it created; `remove` deletes exactly that. Applied stations are recorded in `/C:/.ct_stations.json` and leftovers are cleaned at boot on a tab with no team session. To add one, create `stations/<name>.js` and add `{ id, load: () => import("./<name>.js") }` to its office list in `stations/registry.js`.
 
-- Argentina: `stations/argentina-recycle.js` hides a clue image in the Recycle Bin (`IMG_0001.png`, restorable to `C:\My Documents`).
+- Argentina: `stations/argentina-recycle.js` hides a clue image in the Recycle Bin (`IMG_0001.png`, restorable to `C:\My Documents`), and `stations/argentina-throwback.js` creates `C:\THROWBACK` with `MEMORY.TXT`, `ERROR.LOG` and `PLANO.TXT`, replaces the MS-DOS `HELP` screen, and starts new prompts at `C:\`.
 - Chile: `stations/chile-throwback.js` creates `C:\THROWBACK` with `PLANO.TXT`, `MEMORY.TXT` and `ERROR.LOG`, and overrides the MS-DOS Prompt `HELP` output while the session runs.
 
 ## Development

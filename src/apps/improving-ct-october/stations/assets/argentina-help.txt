@@ -1,0 +1,42 @@
+Microsoft(R) Windows 98
+MS-DOS Command Interpreter
+
+========================================
+       MS-DOS COMMAND REFERENCE
+========================================
+
+Available commands:
+
+HELP
+  Displays this help screen.
+
+DIR
+  Lists files and folders in the current directory.
+
+CD
+  Changes the current directory.
+
+TYPE
+  Displays the contents of a text file.
+
+CLS
+  Clears the screen.
+
+----------------------------------------
+EXAMPLES
+----------------------------------------
+
+CD THROWBACK
+  Opens the THROWBACK directory.
+
+DIR
+  Shows the files inside the directory.
+
+TYPE MEMORY.TXT
+  Displays the contents of MEMORY.TXT.
+
+TIP:
+To read any file, type TYPE followed by
+its exact name, as listed by DIR.
+
+========================================

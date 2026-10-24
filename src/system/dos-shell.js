@@ -9,11 +9,21 @@ export function setHelpOverride(lines) {
   helpOverride = lines;
 }
 
+let startDirOverride = null;
+
+export function setStartDirOverride(path) {
+  startDirOverride =
+    path === null
+      ? null
+      : "/" + path.replace(/\\/g, "/").replace(/^\/+/, "").replace(/\/+$/, "");
+}
+
 export class DOSShell {
   constructor(terminal, options = {}) {
     this.terminal = terminal;
     this.options = options;
-    this.currentDirectory = options.currentDirectory || "/C:/WINDOWS";
+    this.currentDirectory =
+      options.currentDirectory || startDirOverride || "/C:/WINDOWS";
     this.commandHistory = [];
     this.historyIndex = -1;
     this.currentCommand = "";
