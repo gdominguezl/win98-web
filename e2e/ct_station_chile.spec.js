@@ -206,10 +206,11 @@ test.describe("CT station: Chile throwback folder", () => {
     expect(entries.sort()).toEqual(["ERROR.LOG", "MEMORY.TXT", "PLANO.TXT"]);
     const win = await openDos(page);
     await type(page, "HELP");
-    await expect(win).toContainText("Opens the THROWBACK directory.", {
+    await expect(win).toContainText("Displays this help screen.", {
       timeout: 10000,
     });
     await expect(win).not.toContainText(HELP_LINES[0]);
+    await expect(win).not.toContainText("MS-DOS COMMAND REFERENCE");
   });
 
   test("a file the team created inside the folder disappears with it", async ({

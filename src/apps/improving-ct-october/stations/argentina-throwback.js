@@ -6,8 +6,10 @@ import memoryText from "./assets/argentina-memory.txt?raw";
 import errorText from "./assets/argentina-error.log?raw";
 import planoText from "./assets/argentina-plano.txt?raw";
 import helpText from "./assets/argentina-help.txt?raw";
+import helpDosText from "./assets/argentina-help-dos.txt?raw";
 
 const FOLDER = "/C:/THROWBACK";
+const DESKTOP_FILE = "/C:/WINDOWS/Desktop/HELP_PANTALLA.TXT";
 
 const FILES = {
   "MEMORY.TXT": memoryText,
@@ -54,10 +56,13 @@ export async function apply(ctx) {
   for (const [name, text] of Object.entries(FILES)) {
     await writeVerified(fs, `${FOLDER}/${name}`, text, encoder.encode(text));
   }
+  await fs.promises.mkdir("/C:/WINDOWS/Desktop", { recursive: true });
+  await writeVerified(fs, DESKTOP_FILE, helpText, encoder.encode(helpText));
+  document.dispatchEvent(new CustomEvent("desktop-refresh"));
 
-  setHelpOverride(helpText.split("\n"));
+  setHelpOverride(helpDosText.split("\n"));
   setStartDirOverride("C:\\");
-  return { folder: FOLDER };
+  return { folder: FOLDER, desktopFile: DESKTOP_FILE };
 }
 
 export async function remove(ctx) {
@@ -71,6 +76,10 @@ export async function remove(ctx) {
     }
     await fs.promises.rmdir(FOLDER);
   } catch {}
+  try {
+    await fs.promises.unlink(DESKTOP_FILE);
+  } catch {}
+  document.dispatchEvent(new CustomEvent("desktop-refresh"));
   setHelpOverride(null);
   setStartDirOverride(null);
 }

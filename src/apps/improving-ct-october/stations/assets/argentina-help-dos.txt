@@ -1,0 +1,16 @@
+Available commands:
+
+HELP
+  Displays this help screen.
+
+DIR
+  Lists files and folders in the current directory.
+
+CD
+  Changes the current directory.
+
+TYPE
+  Displays the contents of a text file.
+
+CLS
+  Clears the screen.
