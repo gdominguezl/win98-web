@@ -8,7 +8,7 @@ Argentina teams get a second station in the MS-DOS Prompt, like Chile: a `C:\THR
 
 - New Argentina station `throwback-folder` (`src/apps/improving-ct-october/stations/argentina-throwback.js`), registered in `registry.js` after `recycle-clue`. While an Argentina team runs, `C:\THROWBACK` exists with exactly `MEMORY.TXT`, `ERROR.LOG` and `PLANO.TXT` (Argentina's own texts and its own new ANSI drawing, not Chile's). It is removed with everything inside when the session stops running.
 - `HELP` prints the supplied `HELP_PANTALLA.txt` verbatim while an Argentina session runs, via the existing `setHelpOverride`. The help text is bundled as an asset and is never a file in `C:\THROWBACK` or anywhere on the virtual disk.
-- While an Argentina session runs, MS-DOS Prompt opens in `C:\` so the help example `CD THROWBACK` works as written. This adds a small `setStartDirOverride(path | null)` to `dos-shell.js`; default behavior (start in `C:\WINDOWS`) is unchanged.
+- While an Argentina or a Chile session runs, MS-DOS Prompt opens in `C:\` so `CD THROWBACK` works as written (decided by the user for both offices; the Chile station `throwback-folder` also sets and clears it). This adds a small `setStartDirOverride(path | null)` to `dos-shell.js`; default behavior (start in `C:\WINDOWS`) is unchanged.
 - No server, MSN or nginx change.
 
 ## Capabilities

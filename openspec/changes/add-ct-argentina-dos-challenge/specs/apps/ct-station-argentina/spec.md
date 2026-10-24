@@ -38,8 +38,8 @@ The system SHALL print the supplied help screen for `HELP` in MS-DOS Prompt whil
 - **WHEN** a user types `HELP`
 - **THEN** the default help is printed
 
-### Requirement: MS-DOS Prompt opens in C:\ for Argentina teams
-The system SHALL open new MS-DOS Prompt windows in `C:\` while an Argentina session runs and SHALL keep the default directory otherwise.
+### Requirement: MS-DOS Prompt opens in C:\ for Argentina and Chile teams
+The system SHALL open new MS-DOS Prompt windows in `C:\` while an Argentina or a Chile session runs and SHALL keep the default directory otherwise.
 
 #### Scenario: CD as in the help text
 - **GIVEN** a new MS-DOS Prompt during an Argentina session

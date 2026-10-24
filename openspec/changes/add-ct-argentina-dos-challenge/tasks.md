@@ -9,7 +9,7 @@ Prerequisite: engine, Argentina recycle and Chile throwback changes are implemen
 - [ ] 2.1 Add `setStartDirOverride` to `src/system/dos-shell.js` (default unchanged); run `e2e/command_prompt_zenfs.spec.js` and confirm baseline.
 
 ## 3. Station
-- [ ] 3.1 Copy the four supplied files byte for byte into `stations/assets/` and create `argentina-throwback.js` per the design; register it in `registry.js`.
+- [ ] 3.1 Copy the four supplied files byte for byte into `stations/assets/` and create `argentina-throwback.js` per the design; register it in `registry.js`. Also make `chile-throwback.js` set and clear the start directory (add a Chile scenario to the spec and keep `ct_station_chile.spec.js` passing).
 - [ ] 3.2 Check `PLANO.TXT` fits the 640x480 prompt (screenshot) and report if not.
 
 ## 4. Docs and verification
