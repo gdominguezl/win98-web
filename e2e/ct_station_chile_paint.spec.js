@@ -78,6 +78,44 @@ async function floodFillBackground(page) {
   await page.waitForTimeout(800);
 }
 
+async function startTeamViaApp(page, office, keyword) {
+  await page.evaluate(() =>
+    window.System.launchApp("improving-ct-october"),
+  );
+  const win = page.locator(CT_WINDOW);
+  await expect(win).toBeVisible({ timeout: 15000 });
+  await expect(win.locator("#ct-team option").first()).toBeAttached({
+    timeout: 10000,
+  });
+  if (office !== "argentina") await win.locator("#ct-office").selectOption(office);
+  await win.locator("#ct-keyword").fill(keyword);
+  await win.locator("#ct-start").click();
+  await expect(win.locator("#ct-status")).toHaveText("This team is running.", {
+    timeout: 10000,
+  });
+  return win;
+}
+
+async function openFileDialog(page) {
+  const win = page.locator(PAINT_WINDOW);
+  await win.locator(".menu-button", { hasText: "File" }).first().click();
+  await page
+    .locator(".menu-popup .menu-item", { hasText: "Open" })
+    .first()
+    .click();
+  const picker = page.locator(".file-picker");
+  await expect(picker).toBeVisible({ timeout: 10000 });
+  return picker;
+}
+
+async function closeFileDialog(page) {
+  await page
+    .locator(".file-picker button", { hasText: "Cancel" })
+    .first()
+    .click();
+  await expect(page.locator(".file-picker")).toHaveCount(0, { timeout: 10000 });
+}
+
 test.describe("CT stations: Chile paint clue", () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
@@ -142,6 +180,64 @@ test.describe("CT stations: Chile paint clue", () => {
     await expectPath(page, PUERTA, true);
     state.sessions[3] = { startedAt: null, finishedAt: null };
     await expectPath(page, PUERTA, false);
+  });
+
+  test("File > Open preselects the 24-bit Bitmap type during a chile session", async ({
+    page,
+  }) => {
+    await startTeam(page);
+    await expectPath(page, PUERTA, true);
+    await page.evaluate(() => window.System.launchApp("paint"));
+    await expect(page.locator(PAINT_WINDOW)).toBeVisible({ timeout: 15000 });
+    await page.waitForTimeout(1000);
+
+    const picker = await openFileDialog(page);
+    const select = picker.locator("select");
+    await expect(select).toHaveValue(/^[1-9]/);
+    const label = await select
+      .locator("option:checked")
+      .textContent();
+    expect(label).toContain("24-bit");
+    expect(label).toContain("Bitmap");
+    await expect(
+      picker.locator(".explorer-icon", { hasText: "PUERTA.BMP" }),
+    ).toBeVisible({ timeout: 10000 });
+    await closeFileDialog(page);
+  });
+
+  test("File > Open keeps the default type without a chile session", async ({
+    page,
+  }) => {
+    await page.evaluate(() => window.System.launchApp("paint"));
+    await expect(page.locator(PAINT_WINDOW)).toBeVisible({ timeout: 15000 });
+    await page.waitForTimeout(1000);
+    const picker = await openFileDialog(page);
+    await expect(picker.locator("select")).toHaveValue("0");
+    await closeFileDialog(page);
+    await startTeamViaApp(page, "argentina", "onion");
+    await page.waitForTimeout(2500);
+    const picker2 = await openFileDialog(page);
+    await expect(picker2.locator("select")).toHaveValue("0");
+    await closeFileDialog(page);
+  });
+
+  test("File > Open default is restored when the session stops", async ({
+    page,
+  }) => {
+    await startTeam(page);
+    await expectPath(page, PUERTA, true);
+    await page.evaluate(() => window.System.launchApp("paint"));
+    await expect(page.locator(PAINT_WINDOW)).toBeVisible({ timeout: 15000 });
+    await page.waitForTimeout(1000);
+    const picker = await openFileDialog(page);
+    await expect(picker.locator("select")).toHaveValue(/^[1-9]/);
+    await closeFileDialog(page);
+
+    state.sessions[3] = { startedAt: null, finishedAt: null };
+    await expectPath(page, PUERTA, false);
+    const picker2 = await openFileDialog(page);
+    await expect(picker2.locator("select")).toHaveValue("0");
+    await closeFileDialog(page);
   });
 
   test("argentina team and no session get no PUERTA.BMP", async ({ page }) => {

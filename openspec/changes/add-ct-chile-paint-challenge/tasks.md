@@ -11,3 +11,4 @@
 
 ## 4. Docs and verification
 - [x] 4.1 README. Run the new spec, `ct_*` specs, Paint specs if any; MSN/Fotolog/Winamp only for unchanged status. `openspec validate add-ct-chile-paint-challenge --type change --strict`.
+- [x] 4.2 File > Open preselects `24-bit Bitmap (*.bmp;*.dib)` during a Chile session (`paint/challenge.js`, `paint-app.js`, `file-picker.js` `defaultFileTypeIndex`); spec cases added; default restored otherwise.

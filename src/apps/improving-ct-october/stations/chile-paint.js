@@ -1,3 +1,4 @@
+import { setPaintOpenDefault } from "../../paint/challenge.js";
 import bmpUrl from "./assets/puerta.bmp?url";
 
 const PATH = "/C:/My Documents/PUERTA.BMP";
@@ -30,6 +31,7 @@ export async function apply(ctx) {
   const bytes = new Uint8Array(await response.arrayBuffer());
   await fs.promises.mkdir("/C:/My Documents", { recursive: true });
   await writeVerified(fs, PATH, bytes);
+  setPaintOpenDefault("bmp");
   return { path: PATH };
 }
 
@@ -39,4 +41,5 @@ export async function remove(ctx, manifest) {
   try {
     await fs.promises.unlink(path);
   } catch {}
+  setPaintOpenDefault(null);
 }

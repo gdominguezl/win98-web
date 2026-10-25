@@ -2,6 +2,7 @@ import { Application } from '../../system/application.js';
 import { fs } from "@zenfs/core";
 import { ICONS } from '../../config/icons.js';
 import { ShowFilePicker } from '../../shared/utils/file-picker.js';
+import { getPaintOpenDefault } from './challenge.js';
 import { setItem, LOCAL_STORAGE_KEYS } from '../../system/local-storage.js';
 import './paint.css'; // I'll create this file to import all paint styles
 
@@ -39,10 +40,16 @@ export class PaintApp extends Application {
         window.systemHooks = window.systemHooks || {};
 
         window.systemHooks.showOpenFileDialog = async ({ formats }) => {
+            const fileTypes = this._mapFormats(formats);
+            const preferred = getPaintOpenDefault();
+            const preferredIndex = preferred
+                ? fileTypes.findIndex((ft) => ft.extensions.includes(preferred) && /24-bit/i.test(ft.label))
+                : 0;
             const path = await ShowFilePicker({
                 title: "Open",
                 mode: "open",
-                fileTypes: this._mapFormats(formats)
+                fileTypes,
+                defaultFileTypeIndex: preferredIndex > 0 ? preferredIndex : 0
             });
             if (path) {
                 const file = await this._getFileFromPath(path);

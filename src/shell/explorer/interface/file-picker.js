@@ -23,6 +23,7 @@ export class FilePicker {
       initialPath: "/C:/My Documents",
       fileTypes: [{ label: "All Files (*.*)", extensions: ["*"] }],
       suggestedName: "",
+      defaultFileTypeIndex: 0,
       ...options,
     };
 
@@ -134,6 +135,7 @@ export class FilePicker {
       opt.textContent = ft.label;
       this.typeSelect.appendChild(opt);
     });
+    this.typeSelect.value = String(this.options.defaultFileTypeIndex || 0);
     this.typeSelect.onchange = () => this.renderDirectoryContents();
     typeRow.append(typeLabel, this.typeSelect);
 
