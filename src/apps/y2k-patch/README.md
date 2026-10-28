@@ -10,7 +10,7 @@ The **Y2K Patch** window is where a team types the code recovered from the offic
 - **One code per office**: Set by that office's admin in Improving CT October. Letter case, spaces, and dashes are ignored.
 - **A live session**: This tab has to start a team in Improving CT October first. A reset team is told to contact the admin or start again.
 - **Wrong code**: The window shows an error and the field stays editable. There is no lockout.
-- **Success**: A short install sequence covers the desktop, then says the patch is installed and files, memories, and messages will survive midnight. The same browser tab remembers that and does not play it again. A team the server already finished does not replay the sequence.
+- **Success**: A short install sequence covers the desktop for two seconds and removes itself. The window then becomes a larger "Installation complete" screen — pixel-art globe, a four-item checklist beside a fireworks scene dated 31/12/1999 - 23:59, a 100% progress bar, a WELCOME TO 2000 banner, and a Finish button. The typed code is not shown. The same browser tab remembers the finish and does not play the sequence again; a team the server already finished sees the same screen.
 
 ## How to Use
 

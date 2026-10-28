@@ -57,14 +57,19 @@
 
 .y2k-overlay-panel {
   box-sizing: border-box;
-  width: 320px;
-  padding: 16px;
+  width: 480px;
+  padding: 20px;
   background: var(--ButtonFace);
   box-shadow:
     inset -1px -1px var(--ButtonShadow),
     inset 1px 1px var(--ButtonHilight),
     inset -2px -2px var(--ButtonDkShadow),
     inset 2px 2px var(--ButtonLight);
+}
+
+#y2k-overlay-progress {
+  font-size: 18px;
+  margin: 0 0 12px;
 }
 
 .y2k-overlay-panel .progress-indicator {
@@ -81,4 +86,159 @@
   to {
     width: 100%;
   }
+}
+
+.y2k-success {
+  gap: 8px;
+  justify-content: space-evenly;
+  font-family: "Fixedsys Excelsior", monospace;
+  font-size: 15px;
+}
+
+.y2k-success-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.y2k-globe {
+  width: 132px;
+  height: 132px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.y2k-success-headline h1 {
+  margin: 0 0 10px;
+  font-family: "Fixedsys Excelsior", monospace;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--ButtonText);
+}
+
+.y2k-success-headline p {
+  margin: 0 0 3px;
+  font-size: 15px;
+}
+
+.y2k-success-panel {
+  box-sizing: border-box;
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--ButtonFace);
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow),
+    inset -2px -2px var(--ButtonLight),
+    inset 2px 2px var(--ButtonDkShadow);
+}
+
+.y2k-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 2px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 6px;
+}
+
+.y2k-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.y2k-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: var(--Window);
+  color: #0a8a0a;
+  font-weight: bold;
+  font-size: 17px;
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow),
+    inset -2px -2px var(--ButtonLight),
+    inset 2px 2px var(--ButtonDkShadow);
+}
+
+.y2k-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.y2k-scene-date {
+  margin: 0;
+  font-size: 14px;
+}
+
+.y2k-fireworks {
+  width: 200px;
+  height: 117px;
+  image-rendering: pixelated;
+  box-shadow:
+    inset -1px -1px var(--ButtonHilight),
+    inset 1px 1px var(--ButtonShadow);
+}
+
+.y2k-success-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.y2k-success-progress .progress-indicator {
+  flex: 1;
+  height: 20px;
+  margin: 0;
+}
+
+.y2k-pct {
+  font-size: 15px;
+}
+
+.y2k-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  background: #ffff9a;
+  color: #00008b;
+  box-shadow:
+    inset -1px -1px var(--ButtonShadow),
+    inset 1px 1px var(--ButtonHilight),
+    inset -2px -2px var(--ButtonDkShadow),
+    inset 2px 2px var(--ButtonLight);
+}
+
+.y2k-banner-text {
+  font-family: "Fixedsys Excelsior", monospace;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.y2k-spark {
+  color: #f7a81e;
+  font-size: 22px;
+}
+
+.y2k-finish-row {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4px;
+}
+
+.y2k-finish-row button {
+  min-width: 90px;
 }

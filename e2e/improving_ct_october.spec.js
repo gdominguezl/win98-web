@@ -260,8 +260,8 @@ test.describe("Improving CT October", () => {
 
     await patch.locator("#y2k-code").fill("arg new-1");
     await patch.locator("#y2k-ok").click();
-    await expect(page.locator("#y2k-overlay-message")).toBeVisible({ timeout: 10000 });
-    await expect(page.locator("#y2k-overlay-message")).toContainText("patch is installed");
+    await expect(page.locator("#y2k-overlay")).toHaveCount(0, { timeout: 10000 });
+    await expect(patch.locator("#y2k-installed")).toContainText("Installation complete");
   });
 
   test("each validation message is shown and the code is not changed", async ({ page }) => {

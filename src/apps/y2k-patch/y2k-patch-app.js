@@ -2,10 +2,14 @@ import { Application } from "../../system/application.js";
 import { ICONS } from "../../config/icons.js";
 import { finishPatch, getRole, getSession, getToken } from "../improving-ct-october/api.js";
 import { refreshCtTimer } from "../improving-ct-october/timer.js";
+import globeUrl from "./assets/globe.svg?url";
+import fireworksUrl from "./assets/fireworks.svg?url";
 import "./y2k-patch.css";
 
 const APPLIED_KEY = "y2k-patch-applied";
 const INSTALL_MS = 2000;
+const SUCCESS_WIDTH = 640;
+const SUCCESS_HEIGHT = 520;
 
 const FORM_HTML = `
   <form class="y2k-patch" id="y2k-form">
@@ -20,9 +24,38 @@ const FORM_HTML = `
   </form>
 `;
 
-const INSTALLED_HTML = `
-  <div class="y2k-patch">
-    <p id="y2k-installed">The Y2K patch is already installed on this computer.</p>
+const SUCCESS_HTML = `
+  <div class="y2k-patch y2k-success" id="y2k-installed">
+    <div class="y2k-success-header">
+      <img class="y2k-globe" src="${globeUrl}" alt="">
+      <div class="y2k-success-headline">
+        <h1>Installation complete</h1>
+        <p>Code accepted.</p>
+        <p>Critical failure avoided.</p>
+        <p>System date stabilized.</p>
+        <p>All operations restored.</p>
+      </div>
+    </div>
+    <div class="y2k-success-panel">
+      <ul class="y2k-checklist">
+        <li><span class="y2k-check">✓</span>Millennium crisis avoided</li>
+        <li><span class="y2k-check">✓</span>System files patched</li>
+        <li><span class="y2k-check">✓</span>Network functions restored</li>
+        <li><span class="y2k-check">✓</span>Global systems online</li>
+      </ul>
+      <div class="y2k-scene">
+        <p class="y2k-scene-date">31/12/1999 - 23:59</p>
+        <img class="y2k-fireworks" src="${fireworksUrl}" alt="">
+      </div>
+    </div>
+    <div class="y2k-success-progress">
+      <div class="progress-indicator segmented"><span class="progress-indicator-bar" style="width:100%"></span></div>
+      <span class="y2k-pct">100%</span>
+    </div>
+    <div class="y2k-banner"><span class="y2k-spark">✦</span><span class="y2k-banner-text">WELCOME TO 2000</span><span class="y2k-spark">✦</span></div>
+    <div class="y2k-finish-row">
+      <button type="button" id="y2k-finish">Finish</button>
+    </div>
   </div>
 `;
 
@@ -53,20 +86,44 @@ export class Y2kPatchApp extends Application {
     this._installing = false;
   }
 
+  _successSize() {
+    const area = document.getElementById("desktop-area")?.getBoundingClientRect();
+    return {
+      outerWidth: area ? Math.min(SUCCESS_WIDTH, Math.max(320, area.width - 32)) : SUCCESS_WIDTH,
+      outerHeight: area ? Math.min(SUCCESS_HEIGHT, Math.max(300, area.height - 32)) : SUCCESS_HEIGHT,
+    };
+  }
+
   _createWindow() {
+    const applied = isApplied();
+    const size = applied ? this._successSize() : { outerWidth: this.width, outerHeight: this.height };
     const win = new $Window({
       title: this.title,
-      outerWidth: this.width,
-      outerHeight: this.height,
+      outerWidth: size.outerWidth,
+      outerHeight: size.outerHeight,
       resizable: false,
       icons: this.icon,
     });
-    win.$content.html(isApplied() ? INSTALLED_HTML : FORM_HTML);
+    win.$content.html(applied ? SUCCESS_HTML : FORM_HTML);
+    if (applied) win.$content[0].querySelector("#y2k-finish")?.addEventListener("click", () => win.close());
     return win;
   }
 
+  _fitIntoDesktop() {
+    const area = document.getElementById("desktop-area")?.getBoundingClientRect();
+    if (!area) return;
+    const box = this.win[0].getBoundingClientRect();
+    let left = box.left, top = box.top;
+    if (box.right > area.right) left = Math.max(area.left, left - (box.right - area.right));
+    if (box.bottom > area.bottom) top = Math.max(area.top, top - (box.bottom - area.bottom));
+    if (left !== box.left || top !== box.top) this.win.css({ left, top });
+  }
+
   _onLaunch() {
-    if (isApplied()) return;
+    if (isApplied()) {
+      this._fitIntoDesktop();
+      return;
+    }
 
     const root = this.win.$content[0];
     const form = root.querySelector("#y2k-form");
@@ -122,14 +179,22 @@ export class Y2kPatchApp extends Application {
     field.select();
   }
 
+  _showSuccess() {
+    this.win.$content.html(SUCCESS_HTML);
+    this.win.setDimensions(this._successSize());
+    this.win.center();
+    this._fitIntoDesktop();
+    this.win.$content[0].querySelector("#y2k-finish")?.addEventListener("click", () => this.win.close());
+  }
+
   _markInstalled() {
     sessionStorage.setItem(APPLIED_KEY, "1");
-    this.win.$content.html(INSTALLED_HTML);
+    this._showSuccess();
   }
 
   _apply() {
     sessionStorage.setItem(APPLIED_KEY, "1");
-    this.win.$content.html(INSTALLED_HTML);
+    this._showSuccess();
     this._showOverlay();
   }
 
@@ -146,10 +211,6 @@ export class Y2kPatchApp extends Application {
         <div class="progress-indicator" id="y2k-progress">
           <span class="progress-indicator-bar"></span>
         </div>
-        <p id="y2k-overlay-message" hidden>The patch is installed. Files, memories, and messages will survive midnight.</p>
-        <div class="y2k-buttons">
-          <button type="button" id="y2k-overlay-ok" hidden>OK</button>
-        </div>
       </div>
     `;
     screen.appendChild(overlay);
@@ -157,18 +218,7 @@ export class Y2kPatchApp extends Application {
     this._timer = setTimeout(() => {
       this._installing = false;
       this._timer = null;
-      const progress = overlay.querySelector("#y2k-overlay-progress");
-      const bar = overlay.querySelector("#y2k-progress");
-      const message = overlay.querySelector("#y2k-overlay-message");
-      const ok = overlay.querySelector("#y2k-overlay-ok");
-      if (progress) progress.hidden = true;
-      if (bar) bar.hidden = true;
-      if (message) message.hidden = false;
-      if (ok) {
-        ok.hidden = false;
-        ok.addEventListener("click", () => this._removeOverlay());
-        ok.focus();
-      }
+      overlay.remove();
     }, INSTALL_MS);
   }
 

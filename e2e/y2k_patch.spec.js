@@ -78,21 +78,43 @@ test.describe('Y2K Patch', () => {
     await field.fill('Y2KPATCH99');
     await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
 
-    const message = page.locator('#y2k-overlay-message');
-    await expect(message).toBeVisible({ timeout: 10000 });
-    await expect(message).toContainText('patch is installed');
-    await expect(message).toContainText('Files, memories, and messages');
-    await expect(message).toContainText('midnight');
+    await expect(page.locator('#y2k-overlay')).toBeVisible();
+    await expect(page.locator('#y2k-overlay')).toHaveCount(0, { timeout: 10000 });
 
-    await page.locator('#y2k-overlay-ok').click();
-    await expect(page.locator('#y2k-overlay')).toHaveCount(0);
+    const success = win.locator('#y2k-installed');
+    await expect(success).toBeVisible();
+    await expect(success).toContainText('Installation complete');
+    await expect(success).toContainText('Code accepted.');
+    await expect(success).toContainText('Critical failure avoided.');
+    await expect(success).toContainText('System date stabilized.');
+    await expect(success).toContainText('All operations restored.');
+    await expect(success).toContainText('Millennium crisis avoided');
+    await expect(success).toContainText('System files patched');
+    await expect(success).toContainText('Network functions restored');
+    await expect(success).toContainText('Global systems online');
+    await expect(success).toContainText('31/12/1999 - 23:59');
+    await expect(success).toContainText('100%');
+    await expect(success).toContainText('WELCOME TO 2000');
+    await expect(success.locator('#y2k-finish')).toBeVisible();
+    await expect(win).not.toContainText('Y2KPATCH99');
 
-    await win.locator('.window-close-button, .window-action-close').click();
+    const formBox = { width: 360, height: 200 };
+    const winBox = await win.boundingBox();
+    expect(winBox.width).toBeGreaterThan(formBox.width + 100);
+    expect(winBox.height).toBeGreaterThan(formBox.height + 100);
+    const area = await page.locator('#desktop-area').boundingBox();
+    expect(winBox.x).toBeGreaterThanOrEqual(area.x - 1);
+    expect(winBox.y).toBeGreaterThanOrEqual(area.y - 1);
+    expect(winBox.x + winBox.width).toBeLessThanOrEqual(area.x + area.width + 1);
+    expect(winBox.y + winBox.height).toBeLessThanOrEqual(area.y + area.height + 1);
+
+    await success.locator('#y2k-finish').click();
     await expect(win).toHaveCount(0);
 
     await page.locator('.desktop').click({ position: { x: 600, y: 300 } });
     const again = await openPatch(page);
     await expect(again.locator('#y2k-installed')).toBeVisible();
+    await expect(again.locator('#y2k-installed')).toContainText('Installation complete');
     await expect(again.locator('#y2k-code')).toHaveCount(0);
     await expect(page.locator('#y2k-overlay')).toHaveCount(0);
   });
@@ -104,8 +126,8 @@ test.describe('Y2K Patch', () => {
     await field.fill('y2k patch-99');
     await field.press('Enter');
 
-    await expect(page.locator('#y2k-overlay-message')).toBeVisible({ timeout: 10000 });
-    await expect(page.locator('#y2k-overlay-message')).toContainText('survive midnight');
+    await expect(page.locator('#y2k-overlay')).toHaveCount(0, { timeout: 10000 });
+    await expect(win.locator('#y2k-installed')).toContainText('Installation complete');
   });
 
   test('a new tab does not replay the sequence for a finished team', async ({ page }) => {
@@ -113,7 +135,8 @@ test.describe('Y2K Patch', () => {
     const win = await openPatch(page);
     await win.locator('#y2k-code').fill('Y2KPATCH99');
     await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
-    await expect(page.locator('#y2k-overlay-message')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('#y2k-overlay')).toHaveCount(0, { timeout: 10000 });
+    await expect(win.locator('#y2k-installed')).toContainText('Installation complete');
 
     const page2 = await page.context().newPage();
     await installCt(page2, state);
@@ -132,6 +155,7 @@ test.describe('Y2K Patch', () => {
     await win2.locator('#y2k-code').fill('Y2KPATCH99');
     await win2.locator('#y2k-form').evaluate((form) => form.requestSubmit());
     await expect(win2.locator('#y2k-installed')).toBeVisible();
+    await expect(win2.locator('#y2k-installed')).toContainText('Installation complete');
     await expect(page2.locator('#y2k-overlay')).toHaveCount(0);
     expect(state.finishCalls).toBe(calls);
     await page2.close();
@@ -174,9 +198,9 @@ test.describe('Y2K Patch', () => {
     const win = await openPatch(page);
     await win.locator('#y2k-code').fill('Y2KPATCH99');
     await win.locator('#y2k-form').evaluate((form) => form.requestSubmit());
-    await expect(page.locator('#y2k-overlay-message')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('#y2k-overlay')).toHaveCount(0, { timeout: 10000 });
     await expect(page.locator('#ct-timer-over')).toBeHidden();
-    await page.locator('#y2k-overlay-ok').click();
+    await expect(win.locator('#y2k-installed')).toContainText('Installation complete');
     await expect(page.locator('#ct-timer-finale')).toHaveText('Patch accepted.');
     await expect(page.locator('#ct-timer')).toHaveCount(0, { timeout: 4000 });
     expect(state.finishCalls).toBe(1);
@@ -221,5 +245,27 @@ test.describe('Y2K Patch on a short screen', () => {
       expect(box.y + box.height).toBeLessThanOrEqual(area.y + area.height + 1);
       expect(box.y + box.height).toBeLessThanOrEqual(taskbar.y + 1);
     }
+  });
+
+  test('shows the Installation complete screen fitting the desktop', async ({ page }) => {
+    await installCt(page, freshCtState());
+    await page.addInitScript(() => {
+      sessionStorage.setItem('y2k-patch-applied', '1');
+    });
+    await boot(page);
+    const win = await openPatch(page);
+    const success = win.locator('#y2k-installed');
+    await expect(success).toBeVisible();
+    await expect(success).toContainText('Installation complete');
+    await expect(success.locator('#y2k-finish')).toBeVisible();
+
+    const winBox = await win.boundingBox();
+    expect(winBox.width).toBeGreaterThan(460);
+    expect(winBox.height).toBeGreaterThan(300);
+    const area = await page.locator('#desktop-area').boundingBox();
+    expect(winBox.x).toBeGreaterThanOrEqual(area.x - 1);
+    expect(winBox.y).toBeGreaterThanOrEqual(area.y - 1);
+    expect(winBox.x + winBox.width).toBeLessThanOrEqual(area.x + area.width + 1);
+    expect(winBox.y + winBox.height).toBeLessThanOrEqual(area.y + area.height + 1);
   });
 });
