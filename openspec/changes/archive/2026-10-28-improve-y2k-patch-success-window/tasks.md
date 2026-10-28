@@ -15,4 +15,4 @@ Reference image: the user's screenshot of the intended "Installation complete" w
 
 ## 4. Docs and verification
 - [x] 4.1 Update `src/apps/y2k-patch/README.md` and its screenshot.
-- [ ] 4.2 Run `y2k_patch`, `improving_ct_october` and the `ct_station_*` specs; MSN, Fotolog and Winamp specs only to confirm no change. `openspec validate improve-y2k-patch-success-window --type change --strict`.
+- [x] 4.2 Run `y2k_patch`, `improving_ct_october` and the `ct_station_*` specs; MSN, Fotolog and Winamp specs only to confirm no change. `openspec validate improve-y2k-patch-success-window --type change --strict`.
