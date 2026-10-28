@@ -942,8 +942,8 @@
     "semantic_hash": ""
   },
   "src/config/app-registry.js": {
-    "mtime": 1792956615.51441,
-    "seen": 1792956624.311292,
+    "mtime": 1793210382.6227405,
+    "seen": 1793210408.679949,
     "ast_hash": "adde1b2c31533b11bcf4394ffaeac2ae",
     "semantic_hash": ""
   },
@@ -6528,9 +6528,9 @@
     "semantic_hash": ""
   },
   "e2e/y2k_patch.spec.js": {
-    "mtime": 1792778975.882574,
-    "seen": 1792788886.926966,
-    "ast_hash": "9d805eff94a8de41b8c78173a0dde863",
+    "mtime": 1793208613.5527382,
+    "seen": 1793210408.679862,
+    "ast_hash": "fa4e6b4fbc7592986c2989176fca2fcc",
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/code.js": {
@@ -6540,9 +6540,9 @@
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/y2k-patch-app.js": {
-    "mtime": 1792725060.9589596,
-    "seen": 1792726084.646067,
-    "ast_hash": "0643ba33b0863214c5d7267e75fc80e9",
+    "mtime": 1793209735.954102,
+    "seen": 1793210408.679949,
+    "ast_hash": "ff48a928813756183ccd4a071e133971",
     "semantic_hash": ""
   },
   "openspec/changes/archive/2026-10-22-fit-msn-windows-to-desktop/.openspec.yaml": {
@@ -6588,15 +6588,15 @@
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/README.md": {
-    "mtime": 1792788116.2696326,
-    "seen": 1792788886.9271739,
-    "ast_hash": "71f431ac5ea52ca2ce27f5f2d4f54f63",
+    "mtime": 1793209864.747524,
+    "seen": 1793210408.680117,
+    "ast_hash": "c11b27b602f90a1e76c36bebb743d1c3",
     "semantic_hash": ""
   },
   "src/apps/y2k-patch/screenshot.png": {
-    "mtime": 1792718197.4060452,
-    "seen": 1792718240.595685,
-    "ast_hash": "26f3eca1f744c28d2cd948518f333735",
+    "mtime": 1793209864.7960248,
+    "seen": 1793210408.680177,
+    "ast_hash": "4431ed65ce676ec14ea6314ed838831d",
     "semantic_hash": ""
   },
   "e2e/ct-mock.js": {
@@ -6606,9 +6606,9 @@
     "semantic_hash": ""
   },
   "e2e/improving_ct_october.spec.js": {
-    "mtime": 1792788087.6694264,
-    "seen": 1792788886.926958,
-    "ast_hash": "ed5e2338b682f1cee105a332024b05d2",
+    "mtime": 1793208606.587863,
+    "seen": 1793210408.6798542,
+    "ast_hash": "3f132e5c7756e382a2a91584fe3c4b41",
     "semantic_hash": ""
   },
   "src/apps/improving-ct-october/api.js": {
@@ -6827,132 +6827,6 @@
     "ast_hash": "e0766eb4bd050e6d4a7d89540c048b49",
     "semantic_hash": ""
   },
-  "openspec/changes/add-ct-argentina-dos-challenge/design.md": {
-    "mtime": 1792848216.4367502,
-    "seen": 1792849118.444064,
-    "ast_hash": "f22076ff59f81f79949135cd2553ef8b",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-argentina-dos-challenge/proposal.md": {
-    "mtime": 1792848216.436491,
-    "seen": 1792849118.444065,
-    "ast_hash": "d73c642935fc275d48b56604235c0e06",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-argentina-dos-challenge/specs/apps/ct-station-argentina/spec.md": {
-    "mtime": 1792848211.4677286,
-    "seen": 1792849118.444065,
-    "ast_hash": "04b4a56bb54d247bd7bcdf2222195a37",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-argentina-dos-challenge/tasks.md": {
-    "mtime": 1792813670.3407438,
-    "seen": 1792813711.2005272,
-    "ast_hash": "10f01aab08341c08619fc66c31876523",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-paint-challenge/design.md": {
-    "mtime": 1792956135.428998,
-    "seen": 1792956624.3113642,
-    "ast_hash": "d71e7f7ef2bf71051b47acd55598de17",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-paint-challenge/proposal.md": {
-    "mtime": 1792956135.428796,
-    "seen": 1792956624.3113651,
-    "ast_hash": "6cdb0f94951028d65191cc5bf268b327",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-paint-challenge/specs/apps/ct-station-chile/spec.md": {
-    "mtime": 1792956135.430992,
-    "seen": 1792956624.3113651,
-    "ast_hash": "dface2aa1829775cdae2d43bbf58fd27",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-paint-challenge/tasks.md": {
-    "mtime": 1792956135.4314976,
-    "seen": 1792956624.3113658,
-    "ast_hash": "67823306db3d855f1032e4854e593308",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-recycle-and-y2k-clues/design.md": {
-    "mtime": 1792812138.0306544,
-    "seen": 1792813711.2005298,
-    "ast_hash": "285b0cb644ed8fe0c4d08caf7cdee7d6",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-recycle-and-y2k-clues/proposal.md": {
-    "mtime": 1792812138.0252059,
-    "seen": 1792813711.2005298,
-    "ast_hash": "4a400f3106c0ca5b82f7fd4294a1dc5a",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-recycle-and-y2k-clues/specs/apps/ct-station-chile/spec.md": {
-    "mtime": 1792812138.035736,
-    "seen": 1792813711.200531,
-    "ast_hash": "aba94312eb04aaaa8be723d76434ad8b",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-chile-recycle-and-y2k-clues/tasks.md": {
-    "mtime": 1792815888.7920473,
-    "seen": 1792816193.175172,
-    "ast_hash": "d63342be41a022cebb07616e93add8e6",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-minesweeper-challenge/design.md": {
-    "mtime": 1792812137.9816518,
-    "seen": 1792813711.200532,
-    "ast_hash": "ccd0ce8c27de606ca03177cfb8a7ce27",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-minesweeper-challenge/proposal.md": {
-    "mtime": 1792812137.967313,
-    "seen": 1792813711.200532,
-    "ast_hash": "7838dee2217a7e34b5217d8eda9af790",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-minesweeper-challenge/specs/apps/ct-minesweeper-challenge/spec.md": {
-    "mtime": 1792812137.9876094,
-    "seen": 1792813711.200533,
-    "ast_hash": "51d6978a676f9b9ae71d8a5a2c0e54f1",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-minesweeper-challenge/tasks.md": {
-    "mtime": 1792815094.8999028,
-    "seen": 1792816193.175175,
-    "ast_hash": "1566cf0cd4b9c998cfe867bbd85273a5",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-morse-signals/design.md": {
-    "mtime": 1792812150.4523098,
-    "seen": 1792813711.200533,
-    "ast_hash": "b5d320f4a35436245506ca2fa60d03dd",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-morse-signals/proposal.md": {
-    "mtime": 1792812137.936179,
-    "seen": 1792813711.200534,
-    "ast_hash": "42526cf49c81d391de211a798d03f0e0",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-morse-signals/specs/apps/ct-station-argentina/spec.md": {
-    "mtime": 1792812137.9493108,
-    "seen": 1792813711.200534,
-    "ast_hash": "1bc07e52acf2e0c8e21bd27c2c6b3652",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-morse-signals/specs/apps/ct-station-chile/spec.md": {
-    "mtime": 1792812137.95553,
-    "seen": 1792813711.200535,
-    "ast_hash": "45149b884e0d8a61ca031445cd3a10d0",
-    "semantic_hash": ""
-  },
-  "openspec/changes/add-ct-morse-signals/tasks.md": {
-    "mtime": 1792814546.5142868,
-    "seen": 1792816193.175178,
-    "ast_hash": "d1d3ec6e5f3e7437f6c5841520a5f009",
-    "semantic_hash": ""
-  },
   "openspec/changes/archive/2026-10-23-add-ct-argentina-recycle-clue/.openspec.yaml": {
     "mtime": 1792790705.4039795,
     "seen": 1792813711.200557,
@@ -7044,15 +6918,15 @@
     "semantic_hash": ""
   },
   "openspec/specs/apps/ct-station-argentina/spec.md": {
-    "mtime": 1792810764.738609,
-    "seen": 1792813711.20057,
-    "ast_hash": "f0a933c3f2e1f344689168d000c1390d",
+    "mtime": 1792958106.7626612,
+    "seen": 1793210408.680077,
+    "ast_hash": "fbafedfc65f95f5ae0a60a417088f8dd",
     "semantic_hash": ""
   },
   "openspec/specs/apps/ct-station-chile/spec.md": {
-    "mtime": 1792810765.415668,
-    "seen": 1792813711.20057,
-    "ast_hash": "a7fcd7e230ff02a6b13579097ccca993",
+    "mtime": 1792958108.4628792,
+    "seen": 1793210408.680077,
+    "ast_hash": "ff7d2581365375eae99d9e3a88e977f5",
     "semantic_hash": ""
   },
   "openspec/specs/apps/ct-stations/spec.md": {
@@ -7173,6 +7047,216 @@
     "mtime": 1792955612.427721,
     "seen": 1792956624.311251,
     "ast_hash": "931947853344f0dda3a8a513d719d904",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/README.md": {
+    "mtime": 1792959297.3911629,
+    "seen": 1793210408.680023,
+    "ast_hash": "e09e182533c89900657c067bd0164405",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/manuals/admin.md": {
+    "mtime": 1792959308.1401904,
+    "seen": 1793210408.6800241,
+    "ast_hash": "6ae64d8382054f1beba97ee53833f76f",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/manuals/team-player.md": {
+    "mtime": 1792959315.088802,
+    "seen": 1793210408.6800241,
+    "ast_hash": "ca4a204d9b3ccc8e8483aa43a1022b3c",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/reference/architecture-and-deploy.md": {
+    "mtime": 1792959374.9810112,
+    "seen": 1793210408.680025,
+    "ast_hash": "7dc035194b610d05b0f751baf5fb45a1",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/reference/stations.md": {
+    "mtime": 1792959357.7421467,
+    "seen": 1793210408.680026,
+    "ast_hash": "42d03092efa4d1fd7bf979c85966fc9a",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/sessions/argentina.md": {
+    "mtime": 1792959334.3746946,
+    "seen": 1793210408.680026,
+    "ast_hash": "3d9ad7ba76319c6e73e638c463f5130d",
+    "semantic_hash": ""
+  },
+  "docs/game-sessions/sessions/chile.md": {
+    "mtime": 1792959347.3559177,
+    "seen": 1793210408.6800268,
+    "ast_hash": "86990c781323a435af224910b3fededc",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-argentina-dos-challenge/design.md": {
+    "mtime": 1792848216.4367502,
+    "seen": 1793210408.680065,
+    "ast_hash": "f22076ff59f81f79949135cd2553ef8b",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-argentina-dos-challenge/proposal.md": {
+    "mtime": 1792848216.436491,
+    "seen": 1793210408.680065,
+    "ast_hash": "d73c642935fc275d48b56604235c0e06",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-argentina-dos-challenge/specs/apps/ct-station-argentina/spec.md": {
+    "mtime": 1792848211.4677286,
+    "seen": 1793210408.680066,
+    "ast_hash": "04b4a56bb54d247bd7bcdf2222195a37",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-argentina-dos-challenge/tasks.md": {
+    "mtime": 1792813670.3407438,
+    "seen": 1793210408.680066,
+    "ast_hash": "10f01aab08341c08619fc66c31876523",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-paint-challenge/design.md": {
+    "mtime": 1792956135.428998,
+    "seen": 1793210408.680067,
+    "ast_hash": "d71e7f7ef2bf71051b47acd55598de17",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-paint-challenge/proposal.md": {
+    "mtime": 1792956135.428796,
+    "seen": 1793210408.680067,
+    "ast_hash": "6cdb0f94951028d65191cc5bf268b327",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-paint-challenge/specs/apps/ct-station-chile/spec.md": {
+    "mtime": 1792956135.430992,
+    "seen": 1793210408.680068,
+    "ast_hash": "dface2aa1829775cdae2d43bbf58fd27",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-paint-challenge/tasks.md": {
+    "mtime": 1792956135.4314976,
+    "seen": 1793210408.680068,
+    "ast_hash": "67823306db3d855f1032e4854e593308",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-recycle-and-y2k-clues/design.md": {
+    "mtime": 1792812138.0306544,
+    "seen": 1793210408.6800692,
+    "ast_hash": "285b0cb644ed8fe0c4d08caf7cdee7d6",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-recycle-and-y2k-clues/proposal.md": {
+    "mtime": 1792812138.0252059,
+    "seen": 1793210408.6800692,
+    "ast_hash": "4a400f3106c0ca5b82f7fd4294a1dc5a",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-recycle-and-y2k-clues/specs/apps/ct-station-chile/spec.md": {
+    "mtime": 1792812138.035736,
+    "seen": 1793210408.68007,
+    "ast_hash": "aba94312eb04aaaa8be723d76434ad8b",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-chile-recycle-and-y2k-clues/tasks.md": {
+    "mtime": 1792815888.7920473,
+    "seen": 1793210408.68007,
+    "ast_hash": "d63342be41a022cebb07616e93add8e6",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-minesweeper-challenge/design.md": {
+    "mtime": 1792812137.9816518,
+    "seen": 1793210408.6800709,
+    "ast_hash": "ccd0ce8c27de606ca03177cfb8a7ce27",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-minesweeper-challenge/proposal.md": {
+    "mtime": 1792812137.967313,
+    "seen": 1793210408.6800709,
+    "ast_hash": "7838dee2217a7e34b5217d8eda9af790",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-minesweeper-challenge/specs/apps/ct-minesweeper-challenge/spec.md": {
+    "mtime": 1792812137.9876094,
+    "seen": 1793210408.6800709,
+    "ast_hash": "51d6978a676f9b9ae71d8a5a2c0e54f1",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-minesweeper-challenge/tasks.md": {
+    "mtime": 1792815094.8999028,
+    "seen": 1793210408.6800718,
+    "ast_hash": "1566cf0cd4b9c998cfe867bbd85273a5",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-morse-signals/design.md": {
+    "mtime": 1792812150.4523098,
+    "seen": 1793210408.6800718,
+    "ast_hash": "b5d320f4a35436245506ca2fa60d03dd",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-morse-signals/proposal.md": {
+    "mtime": 1792812137.936179,
+    "seen": 1793210408.680073,
+    "ast_hash": "42526cf49c81d391de211a798d03f0e0",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-morse-signals/specs/apps/ct-station-argentina/spec.md": {
+    "mtime": 1792812137.9493108,
+    "seen": 1793210408.680073,
+    "ast_hash": "1bc07e52acf2e0c8e21bd27c2c6b3652",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-morse-signals/specs/apps/ct-station-chile/spec.md": {
+    "mtime": 1792812137.95553,
+    "seen": 1793210408.680073,
+    "ast_hash": "45149b884e0d8a61ca031445cd3a10d0",
+    "semantic_hash": ""
+  },
+  "openspec/changes/archive/2026-10-25-add-ct-morse-signals/tasks.md": {
+    "mtime": 1792814546.5142868,
+    "seen": 1793210408.680074,
+    "ast_hash": "d1d3ec6e5f3e7437f6c5841520a5f009",
+    "semantic_hash": ""
+  },
+  "openspec/changes/improve-y2k-patch-success-window/design.md": {
+    "mtime": 1793208589.166228,
+    "seen": 1793210408.680074,
+    "ast_hash": "b217889d4aea42a0f981d43ea8170a22",
+    "semantic_hash": ""
+  },
+  "openspec/changes/improve-y2k-patch-success-window/proposal.md": {
+    "mtime": 1793208428.3018818,
+    "seen": 1793210408.680075,
+    "ast_hash": "91cac0abf7590cb2badeb4187b7ec652",
+    "semantic_hash": ""
+  },
+  "openspec/changes/improve-y2k-patch-success-window/specs/apps/y2k-patch/spec.md": {
+    "mtime": 1793208428.31079,
+    "seen": 1793210408.680075,
+    "ast_hash": "f3da5d7d8ddfe27298d6102edfcd8713",
+    "semantic_hash": ""
+  },
+  "openspec/changes/improve-y2k-patch-success-window/tasks.md": {
+    "mtime": 1793209873.9993532,
+    "seen": 1793210408.680075,
+    "ast_hash": "f10e2fb28c6c2054022590a3511edd09",
+    "semantic_hash": ""
+  },
+  "openspec/specs/apps/ct-minesweeper-challenge/spec.md": {
+    "mtime": 1792958107.303653,
+    "seen": 1793210408.6800761,
+    "ast_hash": "56669ab15695954de3d472daae61ffe7",
+    "semantic_hash": ""
+  },
+  "src/apps/y2k-patch/assets/fireworks.svg": {
+    "mtime": 1793208939.0485442,
+    "seen": 1793210408.680175,
+    "ast_hash": "5312b524481ffd3975d0c45dc5aee412",
+    "semantic_hash": ""
+  },
+  "src/apps/y2k-patch/assets/globe.svg": {
+    "mtime": 1793208939.0477452,
+    "seen": 1793210408.680176,
+    "ast_hash": "a95a6d7a2dc8b87275a4c7e73b5dea71",
     "semantic_hash": ""
   }
 }
