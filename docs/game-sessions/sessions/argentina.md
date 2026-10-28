@@ -21,10 +21,24 @@ each clue means, and what disappears when the session ends. Sources:
 
 | id | File | What it is |
 |---|---|---|
+| `focus-mode` | `stations/focus-mode.js` | Focus mode: hides non-essential apps and pins MS-DOS Prompt first in Programs |
 | `recycle-clue` | `stations/argentina-recycle.js` | A deleted clue image in the Recycle Bin |
 | `throwback-folder` | `stations/argentina-throwback.js` | `C:\THROWBACK` + MS-DOS session behavior |
 | `signals-file` | `stations/argentina-signals.js` | Morse reference file on the desktop |
 | `minesweeper` | `stations/minesweeper.js` | Locked Minesweeper challenge |
+
+### Focus mode — `focus-mode`
+
+- **What the team sees:** the moment the session starts, the desktop and
+  Start menu are trimmed to what the game needs. Agent, App Maker, Cursor
+  Explorer, Desktop Themes, Diablo, DOS Games Downloader, Doom, Flash
+  Player, Media Player, Quake, Commander Keen, Report a Bug, Sound Scheme
+  Explorer and Task Manager disappear from the desktop, the Games folder
+  and Programs; Network Neighborhood goes too; empty Programs folders
+  (Entertainment, System Tools) disappear and **MS-DOS Prompt** is pinned
+  first under Programs. Buy me a coffee is hidden at all times. Everything
+  is restored when the session ends or is restarted. Files on `C:\` are
+  untouched.
 
 ### Recycle Bin — `recycle-clue`
 

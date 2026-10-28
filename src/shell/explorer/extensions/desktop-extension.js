@@ -4,6 +4,7 @@ import { VirtualStats } from './shell-manager.js';
 import { getPathName, joinPath } from '../navigation/path-utils.js';
 import { getAssociation } from '../../../system/directory.js';
 import { launchApp } from '../../../system/app-manager.js';
+import { isAppHidden, isDesktopItemHidden } from '../../../system/app-visibility.js';
 
 /**
  * DesktopExtension - Shell extension for the Desktop folder
@@ -95,11 +96,14 @@ export class DesktopExtension {
   async readdir(path) {
     // Virtual Desktop path merges virtual items and real files
     if (path === this.virtualPath) {
-      const virtualNames = this.virtualItems.map((i) => i.name);
+      const virtualNames = this.virtualItems
+        .map((i) => i.name)
+        .filter((name) => !isDesktopItemHidden(name));
       try {
         const realNames = await fs.promises.readdir(this.realPath);
+        const visible = await this._filterHiddenShortcuts(this.realPath, realNames);
         // Use Set to avoid duplicates if a virtual item matches a real file
-        return [...new Set([...virtualNames, ...realNames])];
+        return [...new Set([...virtualNames, ...visible])];
       } catch (e) {
         return virtualNames;
       }
@@ -107,11 +111,32 @@ export class DesktopExtension {
 
     // Subfolders of the virtual desktop stay virtual
     if (path.startsWith(this.virtualPath + "/")) {
-      return fs.promises.readdir(this.getRealPath(path));
+      const realPath = this.getRealPath(path);
+      const names = await fs.promises.readdir(realPath);
+      return this._filterHiddenShortcuts(realPath, names);
     }
 
     // Returning null for the real path ensures virtual items are NOT shown there
     return null;
+  }
+
+  async _filterHiddenShortcuts(dirPath, names) {
+    const visible = [];
+    for (const name of names) {
+      if (!name.endsWith(".lnk.json")) {
+        visible.push(name);
+        continue;
+      }
+      try {
+        const content = await fs.promises.readFile(`${dirPath}/${name}`, "utf8");
+        const data = JSON.parse(content);
+        if (data.appId && isAppHidden(data.appId)) continue;
+      } catch (e) {
+        // Unreadable shortcut stays visible, like a broken one would
+      }
+      visible.push(name);
+    }
+    return visible;
   }
 
   /**

@@ -5,6 +5,7 @@ import { ICONS } from '../../config/icons.js';
 import { getAssociation } from '../../system/directory.js';
 import { existsAsync } from '../../system/zenfs-utils.js';
 import { ShellManager } from '../../shell/explorer/extensions/shell-manager.js';
+import { isAppHidden, getPinnedProgram } from '../../system/app-visibility.js';
 
 export const PINNED_PATH = "/C:/WINDOWS/Start Menu";
 export const START_MENU_PATH = "/C:/WINDOWS/Start Menu/Programs";
@@ -137,7 +138,7 @@ export async function getPinnedItemsFromZenFS(path = PINNED_PATH) {
 
       if (!stat.isDirectory() && file.endsWith(".lnk.json")) {
         const item = await loadLnk(fullPath, 32);
-        if (item) {
+        if (item && !isAppHidden(item.appId)) {
           menuItems.push(item);
         }
       }
@@ -249,14 +250,17 @@ export async function getMenuFromZenFS(path) {
       const stat = await fs.promises.stat(fullPath);
 
       if (stat.isDirectory()) {
-        menuItems.push({
-          label: file,
-          icon: ICONS.programs[16],
-          submenu: await getMenuFromZenFS(fullPath),
-        });
+        const submenu = await getMenuFromZenFS(fullPath);
+        if (submenu.length > 0) {
+          menuItems.push({
+            label: file,
+            icon: ICONS.programs[16],
+            submenu,
+          });
+        }
       } else if (file.endsWith(".lnk.json")) {
         const item = await loadLnk(fullPath);
-        if (item) {
+        if (item && !isAppHidden(item.appId)) {
           menuItems.push(item);
         }
       } else {
@@ -271,13 +275,21 @@ export async function getMenuFromZenFS(path) {
     }
 
     // Sort: directories first, then alphabetically
-    return menuItems.sort((a, b) => {
+    const sorted = menuItems.sort((a, b) => {
       const aIsDir = !!a.submenu;
       const bIsDir = !!b.submenu;
       if (aIsDir && !bIsDir) return -1;
       if (!aIsDir && bIsDir) return 1;
       return a.label.localeCompare(b.label);
     });
+
+    const pinned = getPinnedProgram();
+    if (pinned && path === START_MENU_PATH) {
+      const index = sorted.findIndex((item) => !item.submenu && item.appId === pinned);
+      if (index > 0) sorted.unshift(sorted.splice(index, 1)[0]);
+    }
+
+    return sorted;
   } catch (error) {
     console.error(`Failed to read menu from ZenFS: ${path}`, error);
     return [];

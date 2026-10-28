@@ -21,12 +21,25 @@ clue means, and what disappears when the session ends. Sources:
 
 | id | File | What it is |
 |---|---|---|
+| `focus-mode` | `stations/focus-mode.js` | Focus mode: hides non-essential apps and pins MS-DOS Prompt first in Programs |
 | `throwback-folder` | `stations/chile-throwback.js` | `C:\THROWBACK` + MS-DOS session behavior |
 | `morse-file` | `stations/chile-morse.js` | `MORSE.TXT` in My Documents |
 | `recycle-clue` | `stations/chile-recycle.js` | Four dated decoys in the Recycle Bin |
 | `y2k-memory` | `stations/chile-y2k.js` | `SYSTEM\ERROR.LOG` + `MEMORY.TXT` puzzle |
 | `paint-puerta` | `stations/chile-paint.js` | `PUERTA.BMP` hidden-message image |
 | `minesweeper` | `stations/minesweeper.js` | Locked Minesweeper challenge |
+
+### Focus mode — `focus-mode`
+
+Same shared station as Argentina: while the session runs it hides
+non-essential apps (Agent, App Maker, Cursor Explorer, Desktop Themes,
+Diablo, DOS Games Downloader, Doom, Flash Player, Media Player, Quake,
+Commander Keen, Report a Bug, Sound Scheme Explorer, Task Manager) from
+the desktop, the Games folder and Programs, hides Network Neighborhood,
+drops empty Programs folders (Entertainment, System Tools) and pins
+**MS-DOS Prompt** first under Programs. Buy me a coffee is always hidden.
+Everything is restored when the session ends or is restarted; `C:\` files
+are untouched.
 
 ### C:\THROWBACK + MS-DOS — `throwback-folder`
 

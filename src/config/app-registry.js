@@ -72,7 +72,7 @@ export const appRegistry = {
     id: "buy-me-a-coffee",
     title: "Buy me a coffee",
     description: "Support the developer.",
-    icon: ICONS["buy-me-a-coffee"], category: "",
+    icon: ICONS["buy-me-a-coffee"],
     width: 300,
     height: 650,
     resizable: false,

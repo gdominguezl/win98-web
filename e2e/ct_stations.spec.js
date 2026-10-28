@@ -134,7 +134,7 @@ test.describe("CT stations", () => {
     await expectPath(page, `${PROBE_DIR}/ct-test-probe.txt`, true);
     const marker = await readMarker(page);
     expect(marker?.office).toBe("argentina");
-    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["ct-test-probe", "minesweeper", "recycle-clue", "signals-file", "throwback-folder"]);
+    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["ct-test-probe", "focus-mode", "minesweeper", "recycle-clue", "signals-file", "throwback-folder"]);
     expect(await page.evaluate(() => window.__probeApplies["ct-test-probe"])).toBe(1);
   });
 
@@ -147,7 +147,7 @@ test.describe("CT stations", () => {
         async () => Object.keys((await readMarker(page))?.stations || {}).sort(),
         { timeout: 15000 },
       )
-      .toEqual(["minesweeper", "morse-file", "paint-puerta", "recycle-clue", "throwback-folder", "y2k-memory"]);
+      .toEqual(["focus-mode", "minesweeper", "morse-file", "paint-puerta", "recycle-clue", "throwback-folder", "y2k-memory"]);
     const marker = await readMarker(page);
     expect(marker?.office).toBe("chile");
     expect(await fsExists(page, PROBE_DIR)).toBe(false);
@@ -202,7 +202,7 @@ test.describe("CT stations", () => {
     const files = await page.evaluate(async (dir) => window.fs.promises.readdir(dir), PROBE_DIR);
     expect(files).toEqual(["ct-test-probe.txt"]);
     const marker = await readMarker(page);
-    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["ct-test-probe", "minesweeper", "recycle-clue", "signals-file", "throwback-folder"]);
+    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["ct-test-probe", "focus-mode", "minesweeper", "recycle-clue", "signals-file", "throwback-folder"]);
   });
 
   test("cleans a leftover marker and files on a sessionless boot", async ({ page }) => {
@@ -235,7 +235,7 @@ test.describe("CT stations", () => {
     await expectPath(page, `${PROBE_DIR}/ct-test-probe.txt`, true);
     await expect(page.locator("#ct-timer")).toBeVisible({ timeout: 15000 });
     const marker = await readMarker(page);
-    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["ct-test-probe", "minesweeper", "recycle-clue", "signals-file", "throwback-folder"]);
+    expect(Object.keys(marker?.stations || {}).sort()).toEqual(["ct-test-probe", "focus-mode", "minesweeper", "recycle-clue", "signals-file", "throwback-folder"]);
   });
 
   test("an old tab with a token but no stored office applies nothing", async ({ page }) => {

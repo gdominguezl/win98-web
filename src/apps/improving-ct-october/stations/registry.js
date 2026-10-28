@@ -1,5 +1,6 @@
 export const STATIONS = {
   argentina: [
+    { id: "focus-mode", load: () => import("./focus-mode.js") },
     { id: "recycle-clue", load: () => import("./argentina-recycle.js") },
     {
       id: "throwback-folder",
@@ -9,6 +10,7 @@ export const STATIONS = {
     { id: "minesweeper", load: () => import("./minesweeper.js") },
   ],
   chile: [
+    { id: "focus-mode", load: () => import("./focus-mode.js") },
     { id: "throwback-folder", load: () => import("./chile-throwback.js") },
     { id: "morse-file", load: () => import("./chile-morse.js") },
     { id: "minesweeper", load: () => import("./minesweeper.js") },
