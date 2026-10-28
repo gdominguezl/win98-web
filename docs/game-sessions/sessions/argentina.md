@@ -92,7 +92,7 @@ each clue means, and what disappears when the session ends. Sources:
 ### Minesweeper — `minesweeper`
 
 - **Where:** the normal Minesweeper app.
-- **What the team sees:** the board is locked to 9x9 with 10 mines; the Game
+- **What the team sees:** the board is locked to 8x8 with 10 mines; the Game
   menu difficulty choices are disabled. Losing is normal — from the third
   consecutive loss the app shows taunts (e.g. "sos re troll, intenta de
   nuevo"). Winning shows a dialog: **`Codigo: 1`** instead of the usual

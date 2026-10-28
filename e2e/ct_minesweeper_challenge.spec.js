@@ -104,13 +104,13 @@ test.describe("CT station: Minesweeper challenge", () => {
     await page.evaluate(() => sessionStorage.clear());
   });
 
-  test("argentina gets a 9x9/10 locked board and the Codigo: 1 reveal", async ({
+  test("argentina gets an 8x8/10 locked board and the Codigo: 1 reveal", async ({
     page,
   }) => {
     await startTeam(page);
     await page.waitForTimeout(2500);
     const win = await openMinesweeper(page);
-    expect(await boardSize(page)).toBe(81);
+    expect(await boardSize(page)).toBe(64);
 
     await win.locator('.menu-button:has-text("Game")').click();
     const beginner = page.locator(".menu-popup .menu-item:has-text('Beginner')");

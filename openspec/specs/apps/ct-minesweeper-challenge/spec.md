@@ -6,12 +6,12 @@ A Minesweeper station that gives each office a fixed small board, a reveal windo
 ## Requirements
 
 ### Requirement: Fixed board per office
-The system SHALL open Minesweeper on a fixed board while a team's session runs: Argentina 9x9 with 10 mines, Chile 6x6 with 4 mines, with the level choices disabled.
+The system SHALL open Minesweeper on a fixed board while a team's session runs: Argentina 8x8 with 10 mines, Chile 6x6 with 4 mines, with the level choices disabled.
 
 #### Scenario: Argentina board
 - **GIVEN** an Argentina team that started its session
 - **WHEN** the team opens Minesweeper
-- **THEN** the board is 9x9 with 10 mines and the Game menu level items are disabled
+- **THEN** the board is 8x8 with 10 mines and the Game menu level items are disabled
 
 #### Scenario: Chile board
 - **GIVEN** a Chile team that started its session

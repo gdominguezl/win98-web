@@ -5,8 +5,8 @@ import {
 
 const CONFIGS = {
   argentina: {
-    width: 9,
-    height: 9,
+    width: 8,
+    height: 8,
     mines: 10,
     winTitle: "Minesweeper",
     winText: "Codigo: 1",

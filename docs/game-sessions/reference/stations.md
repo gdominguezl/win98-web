@@ -15,7 +15,7 @@ it when the session stops. All paths below are relative to
 | `recycle-clue` | `argentina-recycle.js` | Recycle Bin item `ct-argentina-clue` holding `IMG_0001.png` (asset `assets/argentina-clue.png`), metadata entry with `originalPath` `/C:/My Documents/IMG_0001.png` | Deletes the bin item, its metadata key and the restored copy; refreshes the bin icon |
 | `throwback-folder` | `argentina-throwback.js` | `C:\THROWBACK\{MEMORY.TXT, ERROR.LOG, PLANO.TXT}` (assets `argentina-{memory.txt,error.log,plano.txt}`), `C:\WINDOWS\Desktop\HELP_PANTALLA.TXT` (asset `argentina-help.txt`), `HELP` override (short text, `argentina-help-dos.txt`), start-dir override `C:\` | Empties and removes the folder, unlinks the desktop file + `desktop-refresh`, resets both overrides |
 | `signals-file` | `argentina-signals.js` | `C:\WINDOWS\Desktop\Communication System.txt` (asset `argentina-signals.txt`) | Unlinks it + `desktop-refresh` |
-| `minesweeper` | `minesweeper.js` | Locked Minesweeper board 9x9/10, win dialog `Codigo: 1`, taunts from the 3rd consecutive loss (`src/apps/minesweeper/challenge.js`) | `setMinesweeperChallenge(null)` — normal game restored |
+| `minesweeper` | `minesweeper.js` | Locked Minesweeper board 8x8/10, win dialog `Codigo: 1`, taunts from the 3rd consecutive loss (`src/apps/minesweeper/challenge.js`) | `setMinesweeperChallenge(null)` — normal game restored |
 
 ### Chile
 
